@@ -1,0 +1,6 @@
+{
+  "name": "8K IPTV",
+  "description": "Nederlandstalig verkoopplatform voor premium 8K IPTV-abonnementen: livekanalen, een uitgebreide film- en seriecatalogus, abonnementen, klantbeoordelingen en een interactieve betaalmodule.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

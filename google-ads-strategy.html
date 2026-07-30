@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Strategy – TV Profesional</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green: #014E45;
+    --green-dark: #013d37;
+    --black: #080908;
+    --white: #FDFDF7;
+    --gold: #D4A820;
+    --gray-light: #f4f4f0;
+    --gray-mid: #e0e0d8;
+    --gray-text: #555550;
+    --red: #c0392b;
+    --blue: #1a6bcc;
+    --orange: #d35400;
+  }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: linear-gradient(135deg, #080908 0%, #0d1a18 50%, #080908 100%);
+    color: #fff;
+    padding: 60px 50px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(1,78,69,0.35) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .cover-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4caf8a;
+    margin-bottom: 10px;
+  }
+  .cover-title {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: #fff;
+  }
+  .cover-title span {
+    color: #4caf8a;
+  }
+  .cover-sub {
+    margin-top: 14px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+  }
+  .cover-meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.05em;
+  }
+  .cover-meta-item strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 600;
+  }
+
+  /* ── LAYOUT ── */
+  .page { padding: 36px 44px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green);
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+  }
+  .section-note {
+    font-size: 11.5px;
+    color: var(--gray-text);
+    margin-bottom: 14px;
+    line-height: 1.55;
+  }
+
+  /* ── CAMPAIGN HEADER ── */
+  .campaign-header {
+    background: var(--green);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .campaign-header .camp-num {
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .campaign-header .camp-name {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .campaign-header .camp-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    margin-left: auto;
+  }
+  .campaign-body {
+    border: 1.5px solid var(--green);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* ── AD PREVIEW ── */
+  .ad-preview {
+    background: #fff;
+    border: 1px solid #dce0e0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    max-width: 550px;
+  }
+  .ad-preview-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #1a73e8;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+  .ad-preview-url {
+    font-size: 12px;
+    color: #202124;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .ad-preview-title {
+    font-size: 18px;
+    color: #1a0dab;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+  .ad-preview-desc {
+    font-size: 13px;
+    color: #4d5156;
+    line-height: 1.4;
+  }
+
+  /* ── TABLE ── */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
+  th {
+    background: var(--gray-light);
+    color: var(--green-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--green);
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--gray-mid);
+    vertical-align: top;
+    font-size: 12.5px;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f9faf8; }
+  .char-count {
+    font-size: 10px;
+    color: var(--gray-text);
+    white-space: nowrap;
+    font-family: monospace;
+  }
+  .char-ok { color: #1a7a3a; font-weight: 700; }
+  .char-warn { color: var(--orange); font-weight: 700; }
+  .char-max { color: var(--red); font-weight: 700; }
+
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 99px;
+    margin-right: 4px;
+  }
+  .tag-green { background: rgba(1,78,69,0.10); color: var(--green); border: 1px solid rgba(1,78,69,0.25); }
+  .tag-gold  { background: rgba(212,168,32,0.12); color: #8B6510; border: 1px solid rgba(212,168,32,0.3); }
+  .tag-blue  { background: rgba(26,107,204,0.10); color: var(--blue); border: 1px solid rgba(26,107,204,0.25); }
+  .tag-red   { background: rgba(192,57,43,0.10); color: var(--red); border: 1px solid rgba(192,57,43,0.25); }
+
+  /* ── SITELINKS ── */
+  .sitelinks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .sitelink-card {
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 7px;
+    padding: 12px 14px;
+    background: var(--gray-light);
+  }
+  .sitelink-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a0dab;
+    margin-bottom: 4px;
+  }
+  .sitelink-meta {
+    font-size: 10.5px;
+    color: var(--gray-text);
+    margin-bottom: 2px;
+  }
+  .sitelink-desc {
+    font-size: 11.5px;
+    color: #333;
+    line-height: 1.4;
+  }
+  .sitelink-url {
+    margin-top: 6px;
+    font-size: 10px;
+    color: #188038;
+    font-family: monospace;
+  }
+
+  /* ── RECO CARDS ── */
+  .reco-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .reco-card {
+    border-left: 3px solid var(--green);
+    background: var(--gray-light);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+  }
+  .reco-card.priority-high { border-color: var(--green); }
+  .reco-card.priority-med  { border-color: var(--gold); }
+  .reco-card.priority-low  { border-color: #7a9a97; }
+  .reco-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .reco-body {
+    font-size: 11.5px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+  .reco-priority {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  /* ── CONVERSION BOX ── */
+  .conversion-box {
+    background: linear-gradient(135deg, #f0f8f5 0%, #e8f5f0 100%);
+    border: 1.5px solid rgba(1,78,69,0.3);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+  .conversion-box h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .conversion-steps {
+    list-style: none;
+    counter-reset: steps;
+  }
+  .conversion-steps li {
+    counter-increment: steps;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #333;
+  }
+  .conversion-steps li::before {
+    content: counter(steps);
+    background: var(--green);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    border-radius: 50%;
+    width: 18px; height: 18px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── BUDGET TABLE ── */
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .budget-card {
+    background: var(--gray-light);
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 7px;
+    padding: 14px;
+    text-align: center;
+  }
+  .budget-phase {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .budget-duration {
+    font-size: 11px;
+    color: var(--gray-text);
+    margin-bottom: 8px;
+  }
+  .budget-amount {
+    font-size: 20px;
+    font-weight: 900;
+    color: #111;
+    line-height: 1;
+  }
+  .budget-amount-unit {
+    font-size: 11px;
+    color: var(--gray-text);
+  }
+  .budget-strategy {
+    margin-top: 6px;
+    font-size: 10.5px;
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* ── KEYWORD TABLE ── */
+  .keyword-col { font-family: monospace; font-size: 12px; }
+  .match-exact  { color: var(--blue); font-weight: 700; }
+  .match-phrase { color: var(--orange); font-weight: 700; }
+  .match-broad  { color: var(--gray-text); }
+
+  /* ── NEGATIVE KEYWORDS ── */
+  .neg-kw-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .neg-kw {
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.2);
+    color: var(--red);
+    font-size: 11px;
+    font-family: monospace;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { font-size: 12px; }
+    .cover { min-height: auto; padding: 40px; }
+    .page { padding: 28px 36px; }
+    .section { page-break-inside: avoid; }
+    .sitelinks-grid { page-break-inside: avoid; }
+    .reco-grid { page-break-inside: avoid; }
+    .budget-grid { page-break-inside: avoid; }
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-mid);
+    margin: 28px 0;
+  }
+
+  .highlight-box {
+    background: rgba(1,78,69,0.06);
+    border-left: 3px solid var(--green);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 14px;
+    font-size: 12px;
+    color: #333;
+  }
+  .highlight-box strong { color: var(--green); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Google Ads Strategy Document</div>
+  <div class="cover-title">TV Profesional<br><span>Google Ads Playbook</span></div>
+  <div class="cover-sub">Vollständige Kampagnenstrategie: Headlines, Descriptions, Sitelinks, Keywords und Empfehlungen für den deutschen Markt.</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Markt:</strong> Deutschland · Österreich · Schweiz</div>
+    <div class="cover-meta-item"><strong>Sprache:</strong> Deutsch</div>
+    <div class="cover-meta-item"><strong>Conversion:</strong> WhatsApp (+44 7449 708976)</div>
+    <div class="cover-meta-item"><strong>Topangebot:</strong> 12 Monate ab €69,99 (42% Rabatt)</div>
+    <div class="cover-meta-item"><strong>Erstellt:</strong> Juni 2026</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 1. CAMPAIGN STRUCTURE -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">01 — Kampagnenstruktur Überblick</div>
+
+    <div class="campaign-header">
+      <div class="camp-num">1</div>
+      <div class="camp-name">Generic IPTV</div>
+      <div class="camp-desc">Käufer-Intent · Hauptumsatz</div>
+    </div>
+    <div class="campaign-body">
+      Ziel: Nutzer die aktiv nach IPTV-Abonnements suchen. Höchste Conversion-Rate erwartet. Haupt-Budget hier einsetzen.
+    </div>
+
+    <div class="campaign-header">
+      <div class="camp-num">2</div>
+      <div class="camp-name">Competitor Conquesting</div>
+      <div class="camp-desc">Schnellste Wins · Kaufbereite Nutzer</div>
+    </div>
+    <div class="campaign-body">
+      Ziel: Nutzer die Konkurrenten suchen (ZeroIPTV, HakunaIPTV, etc.). Diese sind bereits kaufbereit – nur der Anbieter fehlt. Günstigster CPA möglich.
+    </div>
+
+    <div class="campaign-header">
+      <div class="camp-num">3</div>
+      <div class="camp-name">Breite Streaming-Intention</div>
+      <div class="camp-desc">Oberer Funnel · Reichweite</div>
+    </div>
+    <div class="campaign-body">
+      Ziel: Nutzer die allgemein nach TV-Streaming suchen. Breitere Zielgruppe, günstigere Klicks, niedrigere sofortige Conversion. Für Reichweite & Remarketing-Listen.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 2. KEYWORDS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">02 — Keywords</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:11px;font-weight:700;color:#333;margin-bottom:8px;">KAMPAGNE 1 — Generic IPTV</p>
+        <table>
+          <tr>
+            <th>Keyword</th>
+            <th style="width:90px;">Match Type</th>
+          </tr>
+          <tr><td class="keyword-col">[iptv abonnement]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptv kaufen]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptv deutschland]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptv 4k]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptv german]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">"bestes iptv"</td><td><span class="match-phrase">"Phrase"</span></td></tr>
+          <tr><td class="keyword-col">"iptv anbieter"</td><td><span class="match-phrase">"Phrase"</span></td></tr>
+          <tr><td class="keyword-col">"iptv subscription"</td><td><span class="match-phrase">"Phrase"</span></td></tr>
+          <tr><td class="keyword-col">"iptv günstig"</td><td><span class="match-phrase">"Phrase"</span></td></tr>
+          <tr><td class="keyword-col">iptv streaming abonnement</td><td><span class="match-broad">Broad</span></td></tr>
+        </table>
+      </div>
+      <div>
+        <p style="font-size:11px;font-weight:700;color:#333;margin-bottom:8px;">KAMPAGNE 2 — Competitor Conquesting</p>
+        <table>
+          <tr>
+            <th>Keyword</th>
+            <th style="width:90px;">Match Type</th>
+          </tr>
+          <tr><td class="keyword-col">[zeroiptv]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[hakunaiptv]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptv4k]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[seroiptv]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[buyiptv]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptvprofesional]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptvgermany]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptvdeutschland]</td><td><span class="match-exact">[Exact]</span></td></tr>
+          <tr><td class="keyword-col">[iptvgerman]</td><td><span class="match-exact">[Exact]</span></td></tr>
+        </table>
+        <p style="font-size:10.5px;color:#888;margin-top:6px;">⚠ Namen NUR als Keywords – niemals im Anzeigentext erwähnen.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <p style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:6px;">NEGATIVE KEYWORDS — Sofort hinzufügen</p>
+      <div class="neg-kw-list">
+        <span class="neg-kw">kostenlos</span>
+        <span class="neg-kw">gratis</span>
+        <span class="neg-kw">free</span>
+        <span class="neg-kw">illegal</span>
+        <span class="neg-kw">crack</span>
+        <span class="neg-kw">hack</span>
+        <span class="neg-kw">trial</span>
+        <span class="neg-kw">test</span>
+        <span class="neg-kw">netflix</span>
+        <span class="neg-kw">disney</span>
+        <span class="neg-kw">amazon</span>
+        <span class="neg-kw">youtube</span>
+        <span class="neg-kw">sky abo</span>
+        <span class="neg-kw">dazn abo</span>
+        <span class="neg-kw">antenna</span>
+        <span class="neg-kw">satellit</span>
+        <span class="neg-kw">forum</span>
+        <span class="neg-kw">reddit</span>
+        <span class="neg-kw">erfahrungen</span>
+        <span class="neg-kw">was ist iptv</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 3. HEADLINES -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">03 — Headlines (RSA) — Max. 30 Zeichen</div>
+    <div class="section-note">Google rotiert Headlines automatisch. Alle 15 Slots befüllen. Mindestens 3 verschiedene Wertversprechen abdecken: Preis, Inhalt, Support.</div>
+
+    <table>
+      <tr>
+        <th style="width:30px;">#</th>
+        <th>Headline</th>
+        <th style="width:60px;">Zeichen</th>
+        <th style="width:120px;">Fokus</th>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">01</td>
+        <td style="font-weight:600;">TV Profesional – Ab €5,83/Mo</td>
+        <td class="char-count char-ok">30 / 30</td>
+        <td><span class="tag tag-gold">Preis</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">02</td>
+        <td style="font-weight:600;">12 Monate nur €69,99</td>
+        <td class="char-count char-ok">21 / 30</td>
+        <td><span class="tag tag-gold">Preis</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">03</td>
+        <td style="font-weight:600;">42% Sparen – Jetzt Buchen</td>
+        <td class="char-count char-ok">25 / 30</td>
+        <td><span class="tag tag-gold">Angebot</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">04</td>
+        <td style="font-weight:600;">59.000+ Sender in 4K</td>
+        <td class="char-count char-ok">21 / 30</td>
+        <td><span class="tag tag-green">Inhalt</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">05</td>
+        <td style="font-weight:600;">200.000+ Filme &amp; Serien</td>
+        <td class="char-count char-ok">23 / 30</td>
+        <td><span class="tag tag-green">Inhalt</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">06</td>
+        <td style="font-weight:600;">Sofort Aktiv – 24/7 Support</td>
+        <td class="char-count char-ok">27 / 30</td>
+        <td><span class="tag tag-blue">Service</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">07</td>
+        <td style="font-weight:600;">Kein Vertrag – Jetzt Starten</td>
+        <td class="char-count char-ok">28 / 30</td>
+        <td><span class="tag tag-blue">Vertrauen</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">08</td>
+        <td style="font-weight:600;">Bestelle Jetzt per WhatsApp</td>
+        <td class="char-count char-ok">27 / 30</td>
+        <td><span class="tag tag-blue">CTA</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">09</td>
+        <td style="font-weight:600;">4K Streaming Ohne Vertrag</td>
+        <td class="char-count char-ok">25 / 30</td>
+        <td><span class="tag tag-green">Qualität</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">10</td>
+        <td style="font-weight:600;">Bestes IPTV Abonnement 2026</td>
+        <td class="char-count char-ok">27 / 30</td>
+        <td><span class="tag tag-green">Position</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">11</td>
+        <td style="font-weight:600;">Alle Geräte Unterstützt</td>
+        <td class="char-count char-ok">23 / 30</td>
+        <td><span class="tag tag-green">Kompatibilität</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">12</td>
+        <td style="font-weight:600;">100% Rückerstattung – 24 Std</td>
+        <td class="char-count char-ok">28 / 30</td>
+        <td><span class="tag tag-blue">Vertrauen</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">13</td>
+        <td style="font-weight:600;">Entertainment für die Familie</td>
+        <td class="char-count char-ok">29 / 30</td>
+        <td><span class="tag tag-green">Zielgruppe</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">14</td>
+        <td style="font-weight:600;">Unterbrechungsfreies Streaming</td>
+        <td class="char-count char-max">30 / 30</td>
+        <td><span class="tag tag-green">Qualität</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">15</td>
+        <td style="font-weight:600;">Über 70.000+ Inhalte Verfügbar</td>
+        <td class="char-count char-max">30 / 30</td>
+        <td><span class="tag tag-green">Inhalt</span></td>
+      </tr>
+    </table>
+
+    <div style="margin-top:10px;" class="highlight-box">
+      <strong>Tipp:</strong> Headlines 01–03 (Preis), 04–05 (Inhalt) und 06–08 (Service/CTA) immer gemeinsam in einer Anzeige verwenden, damit Google alle 3 Dimensionen kombinieren kann.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 4. DESCRIPTIONS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">04 — Descriptions — Max. 90 Zeichen</div>
+    <div class="section-note">Google wählt 2 von 4 Descriptions pro Anzeige aus. Alle 4 Slots befüllen. Jede Description muss allein stehend funktionieren.</div>
+
+    <table>
+      <tr>
+        <th style="width:30px;">#</th>
+        <th>Description Text</th>
+        <th style="width:60px;">Zeichen</th>
+        <th style="width:80px;">Fokus</th>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">D1</td>
+        <td style="font-weight:500; line-height:1.5;">Genieße 59.000+ Sender &amp; 200.000+ Inhalte in 4K – sofort aktiv, kein Vertrag nötig.</td>
+        <td class="char-count char-ok">84 / 90</td>
+        <td><span class="tag tag-green">Inhalt + CTA</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">D2</td>
+        <td style="font-weight:500; line-height:1.5;">12 Monate Abo ab €69,99 – spare 42% gegenüber monatlichen Tarifen. Per WhatsApp bestellen.</td>
+        <td class="char-count char-max">90 / 90</td>
+        <td><span class="tag tag-gold">Preis + CTA</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">D3</td>
+        <td style="font-weight:500; line-height:1.5;">Kein Vertrag. Einmal zahlen, sofort streamen. 100% Rückerstattung innerhalb 24 Std.</td>
+        <td class="char-count char-ok">83 / 90</td>
+        <td><span class="tag tag-blue">Vertrauen</span></td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;color:#888;">D4</td>
+        <td style="font-weight:500; line-height:1.5;">Schnelle Server &amp; 4K auf jedem Gerät – Smart TV, Firestick, iOS &amp; Android. Sofort aktiv.</td>
+        <td class="char-count char-ok">89 / 90</td>
+        <td><span class="tag tag-green">Qualität + Geräte</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 5. AD PREVIEW -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">05 — Anzeigen-Vorschau (Beispielkombination)</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:11px;font-weight:700;color:#333;margin-bottom:8px;">KAMPAGNE 1 — Generic IPTV</p>
+        <div class="ad-preview">
+          <div class="ad-preview-label">Gesponsert</div>
+          <div class="ad-preview-url">🌐 tvprofessional.de</div>
+          <div class="ad-preview-title">12 Monate nur €69,99 | 42% Sparen – Jetzt Buchen | Sofort Aktiv – 24/7 Support</div>
+          <div class="ad-preview-desc">Genieße 59.000+ Sender &amp; 200.000+ Inhalte in 4K – sofort aktiv, kein Vertrag nötig. Kein Vertrag. Einmal zahlen, sofort streamen. 100% Rückerstattung innerhalb 24 Std.</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:11px;font-weight:700;color:#333;margin-bottom:8px;">KAMPAGNE 2 — Competitor</p>
+        <div class="ad-preview">
+          <div class="ad-preview-label">Gesponsert</div>
+          <div class="ad-preview-url">🌐 tvprofessional.de</div>
+          <div class="ad-preview-title">Bestes IPTV Abonnement 2026 | TV Profesional – Ab €5,83/Mo | 100% Rückerstattung – 24 Std</div>
+          <div class="ad-preview-desc">12 Monate Abo ab €69,99 – spare 42% gegenüber monatlichen Tarifen. Per WhatsApp bestellen. Schnelle Server &amp; 4K auf jedem Gerät – Smart TV, Firestick, iOS &amp; Android. Sofort aktiv.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 6. SITELINKS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">06 — Sitelinks (Assets) — Text max. 25 Zeichen · Beschreibung max. 35 Zeichen</div>
+    <div class="section-note">Sitelinks erscheinen unter der Anzeige und erhöhen die CTR deutlich. Mindestens 6 anlegen damit Google rotieren kann.</div>
+
+    <div class="sitelinks-grid">
+
+      <div class="sitelink-card">
+        <div class="sitelink-text">📋 Preise Ansehen</div>
+        <div class="sitelink-meta">Text: "Preise Ansehen" (15 Zeichen)</div>
+        <div class="sitelink-desc">
+          <strong>Zeile 1:</strong> Alle Pakete ab €34,99 verfügbar<br>
+          <strong>Zeile 2:</strong> Wähle 3, 6, 12 oder 24 Monate
+        </div>
+        <div class="sitelink-url">→ /#pricing-section</div>
+      </div>
+
+      <div class="sitelink-card">
+        <div class="sitelink-text">💬 Jetzt Bestellen</div>
+        <div class="sitelink-meta">Text: "Jetzt Bestellen" (15 Zeichen)</div>
+        <div class="sitelink-desc">
+          <strong>Zeile 1:</strong> Per WhatsApp in Minuten bestellen<br>
+          <strong>Zeile 2:</strong> Sofortige Aktivierung garantiert
+        </div>
+        <div class="sitelink-url">→ wa.me/447449708976</div>
+      </div>
+
+      <div class="sitelink-card">
+        <div class="sitelink-text">❓ Häufige Fragen</div>
+        <div class="sitelink-meta">Text: "Häufige Fragen" (14 Zeichen)</div>
+        <div class="sitelink-desc">
+          <strong>Zeile 1:</strong> Antworten zu Einrichtung &amp; Geräten<br>
+          <strong>Zeile 2:</strong> Alles über Aktivierung &amp; Support
+        </div>
+        <div class="sitelink-url">→ /#faq-section</div>
+      </div>
+
+      <div class="sitelink-card">
+        <div class="sitelink-text">⭐ Kundenbewertungen</div>
+        <div class="sitelink-meta">Text: "Kundenbewertungen" (17 Zeichen)</div>
+        <div class="sitelink-desc">
+          <strong>Zeile 1:</strong> Echte Bewertungen unserer Kunden<br>
+          <strong>Zeile 2:</strong> 5-Sterne-Erfahrungen aus ganz DE
+        </div>
+        <div class="sitelink-url">→ /#testimonials</div>
+      </div>
+
+      <div class="sitelink-card">
+        <div class="sitelink-text">📱 WhatsApp Support</div>
+        <div class="sitelink-meta">Text: "WhatsApp Support" (16 Zeichen)</div>
+        <div class="sitelink-desc">
+          <strong>Zeile 1:</strong> 24/7 direkte Hilfe per WhatsApp<br>
+          <strong>Zeile 2:</strong> Schnelle Antworten, sofort aktiv
+        </div>
+        <div class="sitelink-url">→ wa.me/447449708976</div>
+      </div>
+
+      <div class="sitelink-card">
+        <div class="sitelink-text">📺 Kompatible Geräte</div>
+        <div class="sitelink-meta">Text: "Kompatible Geräte" (17 Zeichen)</div>
+        <div class="sitelink-desc">
+          <strong>Zeile 1:</strong> Smart TV, Firestick, iOS &amp; mehr<br>
+          <strong>Zeile 2:</strong> Läuft auf fast jedem Gerät sofort
+        </div>
+        <div class="sitelink-url">→ / (Homepage)</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 7. CALLOUT ASSETS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">07 — Callout Assets (max. 25 Zeichen)</div>
+    <div class="section-note">Callouts erscheinen als kurze Stichpunkte. Mindestens 8–10 anlegen.</div>
+    <div class="neg-kw-list">
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">Sofortige Aktivierung</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">24/7 WhatsApp Support</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">Kein Jahresvertrag</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">100% Rückerstattung</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">4K &amp; FHD Qualität</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">Anti-Freeze Technologie</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">59.000+ Live-Sender</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">200.000+ Filme &amp; Serien</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">Kein VPN benötigt</span>
+      <span class="neg-kw" style="background:rgba(1,78,69,0.08);border-color:rgba(1,78,69,0.2);color:var(--green);">Alle Geräte kompatibel</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 8. WHATSAPP CONVERSION -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">08 — WhatsApp als Conversion einrichten</div>
+
+    <div class="conversion-box">
+      <h3>Setup: WhatsApp-Klick als Google Ads Conversion tracken</h3>
+      <ol class="conversion-steps">
+        <li>In Google Ads: <strong>Conversions → Neue Conversion → Website</strong> → Conversion-Name: "WhatsApp Kontakt"</li>
+        <li>Conversion-Kategorie: <strong>Kontaktaufnahme</strong> · Wert: €30 (durchschnittlicher Plan-Wert) · Zählung: <strong>Einmalig pro Benutzer</strong></li>
+        <li>In deiner Website: Auf jeden WhatsApp-Button-Klick diesen Code triggern:<br>
+          <code style="font-size:11px;background:#fff;padding:4px 8px;border-radius:4px;border:1px solid #ddd;display:block;margin-top:6px;">gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXX'});</code>
+        </li>
+        <li>Alternativ: <strong>Google Tag Manager</strong> → Trigger auf Click-URL die "wa.me" enthält</li>
+        <li>Sobald 30+ Conversions: Bidding auf <strong>Ziel-CPA</strong> umstellen (z.B. Ziel: €8–12 CPA)</li>
+      </ol>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 9. BUDGET & BIDDING -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">09 — Budget &amp; Gebotsstrategien</div>
+
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-phase">Phase 1 · Launch</div>
+        <div class="budget-duration">Woche 1–2</div>
+        <div class="budget-amount">€15–25</div>
+        <div class="budget-amount-unit">pro Tag</div>
+        <div class="budget-strategy">Klicks maximieren</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-phase">Phase 2 · Optimierung</div>
+        <div class="budget-duration">Woche 3–4</div>
+        <div class="budget-amount">€20–30</div>
+        <div class="budget-amount-unit">pro Tag</div>
+        <div class="budget-strategy">Ziel-CPA (ab 30 Conv.)</div>
+      </div>
+      <div class="budget-card">
+        <div class="budget-phase">Phase 3 · Skalierung</div>
+        <div class="budget-duration">Ab Monat 2</div>
+        <div class="budget-amount">€30–50</div>
+        <div class="budget-amount-unit">pro Tag</div>
+        <div class="budget-strategy">Ziel-ROAS</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;" class="highlight-box">
+      <strong>Budget-Aufteilung:</strong> 50% Kampagne 1 (Generic) · 35% Kampagne 2 (Competitor) · 15% Kampagne 3 (Breit). Competitor-Kampagne hat oft den günstigsten CPA, da Nutzer bereits kaufbereit sind.
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 10. RECOMMENDATIONS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">10 — Empfehlungen &amp; Checkliste</div>
+
+    <div class="reco-grid">
+
+      <div class="reco-card priority-high">
+        <div class="reco-priority">🔴 Kritisch</div>
+        <div class="reco-title">Geo-Targeting: DACH</div>
+        <div class="reco-body">Ausschließlich Deutschland, Österreich, Schweiz targetieren. Keine globale Auslieferung – erhöht Relevanz und senkt CPC.</div>
+      </div>
+
+      <div class="reco-card priority-high">
+        <div class="reco-priority">🔴 Kritisch</div>
+        <div class="reco-title">Mobile-First Gebote</div>
+        <div class="reco-body">80%+ der WhatsApp-Conversions kommen von Mobile. Mobile-Gebotsanpassung: +20% auf Smartphones setzen.</div>
+      </div>
+
+      <div class="reco-card priority-high">
+        <div class="reco-priority">🔴 Kritisch</div>
+        <div class="reco-title">Conversion Tracking vor Launch</div>
+        <div class="reco-body">Conversion-Tag auf WhatsApp-Button implementieren BEVOR die Kampagne live geht. Ohne Daten kein Smart Bidding.</div>
+      </div>
+
+      <div class="reco-card priority-high">
+        <div class="reco-priority">🔴 Kritisch</div>
+        <div class="reco-title">Keine Markennamen im Anzeigentext</div>
+        <div class="reco-body">ZeroIPTV, HakunaIPTV etc. nur als Keywords verwenden – niemals im Anzeigentext schreiben. Sonst droht Kontosperrung.</div>
+      </div>
+
+      <div class="reco-card priority-med">
+        <div class="reco-priority">🟡 Wichtig</div>
+        <div class="reco-title">Ad Scheduling – Abendstunden</div>
+        <div class="reco-body">Hauptausspielung: Mo–Fr 17–23 Uhr, Wochenende 10–24 Uhr. Nacht- und frühe Morgenstunden reduzieren oder pausieren.</div>
+      </div>
+
+      <div class="reco-card priority-med">
+        <div class="reco-priority">🟡 Wichtig</div>
+        <div class="reco-title">Landing Page: Preis Above Fold</div>
+        <div class="reco-body">Hero-Bereich sollte "Ab €34,99" oder "Ab €5,83/Monat" zeigen – damit Ad-Copy und Landing Page sofort übereinstimmen (Ad Rank).</div>
+      </div>
+
+      <div class="reco-card priority-med">
+        <div class="reco-priority">🟡 Wichtig</div>
+        <div class="reco-title">Remarketing-Liste aufbauen</div>
+        <div class="reco-body">Google Ads Tag auf allen Seiten. Nutzer die Pricing-Seite besucht haben aber nicht konvertiert: mit +30% Gebotsanpassung remarketen.</div>
+      </div>
+
+      <div class="reco-card priority-med">
+        <div class="reco-priority">🟡 Wichtig</div>
+        <div class="reco-title">Keyword-Qualitätsstufe überwachen</div>
+        <div class="reco-body">Ziel: Qualitätsstufe ≥ 7 für alle Keywords. Keywords unter 5 pausieren oder Anzeigentext/Landing Page optimieren.</div>
+      </div>
+
+      <div class="reco-card priority-low">
+        <div class="reco-priority">🟢 Optional</div>
+        <div class="reco-title">A/B Test: Preis vs. Feature Headline</div>
+        <div class="reco-body">Test ob "12 Monate nur €69,99" oder "59.000+ Sender in 4K" mehr Klicks generiert. RSA-Pinning für sauberen Test verwenden.</div>
+      </div>
+
+      <div class="reco-card priority-low">
+        <div class="reco-priority">🟢 Optional</div>
+        <div class="reco-title">Preis-Assets hinzufügen</div>
+        <div class="reco-body">Google Ads Preis-Erweiterung: 3 Monate €34,99 / 6 Monate €49,99 / 12 Monate €69,99. Zeigt Preise direkt in der SERP.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- 11. COPYRIGHT SAFETY -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">11 — Copyright &amp; Policy Safety</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:8px;">❌ NIEMALS im Anzeigentext verwenden</p>
+        <ul style="font-size:12px;color:#333;line-height:2;padding-left:16px;">
+          <li>Sendernamen: ARD, ZDF, Sky, DAZN, RTL, Pro7...</li>
+          <li>Events: Bundesliga, Champions League, Formel 1...</li>
+          <li>Streaming-Dienste: Netflix, Disney+, HBO...</li>
+          <li>Begriffe: "legal", "illegal", "alle Sender", "gestohlene..."</li>
+          <li>Konkurrenten-Namen in Ad Copy</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;">✅ Sichere Formulierungen</p>
+        <ul style="font-size:12px;color:#333;line-height:2;padding-left:16px;">
+          <li>"Tausende Inhalte" statt Sendernamen</li>
+          <li>"Sport, Filme, Serien" statt spezifische Events</li>
+          <li>"Streaming-Abonnement" als Kategorie-Begriff</li>
+          <li>"Entertainment-Abo" / "TV-Paket"</li>
+          <li>Fokus auf Technik: 4K, Anti-Freeze, Server-Speed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="margin-top:36px;padding-top:16px;border-top:1px solid var(--gray-mid);text-align:center;color:#aaa;font-size:10.5px;">
+    TV Profesional · Google Ads Strategy Document · Juni 2026 · Erstellt für den deutschen Markt
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80">
+  <rect width="120" height="80" rx="10" fill="#1A3A8C"/>
+  <text x="60" y="40" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="28" fill="white" text-anchor="middle">SM</text>
+  <text x="60" y="62" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#FFD700" text-anchor="middle">liiga</text>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140">
+  <path d="M60,4 L112,26 L112,90 Q112,130 60,138 Q8,130 8,90 L8,26 Z" fill="#003F87"/>
+  <path d="M60,14 L104,33 L104,90 Q104,124 60,130 Q16,124 16,90 L16,33 Z" fill="#CF0A2C"/>
+  <text x="60" y="88" font-family="Arial Black,Arial" font-weight="900" font-size="38" fill="white" text-anchor="middle">NHL</text>
+</svg>
