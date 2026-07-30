@@ -1,6 +1,6 @@
 import { BlogPost } from "./blogPosts";
 
-const SITE = "https://8kiptv.nl";
+const SITE = "https://www.8kiptv.nl";
 const INSTA = "https://www.instagram.com/my8k.tv/";
 
 export const DE_BLOG_POSTS_11: BlogPost[] = [

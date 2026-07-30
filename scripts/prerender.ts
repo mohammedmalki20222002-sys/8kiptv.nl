@@ -20,12 +20,16 @@ import { SITE_LANG, type LangCode } from "../src/i18n";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const DIST = resolve(ROOT, "dist");
-const SITE = "https://8kiptv.nl";
+// Canonical origin. This MUST be the host that actually serves 200s: Vercel
+// 308-redirects the apex 8kiptv.nl to www, so emitting apex URLs here would make
+// every canonical, og:url and sitemap <loc> a redirect, which Search Console
+// reports as "Page with redirect" rather than indexing the page.
+const SITE = "https://www.8kiptv.nl";
 const BRAND = "8K IPTV";
 
 // Must match index.html exactly — these are the anchors the template is patched on.
 const TPL_HTML_TAG = '<html lang="nl">';
-const TPL_CANONICAL = '<link rel="canonical" href="https://8kiptv.nl/" />';
+const TPL_CANONICAL = `<link rel="canonical" href="${SITE}/" />`;
 const TPL_TITLE = "<title>8K IPTV — Premium IPTV Abonnement Nederland</title>";
 
 const HOME_DESCRIPTION =
@@ -114,6 +118,16 @@ function buildPage(o: PageOpts): string {
 
 function postUrl(slug: string): string {
   return `${SITE}/blog/${slug}`;
+}
+
+// A duplicate slug would silently overwrite one post's page with another's and put
+// the same <loc> in the sitemap twice, which Search Console flags as a duplicate.
+const seenSlugs = new Set<string>();
+for (const post of ALL_POSTS) {
+  if (seenSlugs.has(post.slug)) {
+    throw new Error(`prerender: duplicate slug "${post.slug}" in ALL_POSTS.`);
+  }
+  seenSlugs.add(post.slug);
 }
 
 // ---- per-post pages -------------------------------------------------------
@@ -272,17 +286,27 @@ if (!home.includes('name="description"')) {
 // ---- sitemap.xml ----------------------------------------------------------
 // Generated from the real post list so it can never drift out of sync with the
 // pages that were actually emitted above.
+//
+// Deliberately only <loc> + <lastmod>:
+//   * Google ignores <changefreq> and <priority> outright, so they were pure
+//     payload — ~2 extra lines on every one of ~950 URLs.
+//   * <lastmod> is derived from real post dates instead of `new Date()`. A
+//     lastmod that jumps to "today" on every deploy, for every URL, is exactly
+//     the pattern Google treats as unreliable and then stops trusting — which
+//     costs recrawl priority on the posts that genuinely did change.
 const today = new Date().toISOString().slice(0, 10);
-const urlEntry = (loc: string, priority: string, changefreq: string, lastmod: string) =>
-  `  <url>\n    <loc>${esc(loc)}</loc>\n    <lastmod>${lastmod}</lastmod>\n` +
-  `    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+const newestPostDate = sorted[0]?.dateISO ?? today;
+
+const urlEntry = (loc: string, lastmod: string) =>
+  `  <url>\n    <loc>${esc(loc)}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
 
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  urlEntry(`${SITE}/`, "1.0", "weekly", today),
-  urlEntry(`${SITE}/blog`, "0.8", "daily", today),
-  ...sorted.map((p) => urlEntry(postUrl(p.slug), "0.7", "monthly", p.dateISO)),
+  // Home and the blog grid both change whenever the newest post lands.
+  urlEntry(`${SITE}/`, newestPostDate),
+  urlEntry(`${SITE}/blog`, newestPostDate),
+  ...sorted.map((p) => urlEntry(postUrl(p.slug), p.dateISO)),
   "</urlset>",
 ].join("\n");
 writeFileSync(resolve(DIST, "sitemap.xml"), sitemap + "\n", "utf8");

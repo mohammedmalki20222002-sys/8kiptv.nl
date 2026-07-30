@@ -12,7 +12,10 @@
     <!-- <meta name="msvalidate.01" content="" /> -->
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <link rel="canonical" href="https://8kiptv.nl/" />
+    <!-- Canonical host is www: Vercel 308-redirects the apex to www.8kiptv.nl, so
+         every canonical / og:url / sitemap entry must use www or Search Console
+         reports the submitted URLs as "Page with redirect" instead of indexing them. -->
+    <link rel="canonical" href="https://www.8kiptv.nl/" />
     <title>8K IPTV — Premium IPTV Abonnement Nederland</title>
 
     <!-- TODO(8kiptv.nl): add the GA4 / Google Ads tags for this property here.

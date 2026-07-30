@@ -105,7 +105,7 @@ export default function BlogPost({ slug, onPricingClick }: BlogPostProps) {
           </a>
         </div>
         <p className="text-white/50 text-xs mt-4 font-mono">
-          <a href="https://8kiptv.nl" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://www.8kiptv.nl" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
             WWW.8KIPTV.NL
           </a>
         </p>

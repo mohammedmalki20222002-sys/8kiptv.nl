@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://8kiptv.nl/sitemap.xml
+# Must be the canonical host. The apex 8kiptv.nl 308-redirects to www, and a
+# sitemap URL that redirects is fetched a step later and trusted less.
+Sitemap: https://www.8kiptv.nl/sitemap.xml

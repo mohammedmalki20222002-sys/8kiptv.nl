@@ -15,19 +15,48 @@ import EuropeCoverage from "./components/EuropeCoverage";
 import CheckoutModal from "./components/CheckoutModal";
 import BlogGrid from "./components/BlogGrid";
 import BlogPost from "./components/BlogPost";
+import { getPostBySlug } from "./data/allPosts";
+import { getBlogText } from "./blogI18n";
 
-type View = { type: "home" } | { type: "blog-grid" } | { type: "blog-post"; slug: string };
+// Canonical origin — must match scripts/prerender.ts. The apex 8kiptv.nl
+// 308-redirects to www, so canonicals have to name the host that serves 200s.
+const SITE_ORIGIN = "https://www.8kiptv.nl";
+
+const INDEXABLE = "index, follow, max-image-preview:large, max-snippet:-1";
+const NOT_INDEXABLE = "noindex, follow";
+
+type View =
+  | { type: "home" }
+  | { type: "blog-grid" }
+  | { type: "blog-post"; slug: string }
+  | { type: "not-found" };
 
 function resolveView(): View {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  if (path === "/") return { type: "home" };
   if (path === "/blog") return { type: "blog-grid" };
   const match = path.match(/^\/blog\/([^/]+)$/);
-  if (match) return { type: "blog-post", slug: match[1] };
-  return { type: "home" };
+  // Only a slug that resolves to a real post is a real page. Anything else falls
+  // through to not-found: the Vercel SPA rewrite answers *every* path with 200, so
+  // without this check /any-typo would serve the homepage under its own canonical —
+  // an unbounded supply of soft 404s and duplicate content for Google to chew on.
+  if (match && getPostBySlug(match[1])) return { type: "blog-post", slug: match[1] };
+  return { type: "not-found" };
+}
+
+/** Create-or-update a <meta name=...> in <head>, so we never emit a second one. */
+function setMetaByName(name: string, content: string) {
+  let meta = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.setAttribute("name", name);
+    document.head.appendChild(meta);
+  }
+  meta.setAttribute("content", content);
 }
 
 function AppInner({ view }: { view: View }) {
-  const { t, dir } = useLanguage();
+  const { t, dir, lang } = useLanguage();
   const [selectedPlanForCheckout, setSelectedPlanForCheckout] = useState<PricingPlan | null>(null);
   const isHome = view.type === "home";
 
@@ -41,16 +70,34 @@ function AppInner({ view }: { view: View }) {
   };
 
   useEffect(() => {
-    const path = window.location.pathname.replace(/\/+$/, "") || "";
-    const canonicalUrl = `https://8kiptv.nl${path}${path ? "" : "/"}`;
-    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
+    const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+
+    if (view.type === "not-found") {
+      // Googlebot renders this app, so a runtime noindex is the only way to keep an
+      // unknown URL out of the index when the host can't return a real 404 status.
+      setMetaByName("robots", NOT_INDEXABLE);
+      // The shell it was served from carries the homepage title/description.
+      document.title = `${getBlogText(lang).notFoundTitle} — 8K IPTV`;
+      setMetaByName("description", getBlogText(lang).notFoundDesc);
+      // Drop the canonical rather than pointing it at the homepage — a 404 that
+      // canonicalises to "/" is the textbook soft-404 signal.
+      link?.remove();
+      return;
     }
-    link.setAttribute("href", canonicalUrl);
-  }, [view]);
+
+    setMetaByName("robots", INDEXABLE);
+
+    const path = window.location.pathname.replace(/\/+$/, "");
+    const canonicalUrl = `${SITE_ORIGIN}${path || "/"}`;
+    if (link) {
+      link.setAttribute("href", canonicalUrl);
+    } else {
+      const created = document.createElement("link");
+      created.setAttribute("rel", "canonical");
+      created.setAttribute("href", canonicalUrl);
+      document.head.appendChild(created);
+    }
+  }, [view, lang]);
 
   return (
     <div
@@ -104,6 +151,20 @@ function AppInner({ view }: { view: View }) {
             <div className="pt-6 md:pt-10" />
             <BlogPost slug={view.slug} onPricingClick={() => scrollToSection("pricing-section")} />
           </>
+        )}
+
+        {view.type === "not-found" && (
+          <section className="px-4 md:px-8 max-w-2xl mx-auto w-full py-24 text-center">
+            <h1 className="text-3xl font-extrabold text-neutral-900 mb-3">
+              {getBlogText(lang).notFoundTitle}
+            </h1>
+            <p className="serif-display italic font-light text-lg text-neutral-500 mb-8">
+              {getBlogText(lang).notFoundDesc}
+            </p>
+            <a href="/" className="inline-flex items-center gap-2 text-[#003580] font-bold hover:underline">
+              8K IPTV
+            </a>
+          </section>
         )}
       </main>
 
