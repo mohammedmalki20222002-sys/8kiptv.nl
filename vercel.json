@@ -3,6 +3,6 @@
   "framework": "vite",
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/((?!.*\\.(?:xml|txt|json|webmanifest)$).*)", "destination": "/index.html" }
+    { "source": "/((?!.*\\.(?:xml|xsl|txt|json|webmanifest)$).*)", "destination": "/index.html" }
   ]
 }

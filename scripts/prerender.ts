@@ -407,9 +407,15 @@ const newestPostDate = sorted[0]?.dateISO ?? today;
 const urlEntry = (loc: string, lastmod: string) =>
   `  <url>\n    <loc>${esc(loc)}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
 
+// Cosmetic: browsers render a bare sitemap with "This XML file does not appear
+// to have any style information associated with it", which looks like an error.
+// Crawlers ignore the stylesheet.
+const XSL = '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>';
+
 const urlset = (entries: string[]): string =>
   [
     '<?xml version="1.0" encoding="UTF-8"?>',
+    XSL,
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...entries,
     "</urlset>",
@@ -448,6 +454,7 @@ for (const lang of langOrder) {
 
 const sitemapIndex = [
   '<?xml version="1.0" encoding="UTF-8"?>',
+  XSL,
   '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ...sitemapFiles.map(
     (f) => `  <sitemap>\n    <loc>${SITE}/${f}</loc>\n    <lastmod>${newestPostDate}</lastmod>\n  </sitemap>`
