@@ -3,6 +3,10 @@
   "framework": "vite",
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "comment": "SPA fallback for app routes only. Machine-readable files are excluded: without this, a request for a sitemap that does not exist (an old name, a typo, a path Search Console still has on file) falls through to index.html and answers HTTP 200 with HTML. Google then reports the sitemap as unreadable or of an unsupported format instead of simply 404-ing.",
+      "source": "/((?!.*\\.(?:xml|txt|json|webmanifest)$).*)",
+      "destination": "/index.html"
+    }
   ]
 }
