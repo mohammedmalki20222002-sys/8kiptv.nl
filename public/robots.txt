@@ -4,3 +4,8 @@ Allow: /
 # Must be the canonical host. The apex 8kiptv.nl 308-redirects to www, and a
 # sitemap URL that redirects is fetched a step later and trusted less.
 Sitemap: https://www.8kiptv.nl/sitemap.xml
+
+# The line above is a sitemap index. The children are listed as well so a
+# crawler that does not expand the index still finds every group directly.
+Sitemap: https://www.8kiptv.nl/sitemap-pages.xml
+Sitemap: https://www.8kiptv.nl/sitemap-blog-nl.xml

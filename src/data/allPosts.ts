@@ -36,6 +36,7 @@ import { NL_BLOG_POSTS_11 } from "./nlBlogPosts11";
 import { NL_BLOG_POSTS_12 } from "./nlBlogPosts12";
 import { NL_BLOG_POSTS_13 } from "./nlBlogPosts13";
 import { NL_BLOG_POSTS_14 } from "./nlBlogPosts14";
+import { NL_BLOG_POSTS_15 } from "./nlBlogPosts15";
 import { DE_BLOG_POSTS_01 } from "./deBlogPosts01";
 import { DE_BLOG_POSTS_02 } from "./deBlogPosts02";
 import { DE_BLOG_POSTS_03 } from "./deBlogPosts03";
@@ -104,6 +105,7 @@ const NL_BLOG_POSTS: BlogPost[] = [
   ...NL_BLOG_POSTS_12,
   ...NL_BLOG_POSTS_13,
   ...NL_BLOG_POSTS_14,
+  ...NL_BLOG_POSTS_15,
 ];
 
 const DE_BLOG_POSTS: BlogPost[] = [
