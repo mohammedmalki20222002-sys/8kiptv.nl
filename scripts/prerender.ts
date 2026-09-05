@@ -130,6 +130,47 @@ for (const post of ALL_POSTS) {
   seenSlugs.add(post.slug);
 }
 
+// ---- internal link graph --------------------------------------------------
+// Without this every post is a dead end: the only links out are "/" and "/blog",
+// so ~990 URLs all hang off one hub page with ~990 outbound links each worth
+// almost nothing. Google discovers them and then never schedules a crawl.
+// Related + prev/next links give each post real inbound links from pages in its
+// own language and topic, which is what turns "Discovered" into "Crawled".
+const byLang = new Map<string, BlogPost[]>();
+for (const post of ALL_POSTS) {
+  const lang = getPostLang(post, SITE_LANG);
+  const bucket = byLang.get(lang);
+  if (bucket) bucket.push(post);
+  else byLang.set(lang, [post]);
+}
+for (const bucket of byLang.values()) {
+  bucket.sort((a, b) => b.dateISO.localeCompare(a.dateISO));
+}
+
+const RELATED_COUNT = 6;
+
+const RELATED_HEADING: Record<string, string> = {
+  nl: "Meer lezen", de: "Mehr lesen", en: "Read more", fr: "À lire aussi",
+  es: "Sigue leyendo", fi: "Lue lisää", sv: "Läs mer", no: "Les mer",
+  da: "Læs mere", it: "Continua a leggere", pl: "Czytaj dalej",
+  pt: "Leia mais", ro: "Continuă lectura", cs: "Další články",
+  tr: "Devamını okuyun", ar: "اقرأ المزيد",
+};
+
+/** Same language first, same category before the rest, newest first, never itself. */
+function relatedPosts(post: BlogPost, lang: string): BlogPost[] {
+  const pool = byLang.get(lang) ?? [];
+  const others = pool.filter((p) => p.slug !== post.slug);
+  const sameCategory = others.filter((p) => p.category === post.category);
+  const rest = others.filter((p) => p.category !== post.category);
+  return [...sameCategory, ...rest].slice(0, RELATED_COUNT);
+}
+
+function postLinkHtml(p: BlogPost): string {
+  const t = getPostText(p, getPostLang(p, SITE_LANG));
+  return `<li><a href="/blog/${p.slug}">${esc(t.title)}</a></li>`;
+}
+
 // ---- per-post pages -------------------------------------------------------
 let count = 0;
 for (const post of ALL_POSTS) {
@@ -176,6 +217,29 @@ for (const post of ALL_POSTS) {
     `<img src="${esc(post.image)}" alt="${esc(t.title)}" width="1200" height="675" />`,
     ...t.body.map((p) => `<p>${paragraphToHtml(p)}</p>`),
     `</article>`,
+    ...(() => {
+      const siblings = byLang.get(lang) ?? [];
+      const i = siblings.findIndex((p) => p.slug === post.slug);
+      const newer = i > 0 ? siblings[i - 1] : undefined;
+      const older = i >= 0 && i < siblings.length - 1 ? siblings[i + 1] : undefined;
+      const related = relatedPosts(post, lang);
+      const out: string[] = [];
+      if (related.length) {
+        out.push(`<aside><h2>${esc(RELATED_HEADING[lang] ?? RELATED_HEADING.en)}</h2>`);
+        out.push(`<ul>${related.map(postLinkHtml).join("")}</ul></aside>`);
+      }
+      if (newer || older) {
+        out.push(
+          `<nav>${[
+            older ? `<a rel="prev" href="/blog/${older.slug}">${esc(getPostText(older, lang).title)}</a>` : "",
+            newer ? `<a rel="next" href="/blog/${newer.slug}">${esc(getPostText(newer, lang).title)}</a>` : "",
+          ]
+            .filter(Boolean)
+            .join(" · ")}</nav>`
+        );
+      }
+      return out;
+    })(),
   ].join("\n");
 
   const html = buildPage({
@@ -343,18 +407,56 @@ const newestPostDate = sorted[0]?.dateISO ?? today;
 const urlEntry = (loc: string, lastmod: string) =>
   `  <url>\n    <loc>${esc(loc)}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
 
-const sitemap = [
-  '<?xml version="1.0" encoding="UTF-8"?>',
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  // Home and the blog grid both change whenever the newest post lands.
+const urlset = (entries: string[]): string =>
+  [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...entries,
+    "</urlset>",
+  ].join("\n") + "\n";
+
+// One sitemap per language instead of a single 990-URL file. Search Console
+// reports coverage per sitemap, so a split makes it visible which language
+// group Google actually indexes — and the Dutch pages, the ones this .nl domain
+// is actually about, no longer queue behind 700 foreign-language URLs.
+const sitemapFiles: string[] = [];
+
+const corePages = urlset([
   urlEntry(`${SITE}/`, newestPostDate),
   urlEntry(`${SITE}/blog`, newestPostDate),
   urlEntry(`${SITE}/voorwaarden`, today),
-  ...sorted.map((p) => urlEntry(postUrl(p.slug), p.dateISO)),
-  "</urlset>",
+]);
+writeFileSync(resolve(DIST, "sitemap-pages.xml"), corePages, "utf8");
+sitemapFiles.push("sitemap-pages.xml");
+
+// Dutch first: it is the language of the domain and should be crawled first.
+const langOrder = [
+  SITE_LANG,
+  ...[...byLang.keys()].filter((l) => l !== SITE_LANG).sort(),
+];
+for (const lang of langOrder) {
+  const posts = byLang.get(lang);
+  if (!posts?.length) continue;
+  const file = `sitemap-blog-${lang}.xml`;
+  writeFileSync(
+    resolve(DIST, file),
+    urlset(posts.map((p) => urlEntry(postUrl(p.slug), p.dateISO))),
+    "utf8"
+  );
+  sitemapFiles.push(file);
+}
+
+const sitemapIndex = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  ...sitemapFiles.map(
+    (f) => `  <sitemap>\n    <loc>${SITE}/${f}</loc>\n    <lastmod>${newestPostDate}</lastmod>\n  </sitemap>`
+  ),
+  "</sitemapindex>",
 ].join("\n");
-writeFileSync(resolve(DIST, "sitemap.xml"), sitemap + "\n", "utf8");
+writeFileSync(resolve(DIST, "sitemap.xml"), sitemapIndex + "\n", "utf8");
 
 console.log(
-  `Prerendered ${count} post pages + /blog grid + /voorwaarden + homepage meta, and wrote sitemap.xml with ${sorted.length + 3} URLs.`
+  `Prerendered ${count} post pages + /blog grid + /voorwaarden + homepage meta, ` +
+    `and wrote a sitemap index over ${sitemapFiles.length} sitemaps (${sorted.length + 3} URLs).`
 );
