@@ -243,6 +243,49 @@ const blogHtml = buildPage({
 mkdirSync(resolve(DIST, "blog"), { recursive: true });
 writeFileSync(resolve(DIST, "blog", "index.html"), blogHtml, "utf8");
 
+// ---- /voorwaarden ---------------------------------------------------------
+// Static route rendered by React at runtime, so it needs the same treatment as
+// the blog: a crawler that fetches the URL must get its own title/description
+// instead of the generic shell.
+const TERMS_TITLE = `Voorwaarden & klantbescherming | ${BRAND}`;
+const TERMS_DESCRIPTION =
+  "15 dagen terugbetalingsgarantie, 24/7 support, wekelijks onderhoud en kwartaalupdates van films. Lees de volledige voorwaarden en klantbescherming van 8K IPTV.";
+
+const termsHtml = buildPage({
+  lang: SITE_LANG,
+  title: TERMS_TITLE,
+  description: TERMS_DESCRIPTION,
+  canonical: `${SITE}/voorwaarden`,
+  ogType: "website",
+  jsonLd: [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: TERMS_TITLE,
+      url: `${SITE}/voorwaarden`,
+      inLanguage: SITE_LANG,
+      description: TERMS_DESCRIPTION,
+      isPartOf: { "@type": "WebSite", name: BRAND, url: SITE },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: BRAND, item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Voorwaarden", item: `${SITE}/voorwaarden` },
+      ],
+    },
+  ],
+  bodyHtml: [
+    `<nav><a href="/">${BRAND}</a> › <a href="/voorwaarden">Voorwaarden</a></nav>`,
+    `<h1>Voorwaarden &amp; klantbescherming</h1>`,
+    `<p>${esc(TERMS_DESCRIPTION)}</p>`,
+    `<p><a href="/">Bekijk de pakketten van ${BRAND}</a> · <a href="/blog">Lees de blog</a></p>`,
+  ].join("\n"),
+});
+mkdirSync(resolve(DIST, "voorwaarden"), { recursive: true });
+writeFileSync(resolve(DIST, "voorwaarden", "index.html"), termsHtml, "utf8");
+
 // ---- homepage: real meta description + Organization JSON-LD ---------------
 const orgJsonLd = {
   "@context": "https://schema.org",
@@ -306,11 +349,12 @@ const sitemap = [
   // Home and the blog grid both change whenever the newest post lands.
   urlEntry(`${SITE}/`, newestPostDate),
   urlEntry(`${SITE}/blog`, newestPostDate),
+  urlEntry(`${SITE}/voorwaarden`, today),
   ...sorted.map((p) => urlEntry(postUrl(p.slug), p.dateISO)),
   "</urlset>",
 ].join("\n");
 writeFileSync(resolve(DIST, "sitemap.xml"), sitemap + "\n", "utf8");
 
 console.log(
-  `Prerendered ${count} post pages + /blog grid + homepage meta, and wrote sitemap.xml with ${sorted.length + 2} URLs.`
+  `Prerendered ${count} post pages + /blog grid + /voorwaarden + homepage meta, and wrote sitemap.xml with ${sorted.length + 3} URLs.`
 );
