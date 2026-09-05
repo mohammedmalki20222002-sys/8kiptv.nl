@@ -132,8 +132,8 @@ export default function Hero({ onPricingClick }: HeroProps) {
             {/* Limited offer scroll */}
             {(() => {
               const OFFERS = [
-                { label: "12 MONTHS", bonus: "+ 3 MONTHS FREE", price: "99,99 €" },
-                { label: "24 MONTHS", bonus: "+ 6 MONTHS FREE", price: "189,99 €" },
+                { label: "12 MAANDEN", bonus: "+ 3 MAANDEN GRATIS", price: "64,99 €" },
+                { label: "24 MAANDEN", bonus: "+ 6 MAANDEN GRATIS", price: "124,99 €" },
               ];
               const offersFilled = [...OFFERS, ...OFFERS, ...OFFERS, ...OFFERS, ...OFFERS, ...OFFERS];
               return (

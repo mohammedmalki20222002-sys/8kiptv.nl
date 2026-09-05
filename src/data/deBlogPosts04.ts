@@ -1,4 +1,4 @@
-import { BlogPost } from "./blogPosts";
+﻿import { BlogPost } from "./blogPosts";
 
 const SITE = "https://www.8kiptv.nl";
 const INSTA = "https://www.instagram.com/my8k.tv/";
@@ -18,7 +18,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Smart IPTV, in den App-Stores oft nur „SIPTV" genannt, gehört zu den bekanntesten IPTV-Apps für Samsung- (Tizen) und LG-Fernseher (webOS). Sie ist schlank, läuft direkt auf dem Fernseher und braucht kein Zusatzgerät. Die Sender selbst liefert die App nicht – dafür brauchst du ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Besonderheit von SIPTV ist, dass die Playlist nicht direkt im Fernseher eingegeben wird, sondern über die Website der App. Du notierst dir die MAC-Adresse, die dir die App auf dem Fernseher anzeigt, und trägst sie zusammen mit der M3U-URL von [8K IPTV](${SITE}) auf der SIPTV-Seite ein.`,
-          `Nach dem Hochladen der Liste startest du die App neu, und die über 89.000 Sender von [8K IPTV](${SITE}) erscheinen sauber sortiert auf dem Bildschirm. Ein Neustart genügt meist, damit alle Kanäle geladen sind.`,
+          `Nach dem Hochladen der Liste startest du die App neu, und die über 69.000 Sender von [8K IPTV](${SITE}) erscheinen sauber sortiert auf dem Bildschirm. Ein Neustart genügt meist, damit alle Kanäle geladen sind.`,
           `SIPTV bietet eine kleine kostenlose Testphase, danach wird eine geringe Einmalgebühr für die App fällig – unabhängig vom Abonnement. Diese Gebühr geht an den App-Entwickler, während die Inhalte weiterhin von [8K IPTV](${SITE}) kommen.`,
           `Praktisch ist die EPG-Unterstützung: Trägst du die passende EPG-URL ein, zeigt SIPTV die Programmvorschau an. In Kombination mit dem täglich gepflegten Katalog von [8K IPTV](${SITE}) siehst du so, was gerade läuft.`,
           `Bei der Bildqualität gibt die App wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich, sofern dein Fernseher die Auflösung unterstützt.`,
@@ -42,7 +42,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Net IPTV ist eine solide Alternative zu Smart IPTV und läuft ebenfalls direkt auf Samsung- und LG-Fernsehern sowie auf einigen anderen Plattformen. Wer keine zusätzliche Box möchte, findet hier einen einfachen Weg. Die Inhalte liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Das Prinzip ähnelt SIPTV: Du lädst deine Playlist über die Net-IPTV-Website hoch, indem du die MAC-Adresse deines Geräts und die M3U-URL von [8K IPTV](${SITE}) einträgst. Anschließend synchronisiert die App die Liste automatisch.`,
-          `Nach dem Hochladen erscheinen die über 89.000 Sender von [8K IPTV](${SITE}) direkt auf dem Fernseher, geordnet in Kategorien wie Sport, Filme und Länderpakete. Ein Neustart der App aktualisiert die Liste.`,
+          `Nach dem Hochladen erscheinen die über 69.000 Sender von [8K IPTV](${SITE}) direkt auf dem Fernseher, geordnet in Kategorien wie Sport, Filme und Länderpakete. Ein Neustart der App aktualisiert die Liste.`,
           `Net IPTV unterstützt mehrere Playlists gleichzeitig, was praktisch ist, wenn du verschiedene Listen verwalten möchtest. Als stabile Hauptquelle dient dabei [8K IPTV](${SITE}) mit seinem gepflegten Katalog.`,
           `Auch hier lässt sich eine EPG-URL hinterlegen, damit die Programmvorschau funktioniert. So zeigt Net IPTV zu den Sendern von [8K IPTV](${SITE}) laufende und kommende Sendungen an.`,
           `Bei der Auflösung gibt die App wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich, für ein scharfes Bild auf dem großen Fernseher.`,
@@ -66,7 +66,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `OTT Player, oft als „OTTplayer" geschrieben, ist ein Dienst, mit dem du deine IPTV-Playlist einmal in einem Online-Konto hinterlegst und dann auf vielen Geräten abrufst. Das ist praktisch, wenn du mehrere Fernseher oder Plattformen nutzt. Die Inhalte kommen von einem Abonnement wie [8K IPTV](${SITE}).`,
           `Der Ablauf ist ungewöhnlich, aber komfortabel: Du registrierst ein kostenloses Konto auf der OTTplayer-Website und lädst dort die M3U-Playlist von [8K IPTV](${SITE}) hoch. Danach meldest du dich in der App mit deinem Konto an.`,
-          `Der große Vorteil ist die zentrale Verwaltung: Änderst du die Liste einmal im Konto, ist sie auf allen verbundenen Geräten aktuell. So bleibt der Katalog von [8K IPTV](${SITE}) mit über 89.000 Sendern überall synchron.`,
+          `Der große Vorteil ist die zentrale Verwaltung: Änderst du die Liste einmal im Konto, ist sie auf allen verbundenen Geräten aktuell. So bleibt der Katalog von [8K IPTV](${SITE}) mit über 69.000 Sendern überall synchron.`,
           `OTTplayer läuft auf Samsung, LG, Android, iOS und weiteren Plattformen. Egal welches Gerät du gerade nutzt, die Sender von [8K IPTV](${SITE}) sind mit demselben Login verfügbar.`,
           `Auch die Programmvorschau wird unterstützt, sofern eine EPG-Quelle hinterlegt ist. In Verbindung mit dem gepflegten Datenkatalog von [8K IPTV](${SITE}) zeigt OTTplayer das aktuelle Programm an.`,
           `Bei der Bildqualität gibt die App wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -90,7 +90,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Der IBO Player ist ein leichtgewichtiger IPTV-Player, der auf vielen Smart TVs und Android-Geräten läuft. Er punktet mit einer aufgeräumten Oberfläche und einfacher Bedienung. Wie jeder Player benötigt er eine Inhaltequelle, und die liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung erfolgt über die IBO-Website: Du liest die Geräte-ID und den Schlüssel aus der App ab und trägst dort deine M3U-Playlist von [8K IPTV](${SITE}) ein. Danach lädt die App die Liste automatisch.`,
-          `Nach der Verknüpfung erscheinen die über 89.000 Sender von [8K IPTV](${SITE}) auf dem Bildschirm, sortiert in klare Kategorien. Ein Neustart der App genügt, um Änderungen zu übernehmen.`,
+          `Nach der Verknüpfung erscheinen die über 69.000 Sender von [8K IPTV](${SITE}) auf dem Bildschirm, sortiert in klare Kategorien. Ein Neustart der App genügt, um Änderungen zu übernehmen.`,
           `Der IBO Player unterstützt sowohl M3U-Listen als auch Xtream-Zugangsdaten. Für die getrennte Darstellung von Live-TV, Filmen und Serien trägst du einfach die Xtream-Daten von [8K IPTV](${SITE}) ein.`,
           `Auch die EPG-Anzeige funktioniert, wenn eine passende Quelle hinterlegt ist. So zeigt der Player zu den Sendern von [8K IPTV](${SITE}) das laufende Programm an.`,
           `Bei der Auflösung gibt der IBO Player wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -114,7 +114,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Duplex IPTV ist ein bekannter Player, der vor allem für seine anpassbare Oberfläche und die vielen Themes geschätzt wird. Er läuft auf Fire TV, Android und einigen Smart TVs. Die Sender selbst kommen nicht vom Player, sondern von einem Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung läuft ähnlich wie bei anderen webbasierten Playern: Du liest die Geräte-ID aus der App und trägst auf der Duplex-Website deine Playlist von [8K IPTV](${SITE}) ein. Danach synchronisiert die App die Liste.`,
-          `Nach der Verknüpfung stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung, geordnet in übersichtliche Kategorien. Duplex erlaubt zudem, das Layout nach deinem Geschmack anzupassen.`,
+          `Nach der Verknüpfung stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung, geordnet in übersichtliche Kategorien. Duplex erlaubt zudem, das Layout nach deinem Geschmack anzupassen.`,
           `Ein Vorteil von Duplex ist die Unterstützung mehrerer Playlists und Profile. Als stabile Hauptquelle dient dabei durchgehend [8K IPTV](${SITE}) mit seinem täglich gepflegten Katalog.`,
           `Auch die EPG-Anzeige ist an Bord, sodass du das aktuelle Programm zu den Sendern von [8K IPTV](${SITE}) im Blick behältst. Das macht das Umschalten komfortabel.`,
           `Bei der Bildqualität gibt der Player wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -138,7 +138,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Der Bob Player hat sich als schneller, moderner IPTV-Player etabliert, der auf Android, Fire TV und weiteren Geräten läuft. Seine flotte Oberfläche macht das Umschalten angenehm. Wie jeder Player benötigt er eine Quelle für die Inhalte, und die liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung erfolgt über die Bob-Player-Website: Du liest die Geräte-ID aus der App und hinterlegst dort deine Playlist oder die Xtream-Daten von [8K IPTV](${SITE}). Danach lädt die App alles automatisch.`,
-          `Nach der Verknüpfung erscheinen die über 89.000 Sender von [8K IPTV](${SITE}) sauber sortiert. Der Bob Player zeigt Live-TV, Filme und Serien getrennt an, wenn du Xtream-Zugangsdaten nutzt.`,
+          `Nach der Verknüpfung erscheinen die über 69.000 Sender von [8K IPTV](${SITE}) sauber sortiert. Der Bob Player zeigt Live-TV, Filme und Serien getrennt an, wenn du Xtream-Zugangsdaten nutzt.`,
           `Der Player ist besonders für seine Geschwindigkeit bekannt, was gerade beim schnellen Zappen zwischen den vielen Sendern von [8K IPTV](${SITE}) angenehm ist.`,
           `Die EPG-Unterstützung sorgt dafür, dass du siehst, was gerade läuft. In Kombination mit dem gepflegten Datenkatalog von [8K IPTV](${SITE}) funktioniert die Programmvorschau zuverlässig.`,
           `Bei der Auflösung gibt der Player wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -162,7 +162,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `MyTVOnline und die neuere Version MyTVOnline+ sind die hauseigenen IPTV-Player der beliebten Formuler-Boxen wie der Z-Serie. Wer eine Formuler besitzt, hat den Player bereits vorinstalliert. Die Inhalte liefert er allerdings nicht selbst – dafür brauchst du ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung erfolgt direkt in der App über ein Portal oder eine Playlist. Du legst ein neues Portal an und trägst die Xtream-Zugangsdaten oder die M3U-URL von [8K IPTV](${SITE}) ein.`,
-          `Nach dem Laden erscheinen die über 89.000 Sender von [8K IPTV](${SITE}) in der übersichtlichen Formuler-Oberfläche, geordnet in Kategorien. MyTVOnline+ bietet zudem eine moderne, schnelle Navigation.`,
+          `Nach dem Laden erscheinen die über 69.000 Sender von [8K IPTV](${SITE}) in der übersichtlichen Formuler-Oberfläche, geordnet in Kategorien. MyTVOnline+ bietet zudem eine moderne, schnelle Navigation.`,
           `Ein Vorteil der Formuler-Kombination ist die Stabilität der Hardware, die auch anspruchsvolle Streams von [8K IPTV](${SITE}) flüssig wiedergibt. So läuft auch ein voller Sportabend ruhig.`,
           `MyTVOnline+ bietet eine komfortable EPG-Ansicht mit Programmvorschau und Aufnahmefunktion auf angeschlossenen Speichern. In Verbindung mit dem Katalog von [8K IPTV](${SITE}) hast du dein Programm stets im Blick.`,
           `Bei der Bildqualität gibt der Player wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich, was die Formuler-Boxen gut ausschöpfen.`,
@@ -186,7 +186,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Media Station X ist ein bemerkenswert flexibler Player, der auf nahezu jeder Plattform läuft – von Samsung und LG über Android TV bis zu diversen Boxen. Seine Stärke ist die geräteübergreifende Verfügbarkeit. Die Sender liefert dabei ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung ist ungewöhnlich: Du rufst in der App eine Startseite auf und gibst auf der Media-Station-X-Website eine Konfiguration ein, die auf deine Playlist von [8K IPTV](${SITE}) verweist. Danach lädt die App die Inhalte.`,
-          `Einmal eingerichtet, stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung. Media Station X kann verschiedene Quellen und Playertypen einbinden, was es sehr anpassbar macht.`,
+          `Einmal eingerichtet, stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung. Media Station X kann verschiedene Quellen und Playertypen einbinden, was es sehr anpassbar macht.`,
           `Der Vorteil ist die Universalität: Egal, ob dein Fernseher Tizen, webOS oder Android nutzt, du kannst denselben Zugang von [8K IPTV](${SITE}) verwenden, ohne für jedes Gerät eine andere App zu suchen.`,
           `Auch die EPG-Anzeige lässt sich einbinden, sodass du zu den Sendern von [8K IPTV](${SITE}) das laufende Programm siehst. Das erleichtert die Orientierung im großen Katalog.`,
           `Bei der Bildqualität gibt die App wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -210,7 +210,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Der XCIPTV Player gehört zu den funktionsreichen IPTV-Playern und ist besonders auf Android und Fire TV verbreitet. Er unterstützt sowohl Xtream Codes als auch M3U-Listen und bietet viele Einstellungen. Die Inhalte kommen von einem Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung ist unkompliziert: Beim Start wählst du „Xtream Codes API" oder „M3U-Playlist" und trägst die Zugangsdaten von [8K IPTV](${SITE}) ein. Der Player lädt daraufhin die komplette Liste.`,
-          `Mit den Xtream-Daten zeigt XCIPTV Live-TV, Filme und Serien getrennt an. So ist der Katalog von [8K IPTV](${SITE}) mit über 89.000 Sendern und mehr als 200.000 VOD-Titeln sauber aufgeteilt.`,
+          `Mit den Xtream-Daten zeigt XCIPTV Live-TV, Filme und Serien getrennt an. So ist der Katalog von [8K IPTV](${SITE}) mit über 69.000 Sendern und mehr als 220.000 VOD-Titeln sauber aufgeteilt.`,
           `XCIPTV bietet viele Extras wie einen integrierten EPG-Guide, Aufnahmefunktionen und anpassbare Layouts. Kombiniert mit dem gepflegten Katalog von [8K IPTV](${SITE}) wird der Player zum vollwertigen TV-Center.`,
           `Auch mehrere Profile lassen sich anlegen, praktisch für Familien. Als stabile Hauptquelle dient dabei durchgehend [8K IPTV](${SITE}).`,
           `Bei der Auflösung gibt der Player wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -234,7 +234,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `IPTV Extreme Pro ist ein beliebter Android-Player, der mit zahlreichen Funktionen und Einstellungen punktet. Er richtet sich an Nutzer, die mehr Kontrolle über ihre Wiedergabe möchten. Wie jeder Player liefert er keine Sender selbst – die Inhalte kommen von einem Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung erfolgt über das Hinzufügen einer Playlist. Du trägst die M3U-URL oder die Xtream-Daten von [8K IPTV](${SITE}) ein, und der Player lädt die komplette Senderliste.`,
-          `Nach dem Laden stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung. IPTV Extreme Pro erlaubt das Sortieren, Ausblenden und Gruppieren von Sendern nach deinen Wünschen.`,
+          `Nach dem Laden stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung. IPTV Extreme Pro erlaubt das Sortieren, Ausblenden und Gruppieren von Sendern nach deinen Wünschen.`,
           `Zu den Extras zählen EPG-Unterstützung, mehrere Decoder-Optionen und ein Kindersicherungsmodus. In Kombination mit dem gepflegten Katalog von [8K IPTV](${SITE}) hast du volle Kontrolle über dein Programm.`,
           `Die verschiedenen Decoder-Einstellungen helfen, die Wiedergabe an dein Gerät anzupassen, falls ein Sender einmal nicht flüssig läuft. So schöpfst du die Qualität von [8K IPTV](${SITE}) optimal aus.`,
           `Bei der Auflösung gibt der Player wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -258,7 +258,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Viele kennen IPTV Smarters Pro als App, doch es gibt auch eine Web-Version, mit der du IPTV direkt im Browser am Computer schauen kannst. Das ist praktisch, wenn du gerade keinen Fernseher oder kein Zusatzgerät zur Hand hast. Die Inhalte liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Der Zugang erfolgt über die Xtream-Zugangsdaten. Du gibst Benutzername, Passwort und Server-URL von [8K IPTV](${SITE}) im Web-Player ein und schaust sofort im Browserfenster.`,
-          `Der Vorteil ist die Unabhängigkeit von einer Installation: Ob am Arbeitsplatz, am Laptop oder auf einem fremden Rechner – mit deinen Daten von [8K IPTV](${SITE}) hast du deine über 89.000 Sender überall dabei.`,
+          `Der Vorteil ist die Unabhängigkeit von einer Installation: Ob am Arbeitsplatz, am Laptop oder auf einem fremden Rechner – mit deinen Daten von [8K IPTV](${SITE}) hast du deine über 69.000 Sender überall dabei.`,
           `Die Web-Version zeigt Live-TV, Filme und Serien in eigenen Rubriken an, genau wie die App. So findest du im Katalog von [8K IPTV](${SITE}) schnell, was du suchst.`,
           `Auch die Programmvorschau funktioniert, sofern eine EPG-Quelle hinterlegt ist. So siehst du zu den Sendern von [8K IPTV](${SITE}) das aktuelle Programm.`,
           `Bei der Bildqualität hängt viel von deinem Browser und der Leitung ab. Über [8K IPTV](${SITE}) sind hohe Auflösungen möglich, ein moderner Browser und eine stabile Verbindung vorausgesetzt.`,
@@ -282,7 +282,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Kodi ist ein beliebtes Mediacenter, und mit dem eingebauten Addon „PVR IPTV Simple Client" wird es zum vollwertigen Live-TV-Empfänger. Das Addon ist bereits Teil von Kodi und muss nur aktiviert werden. Die Sender liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Zur Einrichtung öffnest du in Kodi die Addons, wählst „PVR IPTV Simple Client" und gehst in dessen Konfiguration. Dort trägst du unter „M3U-Playlist-URL" die Adresse von [8K IPTV](${SITE}) ein.`,
-          `Nach einem Neustart von Kodi erscheinen die über 89.000 Sender von [8K IPTV](${SITE}) im TV-Bereich, geordnet in Gruppen. Kodi verwaltet die Liste dann wie einen klassischen TV-Tuner.`,
+          `Nach einem Neustart von Kodi erscheinen die über 69.000 Sender von [8K IPTV](${SITE}) im TV-Bereich, geordnet in Gruppen. Kodi verwaltet die Liste dann wie einen klassischen TV-Tuner.`,
           `Für die Programmvorschau hinterlegst du zusätzlich die EPG-URL im selben Menü. In Kombination mit dem gepflegten Datenkatalog von [8K IPTV](${SITE}) zeigt Kodi dann laufende und kommende Sendungen an.`,
           `Der Vorteil von Kodi ist die Kombination aus Live-TV und deiner restlichen Mediensammlung an einem Ort. Die Live-Sender von [8K IPTV](${SITE}) fügen sich nahtlos in die vertraute Kodi-Oberfläche ein.`,
           `Bei der Bildqualität gibt Kodi wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich, sofern dein Gerät die Leistung mitbringt.`,
@@ -307,7 +307,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
           `Kodi ist offen und erweiterbar, weshalb rund um IPTV zahlreiche Addons kursieren. Nicht alle sind empfehlenswert – manche greifen auf zweifelhafte, öffentliche Quellen zu. Der saubere Weg ist ein Addon, das deine eigene, seriöse Liste von einem Anbieter wie [8K IPTV](${SITE}) einbindet.`,
           `Das wichtigste und offizielle Addon ist der bereits integrierte PVR IPTV Simple Client. Damit bindest du direkt die Liste von [8K IPTV](${SITE}) ein, ohne fragwürdige Drittquellen zu installieren.`,
           `Von Addons, die kostenlose, öffentliche Streams versprechen, solltest du die Finger lassen: Sie sind oft instabil, rechtlich fragwürdig und ein Sicherheitsrisiko. Ein transparenter Zugang wie [8K IPTV](${SITE}) ist die deutlich bessere Wahl.`,
-          `Mit einer seriösen Quelle bekommst du in Kodi Zugriff auf die über 89.000 Sender von [8K IPTV](${SITE}) plus mehr als 200.000 VOD-Titel – zuverlässig und gepflegt statt zufällig zusammengesuchter Links.`,
+          `Mit einer seriösen Quelle bekommst du in Kodi Zugriff auf die über 69.000 Sender von [8K IPTV](${SITE}) plus mehr als 220.000 VOD-Titel – zuverlässig und gepflegt statt zufällig zusammengesuchter Links.`,
           `Für Komfort sorgen ergänzende Skins und die EPG-Funktion, die dir das laufende Programm anzeigen. In Kombination mit dem Datenkatalog von [8K IPTV](${SITE}) behältst du den Überblick.`,
           `Bei der Bildqualität gibt Kodi wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
           `Wichtig ist, Kodi und Addons stets aktuell zu halten und nur vertrauenswürdige Quellen zu nutzen. Der Support von [8K IPTV](${SITE}) hilft dir per WhatsApp bei der sauberen Einrichtung.`,
@@ -330,7 +330,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `„My IPTV Player" ist eine kostenlose App aus dem Microsoft Store, mit der du IPTV bequem auf einem Windows-PC oder -Tablet schaust. Für den Schreibtisch oder als Zweitgerät ist das ideal. Die Sender liefert dabei ein Abonnement wie [8K IPTV](${SITE}).`,
           `Nach der Installation legst du eine neue Playlist an. Du kannst eine M3U-Datei oder die Xtream-Zugangsdaten von [8K IPTV](${SITE}) hinterlegen, und die App lädt die komplette Senderliste.`,
-          `Nach dem Laden stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung, geordnet in Gruppen. Die App zeigt Live-TV übersichtlich an und lässt sich mit Maus und Tastatur komfortabel bedienen.`,
+          `Nach dem Laden stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung, geordnet in Gruppen. Die App zeigt Live-TV übersichtlich an und lässt sich mit Maus und Tastatur komfortabel bedienen.`,
           `Ein Vorteil auf dem PC ist die Flexibilität: Du kannst IPTV in einem Fenster laufen lassen, während du arbeitest oder surfst. So verpasst du kein Spiel – mit einer stabilen Quelle wie [8K IPTV](${SITE}).`,
           `Die App unterstützt auch EPG, sodass du das laufende Programm siehst. In Kombination mit dem Datenkatalog von [8K IPTV](${SITE}) hast du dein Programm im Blick.`,
           `Bei der Auflösung gibt die App wieder, was ankommt. Ein moderner PC gibt problemlos Bild bis 4K wieder, das [8K IPTV](${SITE}) liefert. Per HDMI verbindest du den PC bei Bedarf mit dem Fernseher.`,
@@ -354,7 +354,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Der Neutro Player ist ein schlanker IPTV-Player, der mit einer aufgeräumten, werbefreien Oberfläche punktet. Er läuft auf Android und Fire TV und richtet sich an Nutzer, die es unkompliziert mögen. Die Inhalte liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung ist schnell erledigt: Du legst ein Profil an und trägst die M3U-URL oder die Xtream-Daten von [8K IPTV](${SITE}) ein. Der Player lädt daraufhin die komplette Liste.`,
-          `Nach dem Laden stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung. Der Neutro Player zeigt Live-TV, Filme und Serien getrennt an, wenn du Xtream-Daten nutzt.`,
+          `Nach dem Laden stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung. Der Neutro Player zeigt Live-TV, Filme und Serien getrennt an, wenn du Xtream-Daten nutzt.`,
           `Der Vorteil ist die Schlankheit: Ohne überladene Menüs findest du schnell deinen Sender im großen Katalog von [8K IPTV](${SITE}). Das macht die tägliche Nutzung angenehm.`,
           `Auch eine EPG-Ansicht ist an Bord, sodass du das aktuelle Programm siehst. In Kombination mit dem Datenkatalog von [8K IPTV](${SITE}) funktioniert die Vorschau zuverlässig.`,
           `Bei der Auflösung gibt der Player wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -378,7 +378,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Der TiviMax IPTV Player ist eine komfortable App mit moderner Oberfläche, die als Alternative zu bekannteren Playern immer beliebter wird. Er läuft auf Android und Fire TV. Wie jeder Player benötigt er eine Inhaltequelle, und die liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung erfolgt über ein neues Profil, in das du die M3U-URL oder die Xtream-Zugangsdaten von [8K IPTV](${SITE}) einträgst. Der Player lädt anschließend die komplette Senderliste.`,
-          `Nach dem Laden stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung, sauber in Kategorien geordnet. TiviMax bietet dabei eine flotte, gut lesbare Darstellung.`,
+          `Nach dem Laden stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung, sauber in Kategorien geordnet. TiviMax bietet dabei eine flotte, gut lesbare Darstellung.`,
           `Zu den Stärken zählen eine übersichtliche EPG-Ansicht und die Möglichkeit, Favoriten anzulegen. So behältst du bei den vielen Sendern von [8K IPTV](${SITE}) den Überblick.`,
           `Der Player unterstützt mehrere Profile, was für Familien praktisch ist. Als stabile Hauptquelle dient dabei durchgehend [8K IPTV](${SITE}).`,
           `Bei der Auflösung gibt TiviMax wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -402,7 +402,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Der iPEXO IPTV Player ist ein einfacher, übersichtlicher Player, der auf verschiedenen Smart TVs und Android-Geräten läuft. Er richtet sich an Nutzer, die eine unkomplizierte Lösung suchen. Die Sender liefert ein Abonnement wie [8K IPTV](${SITE}).`,
           `Wie bei vielen Smart-TV-Playern läuft die Einrichtung über eine Website: Du liest die Geräte-ID aus der App und hinterlegst dort deine Playlist von [8K IPTV](${SITE}). Danach synchronisiert die App die Liste.`,
-          `Nach der Verknüpfung erscheinen die über 89.000 Sender von [8K IPTV](${SITE}) auf dem Bildschirm, geordnet in klare Kategorien. Ein Neustart der App übernimmt Änderungen.`,
+          `Nach der Verknüpfung erscheinen die über 69.000 Sender von [8K IPTV](${SITE}) auf dem Bildschirm, geordnet in klare Kategorien. Ein Neustart der App übernimmt Änderungen.`,
           `Der Vorteil von iPEXO ist die einfache Bedienung ohne überladene Menüs. So findest du deinen Sender im großen Katalog von [8K IPTV](${SITE}) schnell.`,
           `Auch die EPG-Anzeige wird unterstützt, sodass du das laufende Programm siehst. In Kombination mit dem Datenkatalog von [8K IPTV](${SITE}) bleibt alles übersichtlich.`,
           `Bei der Auflösung gibt der Player wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -450,7 +450,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Namen wie „Max Player" oder „MaxHD IPTV" tauchen häufig auf, wenn es um IPTV-Player geht. Wichtig ist die Unterscheidung: Ein reiner Player ist nur die Software – die Sender müssen von einer seriösen Quelle wie [8K IPTV](${SITE}) kommen.`,
           `Als reine Wiedergabe-App richtest du einen solchen Player über eine Playlist ein. Du trägst die M3U-URL oder die Xtream-Daten von [8K IPTV](${SITE}) ein, und die komplette Senderliste lädt.`,
-          `Nach dem Laden stehen dir die über 89.000 Sender von [8K IPTV](${SITE}) zur Verfügung. Achte darauf, keine Variante zu nutzen, die bereits ein fragwürdiges Abo enthält – setze auf eine transparente Quelle.`,
+          `Nach dem Laden stehen dir die über 69.000 Sender von [8K IPTV](${SITE}) zur Verfügung. Achte darauf, keine Variante zu nutzen, die bereits ein fragwürdiges Abo enthält – setze auf eine transparente Quelle.`,
           `Der Vorteil einer sauberen Trennung von Player und Anbieter ist Flexibilität: Du kannst den Player wechseln, ohne deinen Zugang zu verlieren. Dein Abonnement bei [8K IPTV](${SITE}) bleibt bestehen.`,
           `Für Komfort sorgen EPG-Anzeige und Favoritenlisten, die die meisten dieser Player bieten. In Kombination mit dem Katalog von [8K IPTV](${SITE}) behältst du den Überblick.`,
           `Bei der Auflösung gibt der Player wieder, was der Server liefert. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,
@@ -474,7 +474,7 @@ export const DE_BLOG_POSTS_04: BlogPost[] = [
         body: [
           `Dev IPTV Pro, oft auch als „By IPTV Pro" bezeichnet, ist ein funktionsreicher Player, der auf Fire TV und Android verbreitet ist. Er bietet viele Einstellungen und ein modernes Design. Wie jeder Player liefert er keine Sender selbst – die Inhalte kommen von einem Abonnement wie [8K IPTV](${SITE}).`,
           `Die Einrichtung erfolgt über ein neues Profil. Du wählst zwischen M3U und Xtream Codes und trägst die Zugangsdaten von [8K IPTV](${SITE}) ein. Der Player lädt anschließend die komplette Liste.`,
-          `Mit den Xtream-Daten zeigt der Player Live-TV, Filme und Serien getrennt an. So ist der Katalog von [8K IPTV](${SITE}) mit über 89.000 Sendern und mehr als 200.000 VOD-Titeln sauber aufgeteilt.`,
+          `Mit den Xtream-Daten zeigt der Player Live-TV, Filme und Serien getrennt an. So ist der Katalog von [8K IPTV](${SITE}) mit über 69.000 Sendern und mehr als 220.000 VOD-Titeln sauber aufgeteilt.`,
           `Zu den Funktionen zählen ein EPG-Guide, Favoriten und ein anpassbares Layout. Kombiniert mit dem gepflegten Katalog von [8K IPTV](${SITE}) wird der Player zum komfortablen TV-Center.`,
           `Auch mehrere Profile lassen sich anlegen, was für Familien praktisch ist. Als stabile Hauptquelle dient dabei durchgehend [8K IPTV](${SITE}).`,
           `Bei der Auflösung gibt der Player wieder, was ankommt. Über [8K IPTV](${SITE}) sind Streams bis 4K und auf kompatiblen Inhalten 8K möglich.`,

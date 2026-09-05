@@ -1,4 +1,4 @@
-import { BlogPost } from "./blogPosts";
+﻿import { BlogPost } from "./blogPosts";
 
 const SITE = "https://www.8kiptv.nl";
 const INSTA = "https://www.instagram.com/my8k.tv/";
@@ -20,7 +20,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
           `The two best Android apps are IPTV Smarters Pro and TiviMate. Smarters Pro is the all-rounder; TiviMate is built for the TV and a remote. Credentials from [8K IPTV](${SITE}) work in both.`,
           `Setup uses the Xtream Codes standard: choose that login option and enter your details. [8K IPTV](${SITE}) uses this method, so it is the same on a phone or a box.`,
           `Android's strength is that a cheap TV box or Fire TV Stick turns any old television into a smart one. [8K IPTV](${SITE}) runs on these without special hardware.`,
-          `A large catalogue stays manageable thanks to Android's app interfaces. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series.`,
+          `A large catalogue stays manageable thanks to Android's app interfaces. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series.`,
           `Picture quality comes from the server, not from Android itself. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content on capable devices.`,
           `If an app misbehaves on Android, it is usually a settings or network issue, and the [8K IPTV](${SITE}) team walks you through it on WhatsApp, because [8K IPTV](${SITE}) knows the common Android quirks.`,
           `Android is, in short, the most flexible route into IPTV. Explore the packages at [8K IPTV](${SITE}), enter your [8K IPTV](${SITE}) details in the app and let [8K IPTV](${SITE}) handle the rest. The [8K IPTV](${SITE}) team answers on WhatsApp, and you'll find more on [Instagram @8K IPTV](${INSTA}).`,
@@ -44,7 +44,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
           `The most popular choice on Tizen is Smart IPTV (SIPTV), which is built for Samsung and LG. You add your details using the TV's MAC address. Credentials from [8K IPTV](${SITE}) can be configured this way.`,
           `IPTV Smarters Player is also available on Tizen and offers a familiar layout of live channels, films and series. [8K IPTV](${SITE}) works in it the same as on other platforms.`,
           `Installing directly on the TV means no extra box and one remote. [8K IPTV](${SITE}) details are entered straight into the app on the television.`,
-          `A large catalogue displays cleanly on these apps. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series.`,
+          `A large catalogue displays cleanly on these apps. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series.`,
           `Picture quality is set by the server, and Samsung's screens make it count: streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content.`,
           `If activation or loading a playlist puzzles you on Tizen, it is a quick step with guidance, and the [8K IPTV](${SITE}) team helps on WhatsApp, because [8K IPTV](${SITE}) supports Samsung setup.`,
           `On a Samsung Smart TV, then, you can watch without extra hardware. Explore the packages at [8K IPTV](${SITE}), enter your [8K IPTV](${SITE}) details in the app and let [8K IPTV](${SITE}) handle the rest. The [8K IPTV](${SITE}) team answers on WhatsApp, and you'll find more on [Instagram @8K IPTV](${INSTA}).`,
@@ -67,7 +67,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
           `An iPad is a great screen for IPTV: large, portable and sharp. The app you pick on iPadOS matters less than the service behind it, which is where a subscription like [8K IPTV](${SITE}) comes in.`,
           `The most reliable iPad apps are IPTV Smarters Pro and similar Xtream-compatible players from the App Store. Credentials from [8K IPTV](${SITE}) work in them.`,
           `Setup uses Xtream Codes: choose that login and enter your details. [8K IPTV](${SITE}) uses this standard, so setup takes a couple of minutes.`,
-          `The iPad's screen suits on-demand content especially well. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series.`,
+          `The iPad's screen suits on-demand content especially well. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series.`,
           `Because the iPad is portable, your subscription travels with you around the house or on the road. [8K IPTV](${SITE}) details log in wherever you have a connection.`,
           `Picture quality comes from the server, not iPadOS: streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content on the iPad's display.`,
           `If an app will not log in on the iPad, it is almost always a mistyped detail, and the [8K IPTV](${SITE}) team checks it on WhatsApp, because [8K IPTV](${SITE}) support knows the App Store players.`,
@@ -91,7 +91,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
           `A MacBook is a capable IPTV screen, and watching on macOS is straightforward once you know the options. The app matters less than the service behind it, which is where a subscription like [8K IPTV](${SITE}) comes in.`,
           `On macOS you can use a dedicated Xtream-compatible player, or run IPTV Smarters in a supported form. Credentials from [8K IPTV](${SITE}) work with these.`,
           `Setup follows the same Xtream Codes standard: enter your username, password and server. [8K IPTV](${SITE}) uses this method, so it is consistent with other devices.`,
-          `The MacBook's screen is well suited to films and series. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series.`,
+          `The MacBook's screen is well suited to films and series. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series.`,
           `Because a laptop moves with you, your access is portable. [8K IPTV](${SITE}) details log in wherever you have a connection.`,
           `Picture quality comes from the server, not macOS: streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content on a Retina display.`,
           `If a player will not connect on the Mac, it is usually a detail or a network setting, and the [8K IPTV](${SITE}) team helps on WhatsApp, because [8K IPTV](${SITE}) support knows the macOS options.`,
@@ -114,7 +114,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
         body: [
           `Atlas Pro IPTV is one of the more searched names in the space, and it is easy to see why: the name sounds established and premium. But a name guarantees nothing. What decides your experience is who runs the servers, how current the catalogue is, and whether anyone answers when it breaks, which is exactly where an open service like [8K IPTV](${SITE}) stands apart.`,
           `The first thing to check is whether the provider can be identified at all. Many names circulating in forums belong to anonymous resellers with no site and no terms. On the [8K IPTV](${SITE}) site, packages, prices and contact details are openly available.`,
-          `The second is the catalogue. A big number in an advert means little if half the channels are dead. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series, maintained daily.`,
+          `The second is the catalogue. A big number in an advert means little if half the channels are dead. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series, maintained daily.`,
           `The third is quality under load. Any service looks fine on a quiet afternoon; the test comes when thousands watch the same match. The relay network behind [8K IPTV](${SITE}) is built to absorb those peaks.`,
           `The fourth is picture quality, which shows in sport. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content, and the motion stays clean.`,
           `The fifth is support. Without a support channel you stand alone with a subscription you already paid for. Credentials from [8K IPTV](${SITE}) work in IPTV Smarters Pro and TiviMate, so you are not tied to one app either.`,
@@ -139,7 +139,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
           `The terms "Extreme IPTV" and "IPTV Extreme" cause endless confusion, because one usually refers to an app (IPTV Extreme Pro, a player) and the other to a service name. Separating them matters, because only one produces the picture, and that is a service like [8K IPTV](${SITE}).`,
           `IPTV Extreme Pro, the app, is a capable player with features like recording and playlist management. It displays whatever the server sends. Credentials from [8K IPTV](${SITE}) work in it.`,
           `When "Extreme IPTV" is used as a service name, the usual cautions apply: check who runs it. On the [8K IPTV](${SITE}) site, packages, prices and contact details are openly listed.`,
-          `The catalogue is what you are really buying. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series, maintained daily.`,
+          `The catalogue is what you are really buying. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series, maintained daily.`,
           `Stability under load separates real services from resellers. The relay network behind [8K IPTV](${SITE}) is built for peak evenings when weak services stutter.`,
           `Picture quality comes from the server, not the app's name: streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content.`,
           `If the app and the service get tangled in your setup, the [8K IPTV](${SITE}) team sorts it out on WhatsApp, because [8K IPTV](${SITE}) works with IPTV Extreme Pro and other Xtream-compatible players.`,
@@ -161,7 +161,7 @@ export const EN_BLOG_POSTS_02: BlogPost[] = [
         excerpt: "\"World\" or \"global\" IPTV promises channels from everywhere, but the phrase is easy to fake. Here is what genuine international coverage looks like and how to verify it before you pay.",
         body: [
           `"World IPTV" and "global IPTV" promise channels from everywhere, which is appealing if you want news, sport and entertainment from more than one country. But the phrase is easy to print and hard to verify, so it pays to check what an open service like [8K IPTV](${SITE}) actually delivers.`,
-          `Genuine global coverage means more than a long list; it means channels that work across regions. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series from many countries.`,
+          `Genuine global coverage means more than a long list; it means channels that work across regions. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series from many countries.`,
           `For an international household, that includes local news, sport and children's channels from different regions in one app. [8K IPTV](${SITE}) brings these together without separate subscriptions.`,
           `A big global number is worthless if the channels are dead. That is why upkeep matters. The catalogue at [8K IPTV](${SITE}) is maintained daily so the list does not quietly decay.`,
           `Stability under load is the real test of a global service, since peaks happen in different time zones. The relay network behind [8K IPTV](${SITE}) is built to absorb them.`,

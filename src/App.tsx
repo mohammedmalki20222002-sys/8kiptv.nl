@@ -15,6 +15,7 @@ import EuropeCoverage from "./components/EuropeCoverage";
 import CheckoutModal from "./components/CheckoutModal";
 import BlogGrid from "./components/BlogGrid";
 import BlogPost from "./components/BlogPost";
+import Terms from "./components/Terms";
 import { getPostBySlug } from "./data/allPosts";
 import { getBlogText } from "./blogI18n";
 
@@ -29,12 +30,14 @@ type View =
   | { type: "home" }
   | { type: "blog-grid" }
   | { type: "blog-post"; slug: string }
+  | { type: "terms" }
   | { type: "not-found" };
 
 function resolveView(): View {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/") return { type: "home" };
   if (path === "/blog") return { type: "blog-grid" };
+  if (path === "/voorwaarden") return { type: "terms" };
   const match = path.match(/^\/blog\/([^/]+)$/);
   // Only a slug that resolves to a real post is a real page. Anything else falls
   // through to not-found: the Vercel SPA rewrite answers *every* path with 200, so
@@ -87,6 +90,14 @@ function AppInner({ view }: { view: View }) {
 
     setMetaByName("robots", INDEXABLE);
 
+    if (view.type === "terms") {
+      document.title = "Voorwaarden & klantbescherming — 8K IPTV";
+      setMetaByName(
+        "description",
+        "15 dagen terugbetalingsgarantie, 24/7 support, permanente updates en kwartaalupdates van films. Lees de volledige voorwaarden van 8K IPTV."
+      );
+    }
+
     const path = window.location.pathname.replace(/\/+$/, "");
     const canonicalUrl = `${SITE_ORIGIN}${path || "/"}`;
     if (link) {
@@ -105,11 +116,11 @@ function AppInner({ view }: { view: View }) {
       className="min-h-screen bg-[#FDFDF7] text-neutral-900 flex flex-col font-sans selection:bg-[#003580] selection:text-white overflow-x-hidden w-full"
     >
       <Header
-        onSportsClick={() => scrollToSection("live-sports-section")}
         onMoviesClick={() => scrollToSection("movies-section")}
         onPricingClick={() => scrollToSection("pricing-section")}
         onReviewsClick={() => scrollToSection("reviews-section")}
-        onFaqClick={() => scrollToSection("faq-section")}
+        onChannelsClick={() => scrollToSection("channels-section")}
+        onPaymentsClick={() => scrollToSection("payments-section")}
       />
 
       <main className="flex-grow">
@@ -124,7 +135,7 @@ function AppInner({ view }: { view: View }) {
             <Pricing onSelectPlan={setSelectedPlanForCheckout} />
 
             {/* Payment methods banner */}
-            <div className="px-4 md:px-8 max-w-4xl mx-auto w-full py-4">
+            <div id="payments-section" className="px-4 md:px-8 max-w-4xl mx-auto w-full py-4 scroll-mt-28">
               <img
                 src="/PAY1-1-1.svg"
                 alt="Accepted payment methods"
@@ -150,6 +161,13 @@ function AppInner({ view }: { view: View }) {
           <>
             <div className="pt-6 md:pt-10" />
             <BlogPost slug={view.slug} onPricingClick={() => scrollToSection("pricing-section")} />
+          </>
+        )}
+
+        {view.type === "terms" && (
+          <>
+            <div className="pt-6 md:pt-10" />
+            <Terms />
           </>
         )}
 
@@ -202,6 +220,7 @@ function AppInner({ view }: { view: View }) {
               <li><button onClick={() => scrollToSection("movies-section")} className="text-neutral-300 hover:text-white transition-colors">{t.footer.link4}</button></li>
               <li><button onClick={() => scrollToSection("channels-section")} className="text-neutral-300 hover:text-white transition-colors">{t.footer.link5}</button></li>
               <li><button onClick={() => scrollToSection("faq-section")} className="text-neutral-300 hover:text-white transition-colors">{t.footer.link6}</button></li>
+              <li><a href="/voorwaarden" className="text-neutral-300 hover:text-white transition-colors no-underline">Voorwaarden &amp; klantbescherming</a></li>
               <li><a href="/blog" className="text-neutral-300 hover:text-white transition-colors">{t.nav.blog}</a></li>
             </ul>
           </div>

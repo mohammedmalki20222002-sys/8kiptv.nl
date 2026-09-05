@@ -5,16 +5,17 @@ import { useLanguage } from "../LanguageContext";
 interface HeaderProps {
   onPricingClick: () => void;
   onReviewsClick: () => void;
-  onFaqClick: () => void;
   onMoviesClick: () => void;
-  onSportsClick: () => void;
+  onChannelsClick: () => void;
+  onPaymentsClick: () => void;
 }
 
-export default function Header({ onPricingClick, onReviewsClick, onFaqClick, onMoviesClick, onSportsClick }: HeaderProps) {
+export default function Header({ onPricingClick, onReviewsClick, onMoviesClick, onChannelsClick, onPaymentsClick }: HeaderProps) {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isBlogPage = window.location.pathname.startsWith("/blog");
+  const isTermsPage = window.location.pathname.startsWith("/voorwaarden");
 
   return (
     <header className="sticky top-4 z-50 px-4 md:px-8 max-w-7xl mx-auto w-full transition-all">
@@ -24,7 +25,7 @@ export default function Header({ onPricingClick, onReviewsClick, onFaqClick, onM
         style={{ background: "linear-gradient(135deg, #0a0f1c 0%, #0e1a30 45%, #0a0f1c 100%)" }}
       >
         {/* Logo — pure text wordmark */}
-        <div className="pl-2 select-none flex items-baseline">
+        <a href="/" aria-label="8K IPTV — home" className="pl-2 select-none flex items-baseline no-underline cursor-pointer hover:opacity-80 transition-opacity">
           <span style={{
             fontFamily: "'Arial Black', Arial, sans-serif",
             fontWeight: 900,
@@ -42,23 +43,27 @@ export default function Header({ onPricingClick, onReviewsClick, onFaqClick, onM
             lineHeight: 1,
             marginLeft: 4,
           }}>IPTV</span>
-        </div>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1.5 bg-white/8 py-1 px-1.5 rounded-full">
-          <button onClick={onSportsClick} className="px-4 py-1.5 text-[13px] font-bold text-white bg-white/15 hover:bg-white/25 transition-colors rounded-full flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"></span>
-            <span>{t.nav.liveSport}</span>
-          </button>
-          <button onClick={onMoviesClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.movies}</button>
+          <a href="/" className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${isBlogPage ? "text-white/75 hover:text-white" : "text-white bg-white/15 hover:bg-white/25"}`}>Home</a>
           <button onClick={onPricingClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.pricing}</button>
+          <button onClick={onMoviesClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.movies}</button>
+          <button onClick={onChannelsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">Zenders</button>
           <button onClick={onReviewsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.reviews}</button>
-          <button onClick={onFaqClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.faq}</button>
           <a
             href="/blog"
             className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${isBlogPage ? "text-white bg-white/15" : "text-white/75 hover:text-white"}`}
           >
             {t.nav.blog}
+          </a>
+          <button onClick={onPaymentsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">Betaalmethoden</button>
+          <a
+            href="/voorwaarden"
+            className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${isTermsPage ? "text-white bg-white/15" : "text-white/75 hover:text-white"}`}
+          >
+            Voorwaarden
           </a>
         </nav>
 
@@ -93,15 +98,14 @@ export default function Header({ onPricingClick, onReviewsClick, onFaqClick, onM
           className="md:hidden absolute top-16 left-4 right-4 border border-white/10 rounded-2xl p-5 shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-top-3 duration-200"
           style={{ background: "linear-gradient(160deg, #0d1220 0%, #111827 100%)" }}
         >
-          <button onClick={() => { onSportsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white flex items-center gap-2">
-            <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-            <span>{t.nav.liveSport}</span>
-          </button>
-          <button onClick={() => { onMoviesClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.movies}</button>
+          <a href="/" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white">Home</a>
           <button onClick={() => { onPricingClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.pricing}</button>
+          <button onClick={() => { onMoviesClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.movies}</button>
+          <button onClick={() => { onChannelsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">Zenders</button>
           <button onClick={() => { onReviewsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.reviews}</button>
-          <button onClick={() => { onFaqClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.faq}</button>
-          <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 text-sm font-semibold text-white/75">{t.nav.blog}</a>
+          <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.blog}</a>
+          <button onClick={() => { onPaymentsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">Betaalmethoden</button>
+          <a href="/voorwaarden" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 text-sm font-semibold text-white/75">Voorwaarden</a>
 
           <button
             onClick={() => { onPricingClick(); setMobileMenuOpen(false); }}

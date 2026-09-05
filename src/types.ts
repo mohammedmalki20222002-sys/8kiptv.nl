@@ -459,24 +459,25 @@ export const ALL_CHANNELS: ChannelItem[] = [
 ];
 
 const COMMON_FEATURES = [
-  "89,000+ live channels",
-  "200,000+ movies & series",
-  "Netflix · HBO · Disney+ & more",
-  "8K | 4K | UHD quality",
-  "Anti-freeze technology",
-  "Fast & stable servers",
-  "Premium movies, series & live TV",
-  "PPV / EPG available",
-  "Advanced parental lock",
-  "Priority customer support",
-  "Global access (no IP lock)",
-  "Regular updates",
-  "Catch-up TV — watch missed programmes",
-  "99.9% server uptime",
-  "VPN included — no geo-restrictions",
-  "30-day money-back guarantee",
-  "Adaptive 8K-ready playback on all devices",
-  "Time-Shift — rewind live broadcasts"
+  "69.000+ live zenders",
+  "220.000+ films & series",
+  "Alle Nederlandse content",
+  "Netflix · HBO · Disney+ & meer",
+  "8K | 4K | UHD kwaliteit",
+  "Anti-freeze technologie",
+  "Snelle & stabiele servers",
+  "Premium films, series & live tv",
+  "PPV / EPG beschikbaar",
+  "Geavanceerd kinderslot",
+  "Klantenservice met voorrang",
+  "Wereldwijde toegang (geen IP-lock)",
+  "Permanente updates",
+  "Catch-up tv — gemiste programma's terugkijken",
+  "99,9% server-uptime",
+  "VPN inbegrepen — geen geoblokkades",
+  "15 dagen terugbetalingsgarantie (zie voorwaarden)",
+  "Vloeiend 8K-ready afspelen op elk apparaat",
+  "Time-Shift — live uitzendingen terugspoelen"
 ];
 
 export const SUBSCRIPTION_PLANS: PricingPlan[] = [
@@ -485,21 +486,21 @@ export const SUBSCRIPTION_PLANS: PricingPlan[] = [
     id: "p1a",
     durationMonths: 1,
     name: "Trial",
-    price: 19.99,
-    originalPrice: 29.99,
+    price: 11.99,
+    originalPrice: 24.99,
     popular: false,
-    savings: "Best to Test",
+    savings: "Om te testen",
     devices: 1,
-    features: ["Best choice to test our service!", ...COMMON_FEATURES]
+    features: ["Ideaal om onze service te testen!", ...COMMON_FEATURES]
   },
   {
     id: "p1b",
     durationMonths: 3,
     name: "Starter",
-    price: 44.99,
-    originalPrice: 64.99,
+    price: 29.99,
+    originalPrice: 54.99,
     popular: false,
-    savings: "Trial Pack",
+    savings: "Proefpakket",
     devices: 1,
     features: COMMON_FEATURES
   },
@@ -507,10 +508,10 @@ export const SUBSCRIPTION_PLANS: PricingPlan[] = [
     id: "p1c",
     durationMonths: 6,
     name: "Standard",
-    price: 64.99,
-    originalPrice: 84.99,
+    price: 44.99,
+    originalPrice: 79.99,
     popular: false,
-    savings: "Great Value",
+    savings: "Beste prijs",
     devices: 1,
     features: COMMON_FEATURES
   },
@@ -519,82 +520,82 @@ export const SUBSCRIPTION_PLANS: PricingPlan[] = [
     durationMonths: 12,
     freeMonths: 3,
     name: "Premium",
-    price: 99.99,
-    originalPrice: 149.99,
+    price: 64.99,
+    originalPrice: 119.99,
     popular: true,
-    savings: "WEEK DEAL",
+    savings: "WEEKDEAL",
     devices: 1,
-    features: ["Best Seller — Europe's favourite plan!", "+ 3 MONTHS FREE = 15 months total — limited weekly offer!", ...COMMON_FEATURES]
+    features: ["Best verkocht — de favoriet van Nederland!", "+ 3 MAANDEN GRATIS = 15 maanden totaal — weekaanbieding!", ...COMMON_FEATURES]
   },
   {
     id: "p1e",
     durationMonths: 24,
     freeMonths: 6,
     name: "Ultra",
-    price: 189.99,
-    originalPrice: 269.99,
+    price: 124.99,
+    originalPrice: 219.99,
     popular: false,
-    savings: "WEEK DEAL",
+    savings: "WEEKDEAL",
     devices: 1,
-    features: ["+ 6 MONTHS FREE = 30 months total — limited weekly offer!", ...COMMON_FEATURES]
+    features: ["+ 6 MAANDEN GRATIS = 30 maanden totaal — weekaanbieding!", ...COMMON_FEATURES]
   },
   // ── 2 Devices ─────────────────────────────────────────────────────────────
   {
     id: "p2a",
     durationMonths: 1,
     name: "Duo Trial",
-    price: 35.99,
-    originalPrice: 49.99,
+    price: 19.99,
+    originalPrice: 39.99,
     popular: false,
-    savings: "Best to Test",
+    savings: "Om te testen",
     devices: 2,
-    features: ["Best choice to test our service!", "2 Simultaneous connections", ...COMMON_FEATURES]
+    features: ["Ideaal om onze service te testen!", "2 Gelijktijdige verbindingen", ...COMMON_FEATURES]
   },
   {
     id: "p2b",
     durationMonths: 3,
     name: "Duo Starter",
     price: 44.99,
-    originalPrice: 84.99,
+    originalPrice: 89.99,
     popular: false,
-    savings: "Trial Pack",
+    savings: "Proefpakket",
     devices: 2,
-    features: ["2 Simultaneous connections", ...COMMON_FEATURES]
+    features: ["2 Gelijktijdige verbindingen", ...COMMON_FEATURES]
   },
   {
     id: "p2c",
     durationMonths: 6,
     name: "Duo Standard",
-    price: 65.99,
-    originalPrice: 109.99,
+    price: 64.99,
+    originalPrice: 129.99,
     popular: false,
-    savings: "Great Value",
+    savings: "Beste prijs",
     devices: 2,
-    features: ["2 Simultaneous connections", ...COMMON_FEATURES]
+    features: ["2 Gelijktijdige verbindingen", ...COMMON_FEATURES]
   },
   {
     id: "p2d",
     durationMonths: 12,
     freeMonths: 3,
     name: "Duo Premium",
-    price: 189.99,
-    originalPrice: 249.99,
+    price: 124.99,
+    originalPrice: 219.99,
     popular: true,
-    savings: "WEEK DEAL",
+    savings: "WEEKDEAL",
     devices: 2,
-    features: ["Best Seller — Europe's favourite plan!", "+ 3 MONTHS FREE = 15 months total — limited weekly offer!", "2 Simultaneous connections", ...COMMON_FEATURES]
+    features: ["Best verkocht — de favoriet van Nederland!", "+ 3 MAANDEN GRATIS = 15 maanden totaal — weekaanbieding!", "2 Gelijktijdige verbindingen", ...COMMON_FEATURES]
   },
   {
     id: "p2e",
     durationMonths: 24,
     freeMonths: 6,
     name: "Duo Ultra",
-    price: 349.99,
-    originalPrice: 499.99,
+    price: 229.99,
+    originalPrice: 399.99,
     popular: false,
-    savings: "WEEK DEAL",
+    savings: "WEEKDEAL",
     devices: 2,
-    features: ["+ 6 MONTHS FREE = 30 months total — limited weekly offer!", "2 Simultaneous connections", ...COMMON_FEATURES]
+    features: ["+ 6 MAANDEN GRATIS = 30 maanden totaal — weekaanbieding!", "2 Gelijktijdige verbindingen", ...COMMON_FEATURES]
   }
 ];
 

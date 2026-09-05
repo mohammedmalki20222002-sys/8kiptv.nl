@@ -1,15 +1,15 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Play, Star, ArrowRight } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 
 const movieTexts: Record<string, { heading: string; headingItalic: string; exploreAll: string; films: string; series: string; footer: string; subscribeNow: string }> = {
-  nl: { heading: "Films & Series.", headingItalic: "8K Kwaliteit.", exploreAll: "Alles verkennen", films: "Films", series: "Series", footer: "Dagelijks bijgewerkt · 200.000+ titels beschikbaar", subscribeNow: "Nu abonneren" },
-  de: { heading: "Filme & Serien.", headingItalic: "8K Qualität.", exploreAll: "Alle ansehen", films: "Filme", series: "Serien", footer: "Täglich aktualisiert · 200.000+ Titel verfügbar", subscribeNow: "Jetzt abonnieren" },
+  nl: { heading: "Films & Series.", headingItalic: "8K Kwaliteit.", exploreAll: "Alles verkennen", films: "Films", series: "Series", footer: "Dagelijks bijgewerkt · 220.000+ titels beschikbaar", subscribeNow: "Nu abonneren" },
+  de: { heading: "Filme & Serien.", headingItalic: "8K Qualität.", exploreAll: "Alle ansehen", films: "Filme", series: "Serien", footer: "Täglich aktualisiert · 220.000+ Titel verfügbar", subscribeNow: "Jetzt abonnieren" },
   fr: { heading: "Films & Séries.", headingItalic: "Qualité 8K.", exploreAll: "Tout explorer", films: "Films", series: "Séries", footer: "Mis à jour quotidiennement · 200 000+ titres disponibles", subscribeNow: "S'abonner" },
-  es: { heading: "Películas & Series.", headingItalic: "Calidad 8K.", exploreAll: "Ver todo", films: "Películas", series: "Series", footer: "Actualizado diariamente · 200.000+ títulos disponibles", subscribeNow: "Suscribirse" },
-  it: { heading: "Film & Serie.", headingItalic: "Qualità 8K.", exploreAll: "Esplora tutto", films: "Film", series: "Serie", footer: "Aggiornato ogni giorno · 200.000+ titoli disponibili", subscribeNow: "Abbonati ora" },
+  es: { heading: "Películas & Series.", headingItalic: "Calidad 8K.", exploreAll: "Ver todo", films: "Películas", series: "Series", footer: "Actualizado diariamente · 220.000+ títulos disponibles", subscribeNow: "Suscribirse" },
+  it: { heading: "Film & Serie.", headingItalic: "Qualità 8K.", exploreAll: "Esplora tutto", films: "Film", series: "Serie", footer: "Aggiornato ogni giorno · 220.000+ titoli disponibili", subscribeNow: "Abbonati ora" },
 };
-const defaultMovieText = { heading: "Movies & Series.", headingItalic: "8K Quality.", exploreAll: "Explore All", films: "Films", series: "Series", footer: "Updated daily · 200,000+ titles available", subscribeNow: "Subscribe Now" };
+const defaultMovieText = { heading: "Movies & Series.", headingItalic: "8K Quality.", exploreAll: "Explore All", films: "Films", series: "Series", footer: "Updated daily · 220.000+ titles available", subscribeNow: "Subscribe Now" };
 
 interface MovieGridProps {
   onPricingClick: () => void;
@@ -221,7 +221,7 @@ export default function MovieGrid({ onPricingClick }: MovieGridProps) {
           {/* Header */}
           <div className="flex items-center justify-between mb-6 px-4 md:px-6">
             <div>
-              <span className="serif-display italic font-light text-2xl text-white/80 block mb-1">200K+ VOD</span>
+              <span className="serif-display italic font-light text-2xl text-white/80 block mb-1">220K+ VOD</span>
               <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">
                 {mt.heading}{" "}
                 <span className="serif-display italic font-light text-white/85">{mt.headingItalic}</span>

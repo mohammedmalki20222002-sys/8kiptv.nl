@@ -58,9 +58,9 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
         {/* ── Stats bar ─────────────────────────────────────────────────── */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-10 md:mb-16">
           {[
-            { value: "89K",  label: t.pricing.statChannels  },
-            { value: "200K", label: t.pricing.statVod        },
-            { value: "8K",   label: "Max Quality"            },
+            { value: "69K",  label: t.pricing.statChannels  },
+            { value: "220K", label: t.pricing.statVod        },
+            { value: "8K",   label: "Max. kwaliteit"         },
             { value: "∞",    label: t.pricing.statUpdate     },
           ].map(({ value, label }, i) => (
             <div key={label} className="flex flex-col items-center relative">
@@ -139,7 +139,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                       color: "#1a1200", fontSize: "8px", fontWeight: "900", padding: "6px 0",
                       letterSpacing: "0.14em", textTransform: "uppercase",
                       boxShadow: `0 2px 8px ${GOLD}88` }}>
-                    ★ BEST SELLER
+                    ★ BEST VERKOCHT
                   </div>
                 )}
 
@@ -151,7 +151,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                       color: "white", fontSize: "7px", fontWeight: "900", padding: "5px 0",
                       letterSpacing: "0.1em", textTransform: "uppercase",
                       boxShadow: "0 2px 8px rgba(0,40,104,0.5)", lineHeight: "1.5" }}>
-                    BEST PACK<br/>TO TEST ★
+                    IDEAAL OM<br/>TE TESTEN ★
                   </div>
                 )}
 

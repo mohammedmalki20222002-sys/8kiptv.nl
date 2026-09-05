@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { ALL_CHANNELS } from "../types";
 import { Radio } from "lucide-react";
 
@@ -137,7 +137,7 @@ export default function ChannelStripe() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5 bg-black/20 px-2.5 py-1 rounded-full border border-white/10">
               <Radio className="w-3 h-3 text-white/60 animate-pulse" />
-              <span className="text-[9px] font-black font-mono uppercase tracking-widest text-white/70">89K+ Channels</span>
+              <span className="text-[9px] font-black font-mono uppercase tracking-widest text-white/70">69K+ Channels</span>
             </div>
             <h2 className="text-lg font-extrabold tracking-tight text-white">Channel Catalogue</h2>
           </div>

@@ -1,4 +1,4 @@
-import { LangCode } from "../i18n";
+﻿import { LangCode } from "../i18n";
 
 export interface BlogPostText {
   title: string;
@@ -71,8 +71,8 @@ export const BLOG_POSTS: BlogPost[] = [
         excerpt: "Cable contracts are getting shorter and pricier while IPTV catalogs keep growing. We break down the real differences — cost, channels, and reliability.",
         body: [
           "Every year the same question comes up in Finnish living rooms: is it finally time to cancel cable? In 2026 the answer is easier than ever, but it's worth separating the marketing claims from what actually changes day to day.",
-          "Cost is the most obvious difference. A typical Finnish cable bundle with sports and a couple of premium channels runs well over the price of a full 8K IPTV subscription, and that's before you add Netflix, Viaplay or C More separately. IPTV bundles everything — live channels, sport, and a 200,000+ title VOD library — into one monthly cost with no separate boxes or installation fees.",
-          "Channel selection is where IPTV has genuinely pulled ahead. Cable providers are limited by physical infrastructure and licensing deals per region, which is why a Helsinki household and a rural cable customer often get different channel lists. 8K IPTV delivers the same 89,000+ channel catalog everywhere, including international channels most cable packages don't carry at all.",
+          "Cost is the most obvious difference. A typical Finnish cable bundle with sports and a couple of premium channels runs well over the price of a full 8K IPTV subscription, and that's before you add Netflix, Viaplay or C More separately. IPTV bundles everything — live channels, sport, and a 220.000+ title VOD library — into one monthly cost with no separate boxes or installation fees.",
+          "Channel selection is where IPTV has genuinely pulled ahead. Cable providers are limited by physical infrastructure and licensing deals per region, which is why a Helsinki household and a rural cable customer often get different channel lists. 8K IPTV delivers the same 69.000+ channel catalog everywhere, including international channels most cable packages don't carry at all.",
           "Reliability used to be cable's strongest argument, but that gap has closed. Modern IPTV runs on redundant relay servers rather than a single regional headend, so an outage in one node reroutes automatically instead of taking down the whole service. Combined with a stable internet connection, uptime is now comparable to — and often better than — traditional cable.",
           "The one place cable still wins: zero setup. If you genuinely don't want to install an app or configure a device, a cable box is still simpler out of the box. For everyone else, IPTV setup takes about two minutes on a Smart TV, Fire Stick or Android box, and the savings pay for themselves within the first month.",
         ],

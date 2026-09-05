@@ -1,4 +1,4 @@
-import { BlogPost } from "./blogPosts";
+﻿import { BlogPost } from "./blogPosts";
 
 const SITE = "https://www.8kiptv.nl";
 const INSTA = "https://www.instagram.com/my8k.tv/";
@@ -17,7 +17,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
         excerpt: "Every provider claims to be the best. Almost none explain what the word means. Here are the five things you can measure yourself, and that decide which service is worth paying for.",
         body: [
           `Search for the best IPTV and you meet a wall of lists that all say the same thing. The problem is that almost nobody explains what "best" means in practice. Fortunately there are five things you can actually measure, and you can test them on any provider, including [8K IPTV](${SITE}).`,
-          `The first is the channel catalogue, the easiest to measure but also the easiest to inflate. Many providers quote numbers that include dead links. The catalogue at [8K IPTV](${SITE}) consists of over 89,000 live channels and more than 200,000 films and series that are actually maintained daily, not a list set up once and then abandoned.`,
+          `The first is the channel catalogue, the easiest to measure but also the easiest to inflate. Many providers quote numbers that include dead links. The catalogue at [8K IPTV](${SITE}) consists of over 69.000 live channels and more than 220.000 films and series that are actually maintained daily, not a list set up once and then abandoned.`,
           `The second is picture quality. A provider can promise 4K and still send compressed HD. The way to test it is to watch a football match in motion, not a still frame. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content, and the motion stays smooth because the bitrate is where it should be.`,
           `The third is uptime, and it matters most. A service that runs flawlessly on a Tuesday afternoon is useless if it collapses during a Champions League night. The relay servers behind [8K IPTV](${SITE}) are built for the peaks, and it is precisely the peaks that expose the unreliable operators.`,
           `The fourth is app support, which decides how free you stand. If you are tied to a single app, you are vulnerable the day it disappears from the store. Credentials from [8K IPTV](${SITE}) work in IPTV Smarters Pro, TiviMate and most other Xtream-compatible players, so you own your access whatever happens to the software.`,
@@ -42,7 +42,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
         body: [
           `The word "service" is more revealing in IPTV than it sounds. It does not mean just a channel list; it means what happens when something goes wrong, who answers and on what terms. That is exactly where an open operator like [8K IPTV](${SITE}) separates itself from an anonymous seller.`,
           `The first mark of service is price transparency. If you have to send a message to get a price, you are being sold uncertainty. On the [8K IPTV](${SITE}) site, packages and prices are openly listed, so you know what you are buying before you pay.`,
-          `The second is content upkeep. A service is not a one-off purchase but an ongoing promise, and the promise shows in whether the channels stay alive. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series, and the list is cleaned continuously so dead links do not pad the numbers.`,
+          `The second is content upkeep. A service is not a one-off purchase but an ongoing promise, and the promise shows in whether the channels stay alive. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series, and the list is cleaned continuously so dead links do not pad the numbers.`,
           `The third is performance under load, where you notice the difference fastest. When everyone watches the same match, a weak service chokes. The relay network behind [8K IPTV](${SITE}) absorbs the peaks, and streams stay up to 4K and up to 8K on compatible content.`,
           `The fourth is support, which only resolves when something breaks, and sooner or later it does. Without a support channel you stand alone with a subscription you already paid for. The [8K IPTV](${SITE}) team answers on WhatsApp, and that is the difference between a temporary glitch and a lost subscription.`,
           `The fifth is the freedom to choose your app. If your access is tied to a single player, you are at the mercy of that software. Credentials from [8K IPTV](${SITE}) work in IPTV Smarters Pro, TiviMate and other Xtream-compatible players, so you decide what you use.`,
@@ -65,8 +65,8 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
         excerpt: "There are hundreds of IPTV players and most are not worth your time. Here are the three that actually work, what separates them, and the most common misconception about what a player can do.",
         body: [
           `Before we get to which players are best, one misconception has to be cleared away, because it costs people money every day. A player does not improve picture quality. It cannot turn a bad stream into a good one. The picture comes from the server, that is from a subscription like [8K IPTV](${SITE}), and the player only shows what it receives.`,
-          `With that said: TiviMate is the best player if you have Android TV and control with a remote. The interface is built for the sofa, the guide is the most orderly on the market, and it handles large catalogues elegantly. With over 89,000 live channels from [8K IPTV](${SITE}), that matters.`,
-          `IPTV Smarters Pro is the most versatile and runs on everything from a phone to a Fire TV Stick, smart TV and Windows. It splits content into live TV, films and series, which makes the more than 200,000 on-demand titles from [8K IPTV](${SITE}) manageable rather than overwhelming.`,
+          `With that said: TiviMate is the best player if you have Android TV and control with a remote. The interface is built for the sofa, the guide is the most orderly on the market, and it handles large catalogues elegantly. With over 69.000 live channels from [8K IPTV](${SITE}), that matters.`,
+          `IPTV Smarters Pro is the most versatile and runs on everything from a phone to a Fire TV Stick, smart TV and Windows. It splits content into live TV, films and series, which makes the more than 220.000 on-demand titles from [8K IPTV](${SITE}) manageable rather than overwhelming.`,
           `IPTV Extreme Pro is the third choice and wins on features like recording and parental controls. All three pull exactly the same stream, so the difference lies in the interface, not in the picture you get from [8K IPTV](${SITE}). Pick the one that feels best in the hand.`,
           `Be sceptical, though, of players that come pre-filled with channels. That almost always means someone loaded a free list that will die soon, and it gives you an entirely wrong impression of what IPTV can be. A maintained source like [8K IPTV](${SITE}) is something else entirely.`,
           `The same goes for players that promise 4K or HD in the name itself. Resolution is set by the server. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content, and no player can upscale its way out of a bad source.`,
@@ -91,7 +91,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
           `An IPTV player is simply the app that displays the stream coming from a server. It is not the service and it is not the source of the picture. That distinction is the first thing to understand before choosing a player for a subscription like [8K IPTV](${SITE}).`,
           `Which player suits you depends on your device. On Android TV with a remote, TiviMate is the smoothest. On a phone, tablet or Fire TV Stick, IPTV Smarters Pro is the most flexible. Credentials from [8K IPTV](${SITE}) work in both.`,
           `The way you log in is standardised. Most players use Xtream Codes, where you enter a username and password. [8K IPTV](${SITE}) uses this standard, so setup is the same across apps.`,
-          `A good player organises content clearly into live channels, films and series. That structure matters when the catalogue is large. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series.`,
+          `A good player organises content clearly into live channels, films and series. That structure matters when the catalogue is large. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series.`,
           `The electronic programme guide, or EPG, shows what is on each channel. It works better the better the service behind it. [8K IPTV](${SITE}) provides an up-to-date guide for supported channels.`,
           `Picture quality comes from the server, not the player. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content, and the player simply displays it.`,
           `If a player will not log in, it is almost always a mistyped detail rather than a fault, and the [8K IPTV](${SITE}) team checks it on WhatsApp, because [8K IPTV](${SITE}) support knows the settings.`,
@@ -115,7 +115,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
           `An IPTV app is the window you watch through, but it is not the thing that produces the picture. That comes from the server, from a subscription like [8K IPTV](${SITE}). Getting this right saves you from blaming the app for problems it cannot cause.`,
           `The most trusted apps are IPTV Smarters Pro and TiviMate. Smarters Pro runs almost everywhere, while TiviMate is built for the TV and a remote. Credentials from [8K IPTV](${SITE}) work in both.`,
           `Setup is standardised through Xtream Codes: you choose that login option and enter your details. [8K IPTV](${SITE}) uses this method, so the steps are the same regardless of the app.`,
-          `A good app organises a large catalogue into live channels, films and series. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series, so that structure matters.`,
+          `A good app organises a large catalogue into live channels, films and series. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series, so that structure matters.`,
           `Be wary of apps that arrive pre-loaded with channels or promise free content. They point at unreliable sources that vanish. On the [8K IPTV](${SITE}) site you get an open service you install into the app yourself.`,
           `Picture quality is set by the server, not the app name. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content, whatever the app is called.`,
           `If playback stutters, it is usually an overloaded server rather than the app, and the [8K IPTV](${SITE}) team helps diagnose it on WhatsApp, because the [8K IPTV](${SITE}) network is built for peak evenings.`,
@@ -138,7 +138,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
         body: [
           `An IPTV subscription is, at its core, access to a server. Not a box, not an app, but the stream a server sends and a player displays. Once you see it that way, judging a subscription like [8K IPTV](${SITE}) becomes much clearer.`,
           `What you pay for is a maintained catalogue that stays alive. A cheap "lifetime" deal is almost always a sign of a service that will vanish. On the [8K IPTV](${SITE}) site, prices are open and fixed, so you know what you are paying for.`,
-          `The size of the catalogue is the visible part. The subscription at [8K IPTV](${SITE}) gives access to over 89,000 live channels and more than 200,000 films and series, maintained daily rather than dumped once.`,
+          `The size of the catalogue is the visible part. The subscription at [8K IPTV](${SITE}) gives access to over 69.000 live channels and more than 220.000 films and series, maintained daily rather than dumped once.`,
           `The invisible part is stability under load, which only shows on a match night. A cheap service saves on server capacity and stutters at the peaks. The relay network behind [8K IPTV](${SITE}) is built for those peaks.`,
           `Picture quality is part of what a subscription buys. Streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content, which matters on modern televisions.`,
           `Flexibility across devices saves money in another way: you do not need separate subscriptions per screen. Credentials from [8K IPTV](${SITE}) work in IPTV Smarters Pro and TiviMate, so one subscription covers the TV, the phone and the tablet.`,
@@ -163,7 +163,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
           `Smart IPTV, known to many as SIPTV, is one of the oldest and best-known IPTV apps for Samsung Tizen and LG webOS televisions. It is a player, so it displays the stream from a server and needs a service behind it like [8K IPTV](${SITE}).`,
           `SIPTV works a little differently from Smarters: you add your playlist or details on its own page using the TV's MAC address. Credentials from [8K IPTV](${SITE}) can be configured this way.`,
           `The app is light and fast, which suits televisions with limited processing power. [8K IPTV](${SITE}) runs on it smoothly without a separate box.`,
-          `As for content, the player shows whatever the service provides. The catalogue at [8K IPTV](${SITE}) covers over 89,000 live channels and more than 200,000 films and series.`,
+          `As for content, the player shows whatever the service provides. The catalogue at [8K IPTV](${SITE}) covers over 69.000 live channels and more than 220.000 films and series.`,
           `SIPTV has a small one-time activation fee on some televisions, which is normal. You get the service itself separately, and on the [8K IPTV](${SITE}) site the price is open.`,
           `Picture quality depends on the stream: streams from [8K IPTV](${SITE}) reach up to 4K and up to 8K on compatible content on SIPTV too.`,
           `If loading the playlist or activating puzzles you, it is a quick task with the right steps, and the [8K IPTV](${SITE}) team guides you on WhatsApp, because [8K IPTV](${SITE}) supports SIPTV setup.`,
@@ -185,7 +185,7 @@ export const EN_BLOG_POSTS_01: BlogPost[] = [
         excerpt: "Whether you live in Finland or abroad, Finnish channels are often the reason to consider IPTV. Here is what a good service includes, from Yle to Liiga, and how to keep them stable.",
         body: [
           `For anyone who wants Finnish television, whether living in Finland or abroad, IPTV is often the simplest route. A large international catalogue is a bonus, but Yle and MTV3 are what people actually watch, and a good service like [8K IPTV](${SITE}) keeps them stable.`,
-          `The foundation is the Yle channels: TV1, TV2, Teema and Fem. These need to work flawlessly. The catalogue at [8K IPTV](${SITE}) includes the Finnish channels as part of a set of over 89,000 live channels.`,
+          `The foundation is the Yle channels: TV1, TV2, Teema and Fem. These need to work flawlessly. The catalogue at [8K IPTV](${SITE}) includes the Finnish channels as part of a set of over 69.000 live channels.`,
           `Among commercial channels, MTV3, Nelonen, Sub and their themed channels matter to many. [8K IPTV](${SITE}) keeps these in a maintained catalogue.`,
           `For sport, Finnish viewers care about Liiga, Veikkausliiga and international competitions. [8K IPTV](${SITE}) brings these together without separate sports add-ons.`,
           `For expats, IPTV means keeping Finnish channels no matter where you live, since the stream travels over any internet connection. [8K IPTV](${SITE}) works the same abroad as at home.`,

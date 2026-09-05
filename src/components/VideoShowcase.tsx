@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useLanguage } from "../LanguageContext";
 
 const videoSections: Record<string, { heading: string; headingItalic: string; subtitle: string }> = {
@@ -10,7 +10,7 @@ const videoSections: Record<string, { heading: string; headingItalic: string; su
   en: {
     heading: "Everything you need,",
     headingItalic: "in one place.",
-    subtitle: "Over 89,000 live channels and 200,000+ VOD — instantly on any device, no contract.",
+    subtitle: "Over 69.000 live channels and 220.000+ VOD — instantly on any device, no contract.",
   },
   fr: {
     heading: "Tout ce dont vous avez besoin,",
@@ -20,32 +20,32 @@ const videoSections: Record<string, { heading: string; headingItalic: string; su
   da: {
     heading: "Alt hvad du har brug for,",
     headingItalic: "på ét sted.",
-    subtitle: "Over 89.000 live-kanaler og 200.000+ VOD — øjeblikkeligt på alle enheder, ingen kontrakt.",
+    subtitle: "Over 69.000 live-kanaler og 220.000+ VOD — øjeblikkeligt på alle enheder, ingen kontrakt.",
   },
   ar: {
     heading: "كل ما تحتاجه,",
     headingItalic: "في مكان واحد.",
-    subtitle: "أكثر من 89,000 قناة مباشرة وأكثر من 200,000 VOD — فوراً على أي جهاز، بدون عقد.",
+    subtitle: "أكثر من 69.000 قناة مباشرة وأكثر من 220.000 VOD — فوراً على أي جهاز، بدون عقد.",
   },
   nl: {
     heading: "Alles wat je nodig hebt,",
     headingItalic: "op één plek.",
-    subtitle: "Meer dan 89.000 live-zenders en 200.000+ VOD — direct op elk apparaat, geen contract.",
+    subtitle: "Meer dan 69.000 live-zenders en 220.000+ VOD — direct op elk apparaat, geen contract.",
   },
   de: {
     heading: "Alles was du brauchst,",
     headingItalic: "an einem Ort.",
-    subtitle: "Über 89.000 Live-Kanäle und 200.000+ VOD — sofort auf jedem Gerät, kein Vertrag.",
+    subtitle: "Über 69.000 Live-Kanäle und 220.000+ VOD — sofort auf jedem Gerät, kein Vertrag.",
   },
   es: {
     heading: "Todo lo que necesitas,",
     headingItalic: "en un solo lugar.",
-    subtitle: "Más de 89.000 canales en directo y 200.000+ VOD — al instante en cualquier dispositivo, sin contrato.",
+    subtitle: "Más de 69.000 canales en directo y 220.000+ VOD — al instante en cualquier dispositivo, sin contrato.",
   },
   it: {
     heading: "Tutto ciò che ti serve,",
     headingItalic: "in un unico posto.",
-    subtitle: "Oltre 89.000 canali live e 200.000+ VOD — immediatamente su qualsiasi dispositivo, senza contratto.",
+    subtitle: "Oltre 69.000 canali live e 220.000+ VOD — immediatamente su qualsiasi dispositivo, senza contratto.",
   },
   sv: {
     heading: "Allt du behöver,",
