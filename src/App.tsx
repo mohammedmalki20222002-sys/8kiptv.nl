@@ -16,8 +16,10 @@ import CheckoutModal from "./components/CheckoutModal";
 import BlogGrid from "./components/BlogGrid";
 import BlogPost from "./components/BlogPost";
 import Terms from "./components/Terms";
+import SocialLinks from "./components/SocialLinks";
 import { getPostBySlug } from "./data/allPosts";
 import { getBlogText } from "./blogI18n";
+import { getTerms } from "./termsText";
 
 // Canonical origin — must match scripts/prerender.ts. The apex 8kiptv.nl
 // 308-redirects to www, so canonicals have to name the host that serves 200s.
@@ -91,11 +93,9 @@ function AppInner({ view }: { view: View }) {
     setMetaByName("robots", INDEXABLE);
 
     if (view.type === "terms") {
-      document.title = "Voorwaarden & klantbescherming — 8K IPTV";
-      setMetaByName(
-        "description",
-        "15 dagen terugbetalingsgarantie, 24/7 support, permanente updates en kwartaalupdates van films. Lees de volledige voorwaarden van 8K IPTV."
-      );
+      const tt = getTerms(lang);
+      document.title = `${tt.title1} ${tt.title2} — 8K IPTV`;
+      setMetaByName("description", tt.intro);
     }
 
     const path = window.location.pathname.replace(/\/+$/, "");
@@ -198,6 +198,8 @@ function AppInner({ view }: { view: View }) {
             <p className="serif-display italic font-light text-lg text-neutral-200 leading-relaxed max-w-sm">
               {t.footer.tagline}
             </p>
+            <SocialLinks />
+
             <p className="serif-display italic font-light text-base text-neutral-500 pt-3">
               {t.footer.copyright}
             </p>
@@ -220,7 +222,7 @@ function AppInner({ view }: { view: View }) {
               <li><button onClick={() => scrollToSection("movies-section")} className="text-neutral-300 hover:text-white transition-colors">{t.footer.link4}</button></li>
               <li><button onClick={() => scrollToSection("channels-section")} className="text-neutral-300 hover:text-white transition-colors">{t.footer.link5}</button></li>
               <li><button onClick={() => scrollToSection("faq-section")} className="text-neutral-300 hover:text-white transition-colors">{t.footer.link6}</button></li>
-              <li><a href="/voorwaarden" className="text-neutral-300 hover:text-white transition-colors no-underline">Voorwaarden &amp; klantbescherming</a></li>
+              <li><a href="/voorwaarden" className="text-neutral-300 hover:text-white transition-colors no-underline">{t.nav.terms}</a></li>
               <li><a href="/blog" className="text-neutral-300 hover:text-white transition-colors">{t.nav.blog}</a></li>
             </ul>
           </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface HeaderProps {
   onPricingClick: () => void;
@@ -47,10 +48,10 @@ export default function Header({ onPricingClick, onReviewsClick, onMoviesClick, 
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1.5 bg-white/8 py-1 px-1.5 rounded-full">
-          <a href="/" className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${isBlogPage ? "text-white/75 hover:text-white" : "text-white bg-white/15 hover:bg-white/25"}`}>Home</a>
+          <a href="/" className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${isBlogPage ? "text-white/75 hover:text-white" : "text-white bg-white/15 hover:bg-white/25"}`}>{t.nav.home}</a>
           <button onClick={onPricingClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.pricing}</button>
           <button onClick={onMoviesClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.movies}</button>
-          <button onClick={onChannelsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">Zenders</button>
+          <button onClick={onChannelsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.channels}</button>
           <button onClick={onReviewsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.reviews}</button>
           <a
             href="/blog"
@@ -58,17 +59,19 @@ export default function Header({ onPricingClick, onReviewsClick, onMoviesClick, 
           >
             {t.nav.blog}
           </a>
-          <button onClick={onPaymentsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">Betaalmethoden</button>
+          <button onClick={onPaymentsClick} className="px-4 py-1.5 text-[13px] font-medium text-white/75 hover:text-white transition-colors rounded-full">{t.nav.payments}</button>
           <a
             href="/voorwaarden"
             className={`px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors ${isTermsPage ? "text-white bg-white/15" : "text-white/75 hover:text-white"}`}
           >
-            Voorwaarden
+            {t.nav.terms}
           </a>
         </nav>
 
         {/* Right side */}
         <div className="flex items-center gap-2 pr-1">
+          <LanguageSwitcher />
+
           <button
             onClick={onPricingClick}
             className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all hover:opacity-90 active:scale-95"
@@ -98,14 +101,14 @@ export default function Header({ onPricingClick, onReviewsClick, onMoviesClick, 
           className="md:hidden absolute top-16 left-4 right-4 border border-white/10 rounded-2xl p-5 shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-top-3 duration-200"
           style={{ background: "linear-gradient(160deg, #0d1220 0%, #111827 100%)" }}
         >
-          <a href="/" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white">Home</a>
+          <a href="/" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white">{t.nav.home}</a>
           <button onClick={() => { onPricingClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.pricing}</button>
           <button onClick={() => { onMoviesClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.movies}</button>
-          <button onClick={() => { onChannelsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">Zenders</button>
+          <button onClick={() => { onChannelsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.channels}</button>
           <button onClick={() => { onReviewsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.reviews}</button>
           <a href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.blog}</a>
-          <button onClick={() => { onPaymentsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">Betaalmethoden</button>
-          <a href="/voorwaarden" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 text-sm font-semibold text-white/75">Voorwaarden</a>
+          <button onClick={() => { onPaymentsClick(); setMobileMenuOpen(false); }} className="text-left py-2 border-b border-white/8 text-sm font-semibold text-white/75">{t.nav.payments}</button>
+          <a href="/voorwaarden" onClick={() => setMobileMenuOpen(false)} className="text-left py-2 text-sm font-semibold text-white/75">{t.nav.terms}</a>
 
           <button
             onClick={() => { onPricingClick(); setMobileMenuOpen(false); }}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Plus, Minus, Lock } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
+import { getExtra } from "../i18nExtra";
 import { WA_NUMBER } from "../types";
 
 const PaypalLogo = () => (
@@ -106,7 +107,8 @@ const BankTransferLogo = () => (
 );
 
 export default function PaymentsAndFaq() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const pay = getExtra(lang).payments;
   const [activeFaqId, setActiveFaqId] = useState<number | null>(0);
 
   const toggleFaq = (i: number) => {
@@ -114,13 +116,13 @@ export default function PaymentsAndFaq() {
   };
 
   const paymentMethods = [
-    { name: "Bank Transfer", logo: <BankTransferLogo />,  desc: "Standard bank wire",        delay: t.payments.direct,  mostUsed: true  },
+    { name: "Bank Transfer", logo: <BankTransferLogo />,  desc: pay.bankWire,               delay: t.payments.direct,  mostUsed: true  },
     { name: "PayPal",        logo: <PaypalLogo />,        desc: t.payments.methodDescs[0],  delay: t.payments.direct,  mostUsed: true  },
     { name: "Visa",          logo: <VisaLogo />,          desc: t.payments.methodDescs[1],  delay: t.payments.direct,  mostUsed: false },
     { name: "Mastercard",    logo: <MastercardLogo />,    desc: t.payments.methodDescs[2],  delay: t.payments.direct,  mostUsed: false },
     { name: "Crypto",        logo: <CryptoLogo />,        desc: "BTC · ETH · USDT",         delay: t.payments.direct,  mostUsed: false },
     { name: "USDT",          logo: <UsdtLogo />,          desc: "TRC20 · ERC20 · Stable",    delay: t.payments.direct,  mostUsed: false },
-    { name: "iDEAL",         logo: <IdealLogo />,         desc: "Direct bank payment (NL)", delay: t.payments.direct,  mostUsed: false },
+    { name: "iDEAL",         logo: <IdealLogo />,         desc: pay.idealDesc,              delay: t.payments.direct,  mostUsed: false },
     { name: "SEPA",          logo: <SepaLogo />,          desc: t.payments.methodDescs[3],  delay: t.payments.days12,  mostUsed: false },
     { name: "Sofort",        logo: <SofortLogo />,        desc: t.payments.methodDescs[4],  delay: t.payments.direct,  mostUsed: false },
     { name: "Klarna",        logo: <KlarnaLogo />,        desc: t.payments.methodDescs[5],  delay: t.payments.direct,  mostUsed: false },

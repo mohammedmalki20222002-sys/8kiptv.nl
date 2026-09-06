@@ -3,13 +3,33 @@
 /** The one language the site is published in. 8kiptv.nl is a Dutch-only site. */
 export const SITE_LANG: LangCode = 'nl';
 
+/**
+ * Languages offered in the header switcher: Dutch (the published site language),
+ * English, Arabic and the EU set — French, German, Spanish and the Nordics.
+ * Every code here must have a full entry in `translations` and in `blogTexts`.
+ */
 export const LANGUAGES: { code: LangCode; label: string; flag: string; dir: 'ltr' | 'rtl' }[] = [
   { code: 'nl', label: 'Nederlands', flag: 'nl', dir: 'ltr' },
+  { code: 'en', label: 'English',    flag: 'gb', dir: 'ltr' },
+  { code: 'fr', label: 'Français',   flag: 'fr', dir: 'ltr' },
+  { code: 'de', label: 'Deutsch',    flag: 'de', dir: 'ltr' },
+  { code: 'es', label: 'Español',    flag: 'es', dir: 'ltr' },
+  { code: 'sv', label: 'Svenska',    flag: 'se', dir: 'ltr' },
+  { code: 'no', label: 'Norsk',      flag: 'no', dir: 'ltr' },
+  { code: 'da', label: 'Dansk',      flag: 'dk', dir: 'ltr' },
+  { code: 'fi', label: 'Suomi',      flag: 'fi', dir: 'ltr' },
+  { code: 'ar', label: 'العربية',     flag: 'sa', dir: 'rtl' },
 ];
 
-/** Flag shown on a blog card whose post is written in something other than SITE_LANG. */
+/** Is `code` one of the languages the switcher offers? */
+export function isSupportedLang(code: string): code is LangCode {
+  return LANGUAGES.some(l => l.code === code);
+}
+
+/** Flag shown on a blog card whose post is written in something other than the active language. */
 export const POST_LANG_FLAGS: Partial<Record<LangCode, string>> = {
-  nl: 'nl', en: 'gb',
+  nl: 'nl', en: 'gb', fr: 'fr', de: 'de', es: 'es',
+  sv: 'se', no: 'no', da: 'dk', fi: 'fi', ar: 'sa',
 };
 
 export interface T {
@@ -34,6 +54,10 @@ export interface T {
     subscribe: string;
     mobileSubscribe: string;
     blog: string;
+    home: string;
+    channels: string;
+    payments: string;
+    terms: string;
   };
   platforms: {
     heading: string;
@@ -134,6 +158,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Tilaa nyt',
       mobileSubscribe: 'Tilaa nyt — näytä hinnat',
       blog: 'Blogi',
+      home: 'Etusivu',
+      channels: 'Kanavat',
+      payments: 'Maksutavat',
+      terms: 'Ehdot',
     },
     platforms: {
       heading: 'Kaikki alustat.',
@@ -265,6 +293,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Subscribe now',
       mobileSubscribe: 'Subscribe now — view plans',
       blog: 'Blog',
+      home: 'Home',
+      channels: 'Channels',
+      payments: 'Payment methods',
+      terms: 'Terms',
     },
     platforms: {
       heading: 'All platforms.',
@@ -381,6 +413,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: "S'abonner",
       mobileSubscribe: "S'abonner — voir les tarifs",
       blog: 'Blog',
+      home: 'Accueil',
+      channels: 'Chaînes',
+      payments: 'Moyens de paiement',
+      terms: 'Conditions',
     },
     platforms: {
       heading: 'Toutes les plateformes.',
@@ -497,6 +533,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Abonner nu',
       mobileSubscribe: 'Abonner nu — vis priser',
       blog: 'Blog',
+      home: 'Forside',
+      channels: 'Kanaler',
+      payments: 'Betalingsmetoder',
+      terms: 'Vilkår',
     },
     platforms: {
       heading: 'Alle platforme.',
@@ -613,6 +653,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Jetzt abonnieren',
       mobileSubscribe: 'Jetzt abonnieren — Pläne ansehen',
       blog: 'Blog',
+      home: 'Startseite',
+      channels: 'Sender',
+      payments: 'Zahlungsarten',
+      terms: 'AGB',
     },
     platforms: {
       heading: 'Alle Plattformen.',
@@ -710,6 +754,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Suscribirse ahora',
       mobileSubscribe: 'Suscribirse — ver planes',
       blog: 'Blog',
+      home: 'Inicio',
+      channels: 'Canales',
+      payments: 'Métodos de pago',
+      terms: 'Condiciones',
     },
     platforms: {
       heading: 'Todas las plataformas.',
@@ -807,6 +855,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Abbonati ora',
       mobileSubscribe: 'Abbonati — vedi i piani',
       blog: 'Blog',
+      home: 'Home',
+      channels: 'Canali',
+      payments: 'Metodi di pagamento',
+      terms: 'Condizioni',
     },
     platforms: {
       heading: 'Tutte le piattaforme.',
@@ -904,6 +956,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Abonneer nu',
       mobileSubscribe: 'Abonneer nu — bekijk plannen',
       blog: 'Blog',
+      home: 'Home',
+      channels: 'Zenders',
+      payments: 'Betaalmethoden',
+      terms: 'Voorwaarden',
     },
     platforms: {
       heading: 'Alle platforms.',
@@ -1001,6 +1057,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Prenumerera nu',
       mobileSubscribe: 'Prenumerera nu — visa planer',
       blog: 'Blogg',
+      home: 'Hem',
+      channels: 'Kanaler',
+      payments: 'Betalsätt',
+      terms: 'Villkor',
     },
     platforms: {
       heading: 'Alla plattformar.',
@@ -1098,6 +1158,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Abonner nå',
       mobileSubscribe: 'Abonner nå — vis planer',
       blog: 'Blogg',
+      home: 'Hjem',
+      channels: 'Kanaler',
+      payments: 'Betalingsmåter',
+      terms: 'Vilkår',
     },
     platforms: {
       heading: 'Alle plattformer.',
@@ -1195,6 +1259,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Subskrybuj teraz',
       mobileSubscribe: 'Subskrybuj — zobacz plany',
       blog: 'Blog',
+      home: 'Strona główna',
+      channels: 'Kanały',
+      payments: 'Metody płatności',
+      terms: 'Regulamin',
     },
     platforms: {
       heading: 'Wszystkie platformy.',
@@ -1292,6 +1360,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Subscrever agora',
       mobileSubscribe: 'Subscrever — ver planos',
       blog: 'Blog',
+      home: 'Início',
+      channels: 'Canais',
+      payments: 'Métodos de pagamento',
+      terms: 'Termos',
     },
     platforms: {
       heading: 'Todas as plataformas.',
@@ -1389,6 +1461,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Abonează-te acum',
       mobileSubscribe: 'Abonează-te — vezi planurile',
       blog: 'Blog',
+      home: 'Acasă',
+      channels: 'Canale',
+      payments: 'Metode de plată',
+      terms: 'Termeni',
     },
     platforms: {
       heading: 'Toate platformele.',
@@ -1486,6 +1562,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Přihlásit k odběru',
       mobileSubscribe: 'Přihlásit se — zobrazit plány',
       blog: 'Blog',
+      home: 'Domů',
+      channels: 'Kanály',
+      payments: 'Platební metody',
+      terms: 'Podmínky',
     },
     platforms: {
       heading: 'Všechny platformy.',
@@ -1583,6 +1663,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'Şimdi abone ol',
       mobileSubscribe: 'Şimdi abone ol — planları gör',
       blog: 'Blog',
+      home: 'Ana sayfa',
+      channels: 'Kanallar',
+      payments: 'Ödeme yöntemleri',
+      terms: 'Koşullar',
     },
     platforms: {
       heading: 'Tüm platformlar.',
@@ -1680,6 +1764,10 @@ export const translations: Record<LangCode, T> = {
       subscribe: 'اشترك الآن',
       mobileSubscribe: 'اشترك الآن — عرض الخطط',
       blog: 'المدونة',
+      home: 'الرئيسية',
+      channels: 'القنوات',
+      payments: 'طرق الدفع',
+      terms: 'الشروط',
     },
     platforms: {
       heading: 'جميع المنصات.',

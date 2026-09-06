@@ -1,6 +1,8 @@
 ﻿import React from "react";
 import { ALL_CHANNELS } from "../types";
 import { Radio } from "lucide-react";
+import { useLanguage } from "../LanguageContext";
+import { getExtra } from "../i18nExtra";
 
 type Ch = { id: string; name: string; logo: string; bg: string };
 
@@ -120,6 +122,8 @@ const ChannelCard: React.FC<{ ch: Ch }> = ({ ch }) => (
 );
 
 export default function ChannelStripe() {
+  const { lang } = useLanguage();
+  const cx = getExtra(lang).channels;
   const t1 = [...EU_BROADCAST,        ...EU_BROADCAST,        ...EU_BROADCAST];
   const t2 = [...WORLDWIDE_STREAMING, ...WORLDWIDE_STREAMING, ...WORLDWIDE_STREAMING];
   const t3 = [...WORLDWIDE_BROAD,     ...WORLDWIDE_BROAD,     ...WORLDWIDE_BROAD];
@@ -137,12 +141,12 @@ export default function ChannelStripe() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5 bg-black/20 px-2.5 py-1 rounded-full border border-white/10">
               <Radio className="w-3 h-3 text-white/60 animate-pulse" />
-              <span className="text-[9px] font-black font-mono uppercase tracking-widest text-white/70">69K+ Channels</span>
+              <span className="text-[9px] font-black font-mono uppercase tracking-widest text-white/70">{cx.badge}</span>
             </div>
-            <h2 className="text-lg font-extrabold tracking-tight text-white">Channel Catalogue</h2>
+            <h2 className="text-lg font-extrabold tracking-tight text-white">{cx.catalogue}</h2>
           </div>
           <span className="hidden sm:block text-[9px] font-mono text-white/40 border border-white/10 bg-black/10 px-2.5 py-1 rounded-full">
-            {ALL_CHANNELS.length} listed
+            {ALL_CHANNELS.length} {cx.listed}
           </span>
         </div>
 
@@ -150,7 +154,7 @@ export default function ChannelStripe() {
           <div className="flex items-end gap-3">
             <span className="text-base">🌍</span>
             <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-none">
-              European <span className="serif-display italic font-light text-white/85">Channels.</span>
+              {cx.eu} <span className="serif-display italic font-light text-white/85">{cx.euItalic}</span>
             </h3>
           </div>
         </div>
@@ -165,7 +169,7 @@ export default function ChannelStripe() {
           <div className="flex items-end gap-3">
             <span className="text-base">🌐</span>
             <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-none">
-              Worldwide <span className="serif-display italic font-light text-white/85">Channels.</span>
+              {cx.world} <span className="serif-display italic font-light text-white/85">{cx.worldItalic}</span>
             </h3>
           </div>
         </div>
@@ -188,7 +192,7 @@ export default function ChannelStripe() {
               <span className="text-[9px] font-black font-mono uppercase tracking-[0.18em] text-amber-400">VIP</span>
             </span>
             <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-none">
-              PPV VIP <span className="serif-display italic font-light text-white/85">Channels EU.</span>
+              {cx.ppv} <span className="serif-display italic font-light text-white/85">{cx.ppvItalic}</span>
             </h3>
           </div>
         </div>

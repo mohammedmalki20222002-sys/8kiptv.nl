@@ -1,5 +1,6 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
+import { getExtra } from "../i18nExtra";
 
 const EU_CHANNELS = [
   { id: "bbc1",     name: "BBC One",       sub: "BBC One HD",        logo: "/logos/bbc.svg",       bg: "#BB1919" },
@@ -29,7 +30,8 @@ interface HeroProps {
 }
 
 export default function Hero({ onPricingClick }: HeroProps) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const hx = getExtra(lang).hero;
   const doubled = [...EU_CHANNELS, ...EU_CHANNELS, ...EU_CHANNELS];
 
   return (
@@ -132,8 +134,8 @@ export default function Hero({ onPricingClick }: HeroProps) {
             {/* Limited offer scroll */}
             {(() => {
               const OFFERS = [
-                { label: "12 MAANDEN", bonus: "+ 3 MAANDEN GRATIS", price: "64,99 €" },
-                { label: "24 MAANDEN", bonus: "+ 6 MAANDEN GRATIS", price: "124,99 €" },
+                { label: hx.months(12), bonus: hx.freeBonus(3), price: "64,99 €" },
+                { label: hx.months(24), bonus: hx.freeBonus(6), price: "124,99 €" },
               ];
               const offersFilled = [...OFFERS, ...OFFERS, ...OFFERS, ...OFFERS, ...OFFERS, ...OFFERS];
               return (

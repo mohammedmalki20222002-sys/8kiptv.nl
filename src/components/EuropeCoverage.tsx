@@ -1,17 +1,6 @@
 import { WA_NUMBER } from "../types";
-
-const WA_URL =
-  `https://wa.me/${WA_NUMBER}?text=` +
-  encodeURIComponent("Hallo, ik wil graag meer weten over 8K IPTV.");
-
-const ct = {
-  badge: "Dekking in heel Nederland",
-  title: "De #1 IPTV-dienst van Nederland",
-  subtitle:
-    "Van Amsterdam tot Groningen, van Rotterdam tot Maastricht — glasheldere streams op elk Nederlands netwerk (KPN, Ziggo, Odido, Delta). Nederlandstalige support, 24/7 bereikbaar.",
-  contact: "Contact opnemen",
-  packages: "Bekijk pakketten",
-};
+import { useLanguage } from "../LanguageContext";
+import { getExtra } from "../i18nExtra";
 
 // Netherlands and Belgium lead — the rest shows the wider reach for expats and
 // households that watch foreign channels.
@@ -45,6 +34,26 @@ interface EuropeCoverageProps {
 }
 
 export default function EuropeCoverage({ onPricingClick }: EuropeCoverageProps) {
+  const { lang } = useLanguage();
+  const ct = getExtra(lang).coverage;
+  // Country names come from the browser rather than a translation table: the strip
+  // only ever shows ISO region codes, and Intl already knows them in every language.
+  const regionNames = (() => {
+    try {
+      return new Intl.DisplayNames([lang], { type: "region" });
+    } catch {
+      return null;
+    }
+  })();
+  const countryName = (c: { code: string; name: string }) => {
+    try {
+      return regionNames?.of(c.code.toUpperCase()) ?? c.name;
+    } catch {
+      return c.name;
+    }
+  };
+  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(ct.waText)}`;
+
   return (
     <section className="px-4 md:px-8 max-w-7xl mx-auto w-full py-3">
       <div
@@ -104,11 +113,11 @@ export default function EuropeCoverage({ onPricingClick }: EuropeCoverageProps) 
                   boxShadow: "0 6px 20px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.08) inset",
                   outline: "1px solid rgba(255,255,255,0.1)",
                 }}
-                title={c.name}
+                title={countryName(c)}
               >
                 <img
                   src={`https://flagcdn.com/w160/${c.code}.png`}
-                  alt={c.name}
+                  alt={countryName(c)}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -120,7 +129,7 @@ export default function EuropeCoverage({ onPricingClick }: EuropeCoverageProps) 
         {/* Buttons */}
         <div className="relative z-10 flex items-center justify-center gap-3">
           <a
-            href={WA_URL}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 rounded-full text-[13px] font-bold text-white transition-all hover:brightness-110 active:scale-95"

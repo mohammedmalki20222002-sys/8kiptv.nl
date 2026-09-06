@@ -8,6 +8,11 @@ const movieTexts: Record<string, { heading: string; headingItalic: string; explo
   fr: { heading: "Films & Séries.", headingItalic: "Qualité 8K.", exploreAll: "Tout explorer", films: "Films", series: "Séries", footer: "Mis à jour quotidiennement · 200 000+ titres disponibles", subscribeNow: "S'abonner" },
   es: { heading: "Películas & Series.", headingItalic: "Calidad 8K.", exploreAll: "Ver todo", films: "Películas", series: "Series", footer: "Actualizado diariamente · 220.000+ títulos disponibles", subscribeNow: "Suscribirse" },
   it: { heading: "Film & Serie.", headingItalic: "Qualità 8K.", exploreAll: "Esplora tutto", films: "Film", series: "Serie", footer: "Aggiornato ogni giorno · 220.000+ titoli disponibili", subscribeNow: "Abbonati ora" },
+  sv: { heading: 'Filmer & serier.', headingItalic: '8K-kvalitet.', exploreAll: 'Utforska allt', films: 'Filmer', series: 'Serier', footer: 'Uppdateras dagligen · 220.000+ titlar tillgängliga', subscribeNow: 'Prenumerera nu' },
+  no: { heading: 'Filmer & serier.', headingItalic: '8K-kvalitet.', exploreAll: 'Utforsk alt', films: 'Filmer', series: 'Serier', footer: 'Oppdateres daglig · 220.000+ titler tilgjengelig', subscribeNow: 'Abonner nå' },
+  da: { heading: 'Film & serier.', headingItalic: '8K-kvalitet.', exploreAll: 'Udforsk alt', films: 'Film', series: 'Serier', footer: 'Opdateres dagligt · 220.000+ titler tilgængelige', subscribeNow: 'Abonner nu' },
+  fi: { heading: 'Elokuvat & sarjat.', headingItalic: '8K-laatu.', exploreAll: 'Selaa kaikkia', films: 'Elokuvat', series: 'Sarjat', footer: 'Päivitetään päivittäin · 220.000+ nimikettä saatavilla', subscribeNow: 'Tilaa nyt' },
+  ar: { heading: 'أفلام ومسلسلات.', headingItalic: 'جودة 8K.', exploreAll: 'استكشف الكل', films: 'أفلام', series: 'مسلسلات', footer: 'يُحدَّث يومياً · أكثر من 220.000 عنوان متاح', subscribeNow: 'اشترك الآن' },
 };
 const defaultMovieText = { heading: "Movies & Series.", headingItalic: "8K Quality.", exploreAll: "Explore All", films: "Films", series: "Series", footer: "Updated daily · 220.000+ titles available", subscribeNow: "Subscribe Now" };
 

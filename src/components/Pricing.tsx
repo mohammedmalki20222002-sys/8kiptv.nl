@@ -2,6 +2,8 @@ import { useState } from "react";
 import { PricingPlan, SUBSCRIPTION_PLANS, WA_NUMBER } from "../types";
 import { Check, ShieldCheck, Zap, Crown, MessageCircle, Monitor } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
+import { getExtra } from "../i18nExtra";
+import { getPlanText, planFeatures, planSavings } from "../planText";
 
 interface PricingProps {
   onSelectPlan: (plan: PricingPlan) => void;
@@ -27,7 +29,9 @@ function buildWhatsAppUrl(plan: PricingPlan, waMsg: (m: number, d: number, p: st
 }
 
 export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const px = getExtra(lang).pricing;
+  const pt = getPlanText(lang);
   const [activeDevices, setActiveDevices] = useState<1 | 2>(1);
 
   const MONTH_ORDER = [12, 1, 3, 6, 24];
@@ -60,7 +64,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
           {[
             { value: "69K",  label: t.pricing.statChannels  },
             { value: "220K", label: t.pricing.statVod        },
-            { value: "8K",   label: "Max. kwaliteit"         },
+            { value: "8K",   label: px.quality               },
             { value: "∞",    label: t.pricing.statUpdate     },
           ].map(({ value, label }, i) => (
             <div key={label} className="flex flex-col items-center relative">
@@ -139,7 +143,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                       color: "#1a1200", fontSize: "8px", fontWeight: "900", padding: "6px 0",
                       letterSpacing: "0.14em", textTransform: "uppercase",
                       boxShadow: `0 2px 8px ${GOLD}88` }}>
-                    ★ BEST VERKOCHT
+                    {px.bestSeller}
                   </div>
                 )}
 
@@ -151,7 +155,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                       color: "white", fontSize: "7px", fontWeight: "900", padding: "5px 0",
                       letterSpacing: "0.1em", textTransform: "uppercase",
                       boxShadow: "0 2px 8px rgba(0,40,104,0.5)", lineHeight: "1.5" }}>
-                    IDEAAL OM<br/>TE TESTEN ★
+                    {px.testPack1}<br/>{px.testPack2}
                   </div>
                 )}
 
@@ -203,11 +207,11 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                           }}>
                           <span className="text-[13px] font-black tracking-tight"
                             style={{ color: plan.popular ? "#1a1200" : "white" }}>
-                            +{plan.freeMonths} MO
+                            +{plan.freeMonths} {px.moShort}
                           </span>
                           <span className="text-[10px] font-black uppercase tracking-widest"
                             style={{ color: plan.popular ? "#1a1200" : "rgba(255,255,255,0.85)" }}>
-                            FREE
+                            {px.freeShort}
                           </span>
                         </div>
                       </div>
@@ -243,7 +247,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                         color: GREEN,
                         border: `1px solid rgba(0,53,128,0.25)`,
                       }}>
-                      {plan.savings}
+                      {planSavings(plan, pt)}
                     </span>
                     <span className="text-4xl font-black leading-none tracking-tighter"
                       style={plan.popular ? {
@@ -280,7 +284,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
 
                   {/* Features */}
                   <ul className="space-y-3 flex-1 mb-6">
-                    {plan.features.slice(0, 12).map((feature, i) => (
+                    {planFeatures(plan, pt).slice(0, 12).map((feature, i) => (
                       <li key={i} className="flex items-center gap-3">
                         <span className="w-6 h-6 shrink-0 rounded-full flex items-center justify-center"
                           style={plan.popular ? {
