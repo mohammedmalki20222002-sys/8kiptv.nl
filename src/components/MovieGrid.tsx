@@ -213,7 +213,7 @@ export default function MovieGrid({ onPricingClick }: MovieGridProps) {
   const mt = movieTexts[lang] ?? defaultMovieText;
 
   return (
-    <section id="movies-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-4">
+    <section id="movies-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-4 scroll-mt-28">
       <div
         className="rounded-2xl overflow-hidden relative text-white"
         style={{ background: "linear-gradient(145deg, #003580 0%, #002468 60%, #001a50 100%)" }}

@@ -132,7 +132,7 @@ export default function LiveSports({ onPricingClick }: LiveSportsProps) {
 
   return (
     <>
-      <section id="live-sports-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-4">
+      <section id="live-sports-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-4 scroll-mt-28">
         <div className="rounded-2xl overflow-hidden relative text-white py-5"
           style={{ background: "linear-gradient(145deg, #0a0f1e 0%, #0d1a2e 55%, #091525 100%)" }}>
           <div className="overflow-hidden -mx-4 md:-mx-6 select-none pointer-events-none">

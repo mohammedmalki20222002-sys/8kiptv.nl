@@ -67,12 +67,62 @@ function AppInner({ view }: { view: View }) {
 
   const scrollToSection = (id: string) => {
     if (!isHome) {
+      // Off the homepage the section does not exist yet, so hand the target to the
+      // homepage as a fragment; the effect below applies it once React has rendered.
       window.location.href = `/#${id}`;
       return;
     }
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  // Arriving at "/#pricing-section" from the blog or the terms page: the browser
+  // resolves the fragment while the app is still an empty <div id="root">, finds
+  // nothing, and leaves you at the top. Re-apply the hash after mount, and keep
+  // re-applying while the hero video and the poster images finish loading and
+  // push the section around. Any deliberate scroll from the visitor wins.
+  useEffect(() => {
+    if (view.type !== "home") return;
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    let timer = 0;
+    let lastTop: number | null = null;
+    let stopped = false;
+    const deadline = Date.now() + 4000;
+
+    const stop = () => {
+      stopped = true;
+      window.clearTimeout(timer);
+    };
+    window.addEventListener("wheel", stop, { once: true, passive: true });
+    window.addEventListener("touchstart", stop, { once: true, passive: true });
+    window.addEventListener("keydown", stop, { once: true });
+
+    const settle = () => {
+      if (stopped) return;
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (lastTop === null || Math.abs(top - lastTop) > 2) {
+          // The layout above the section is still shifting — realign.
+          el.scrollIntoView({ behavior: "auto", block: "start" });
+          lastTop = top;
+        } else {
+          stop();
+          return;
+        }
+      }
+      if (Date.now() < deadline) timer = window.setTimeout(settle, 120);
+    };
+    settle();
+
+    return () => {
+      stop();
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchstart", stop);
+      window.removeEventListener("keydown", stop);
+    };
+  }, [view]);
 
   useEffect(() => {
     const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');

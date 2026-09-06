@@ -130,7 +130,7 @@ export default function ChannelStripe() {
   const t4 = [...PPV_VIP,             ...PPV_VIP,             ...PPV_VIP];
 
   return (
-    <section id="channels-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-4">
+    <section id="channels-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-4 scroll-mt-28">
       <div className="text-white rounded-2xl py-8 px-4 md:px-6 relative overflow-hidden shadow-lg"
         style={{ background: "linear-gradient(160deg, #0a0f1c 0%, #111827 50%, #0a0f1c 100%)", border: "1px solid rgba(30,79,216,0.18)" }}>
 

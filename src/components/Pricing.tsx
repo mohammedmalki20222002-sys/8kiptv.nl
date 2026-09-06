@@ -46,7 +46,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
   return (
     <section
       id="pricing-section"
-      className="relative py-10 md:py-20 px-4 md:px-8 w-full text-center overflow-hidden"
+      className="relative py-10 md:py-20 px-4 md:px-8 w-full text-center overflow-hidden scroll-mt-28"
       style={{ background: `linear-gradient(160deg, #080c14 0%, #0d1628 45%, #080c14 100%)` }}
     >
       {/* Ambient glow */}

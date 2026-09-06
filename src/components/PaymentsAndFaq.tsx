@@ -129,7 +129,7 @@ export default function PaymentsAndFaq() {
   ];
 
   return (
-    <section id="faq-section" className="py-16 px-4 md:px-8 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <section id="faq-section" className="py-16 px-4 md:px-8 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start scroll-mt-28">
 
       {/* Payments */}
       <div className="lg:col-span-5 bg-[#FDFDF7] rounded-[2rem] p-5 sm:p-8 border border-neutral-900/10 text-left">

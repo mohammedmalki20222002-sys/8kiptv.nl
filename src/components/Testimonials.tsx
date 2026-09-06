@@ -103,7 +103,7 @@ export default function Testimonials() {
   const avgRating = (EU_REVIEWS.reduce((s, r) => s + r.ratingValue, 0) / EU_REVIEWS.length).toFixed(1);
 
   return (
-    <section id="reviews-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-10">
+    <section id="reviews-section" className="px-4 md:px-8 max-w-7xl mx-auto w-full py-10 scroll-mt-28">
       <div className="bg-[#111211] text-[#FDFDF7] rounded-[2.5rem] py-16 px-6 md:px-12 relative overflow-hidden">
 
         {/* Background accents */}
