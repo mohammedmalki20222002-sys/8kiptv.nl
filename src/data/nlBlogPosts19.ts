@@ -1,0 +1,220 @@
+import { BlogPost } from "./blogPosts";
+
+const SITE = "https://www.8kiptv.nl";
+const TERMS = "https://www.8kiptv.nl/voorwaarden";
+const BLOG = "https://www.8kiptv.nl/blog";
+
+const IMG = [
+  "https://images.unsplash.com/photo-1436450412740-6b988f486c6b?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1467293622093-9f15c96be70f?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
+];
+
+type Draft = {
+  slug: string;
+  category: string;
+  date: string;
+  title: string;
+  excerpt: string;
+  body: string[];
+};
+
+const DRAFTS: Draft[] = [
+  {
+    slug: "iptv-code",
+    category: "Gids",
+    date: "2026-08-07",
+    title: "IPTV code: wat het is, waar je hem vindt en wat je ermee doet",
+    excerpt: "Activatiecode, MAC-adres, Xtream Codes of M3U-link: vier verschillende dingen die vaak door elkaar worden gehaald.",
+    body: [
+      `"IPTV code" is een verzamelnaam voor vier heel verschillende dingen, en die worden voortdurend door elkaar gehaald. Als je weet welke je nodig hebt, is het installeren van een abonnement in twee minuten gepiept. Weet je dat niet, dan kun je een halve avond kwijt zijn.`,
+      `De eerste is de activatiecode van een app. Sommige Smart TV-spelers vragen een eenmalige activering bij de ontwikkelaar voordat ze werken. Die code, en de eventuele kleine vergoeding die erbij hoort, gaat naar de maker van de app — niet naar je IPTV-aanbieder. Dat staat ook zo in onze [voorwaarden](${TERMS}).`,
+      `De tweede is het MAC-adres of de device key. Dat is het unieke nummer van je apparaat dat spelers als Net IPTV, Set IPTV en Smart One tonen bij de eerste start. Dat nummer stuur je naar je aanbieder, die er jouw lijn aan koppelt.`,
+      `De derde zijn de Xtream Codes-gegevens: een gebruikersnaam, een wachtwoord en een server-URL. Dit is tegenwoordig de gebruikelijkste en handigste manier, omdat je speler daarmee ook de programmagids en de VOD-bibliotheek netjes ophaalt.`,
+      `De vierde is de M3U-link: één lange URL die de volledige zenderlijst bevat. Handig voor spelers die geen Xtream Codes ondersteunen, zoals VLC of oudere ontvangers. Bij [8K IPTV](${SITE}) krijg je zowel de Xtream Codes-gegevens als de M3U-link toegestuurd via WhatsApp, direct na je bestelling.`,
+      `Belangrijk: die gegevens zijn persoonlijk. Het delen van je inloggegevens met derden of gebruik op meer apparaten dan je abonnement toestaat, leidt tot directe blokkering zonder terugbetaling. Wil je op twee schermen tegelijk kijken, neem dan gewoon het pakket voor twee gelijktijdige verbindingen.`,
+      `Je codes staan trouwens ook in de factuur of het contract dat wij na je betaling toesturen, als bericht of PDF. Daar staan verder de startdatum, de einddatum, de looptijd inclusief gratis maanden, het aantal apparaten en het betaalde bedrag in. Bewaar dat document, dan hoef je bij een nieuwe installatie niets op te zoeken.`,
+      `Wat je met die codes binnenhaalt: meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, Catch-up, Time-Shift, EPG, PPV, kinderslot, geen IP-lock en VPN inbegrepen, in kwaliteit tot 8K waar de bron dat toelaat.`,
+      `Prijzen: 11,99 euro voor een maand, 29,99 voor drie, 44,99 voor zes, 64,99 voor twaalf plus drie maanden gratis, 124,99 voor vierentwintig plus zes maanden gratis op één apparaat; 19,99, 44,99, 64,99, 124,99 en 229,99 euro voor twee apparaten. Zie ook [IPTV app android](${BLOG}/iptv-app-android).`,
+    ],
+  },
+  {
+    slug: "iptv-en-kodi",
+    category: "Apps",
+    date: "2026-08-06",
+    title: "IPTV en Kodi combineren: hoe het werkt en waar je op moet letten",
+    excerpt: "Kodi kan met de juiste add-on prima een IPTV-abonnement afspelen. Dit is de opzet, plus wanneer een gewone speler handiger is.",
+    body: [
+      `Kodi is geen IPTV-dienst maar een mediacentrum dat je zelf inricht. Met de juiste add-on kan het prima een IPTV-abonnement afspelen, inclusief programmagids. Voor wie Kodi al gebruikt voor zijn eigen mediabibliotheek is dat een logische stap.`,
+      `De gebruikelijke opzet is de PVR IPTV Simple Client. Die zit standaard in Kodi en hoef je dus niets voor te installeren; je zet hem aan bij de add-ons en vult daar de M3U-URL van je abonnement in, plus de EPG-URL voor de programmagids. Daarna verschijnt er een tv-sectie in het hoofdmenu.`,
+      `Bij [8K IPTV](${SITE}) krijg je die M3U-link direct na je bestelling toegestuurd via WhatsApp, samen met de Xtream Codes-gegevens voor spelers die daarmee werken. Voor Kodi heb je aan de M3U-link genoeg, maar er bestaan ook add-ons die met Xtream Codes overweg kunnen en dan ook de VOD-bibliotheek netjes tonen.`,
+      `Wanneer is Kodi de juiste keuze? Als je al een verzameling eigen bestanden beheert en alles in één interface wilt hebben. Of als je op een pc of mediaspeler kijkt waar je Kodi toch al draait. In dat geval is het een elegante oplossing.`,
+      `Wanneer niet? Als je alleen IPTV wilt kijken. Dan is een toegewijde speler als IPTV Smarters Pro of TiviMate eenvoudiger op te zetten en sneller in gebruik, met een gids die er meteen goed uitziet. Kodi vraagt wat meer configuratie voordat het lekker loopt.`,
+      `Praktische aandachtspunten. Ververs de EPG na het instellen één keer handmatig, anders blijft de gids leeg. Zet hardware-decodering aan in de Kodi-instellingen als je haperingen ziet bij snelle beelden. En houd Kodi zelf bijgewerkt, want oudere versies gaan soms niet goed om met moderne streams.`,
+      `Wat je via Kodi met ons abonnement kunt bekijken: meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, Catch-up, Time-Shift, PPV-evenementen, een geavanceerd kinderslot en toegang zonder IP-lock met VPN inbegrepen.`,
+      `De abonnementsprijzen zijn vast: 11,99 euro voor een maand, 29,99 voor drie maanden, 44,99 voor zes maanden, 64,99 voor twaalf plus drie maanden gratis en 124,99 voor vierentwintig plus zes maanden gratis op één apparaat. Voor twee gelijktijdige verbindingen 19,99, 44,99, 64,99, 124,99 en 229,99 euro.`,
+      `Kodi zelf is gratis en hoort niet bij het abonnement; wij leveren de lijn en de inloggegevens, zoals beschreven in onze [voorwaarden](${TERMS}). Kom je er niet uit met de configuratie, dan loopt onze klantenservice het 24/7 met je door. Zie ook [beste IPTV player](${BLOG}/beste-iptv-player).`,
+    ],
+  },
+  {
+    slug: "iptv-free-trial",
+    category: "Prijzen",
+    date: "2026-08-05",
+    title: "IPTV free trial: wat een gratis proefperiode je wel en niet vertelt",
+    excerpt: "Gratis testen klinkt goed, maar een paar uur zegt niets over stabiliteit. Dit is onze aanpak en waarom we die eerlijker vinden.",
+    body: [
+      `De zoektocht naar een IPTV free trial is begrijpelijk: je wilt weten wat je koopt voordat je betaalt. Toch is een gratis proefperiode van een paar uur een slechte maatstaf, en we leggen graag uit waarom.`,
+      `Wat je in een paar uur ziet: of er beeld is. Wat je niet ziet: of de lijn stabiel blijft op een drukke zondagavond, of de programmagids elke dag netjes gevuld wordt, of er wekelijks onderhoud gebeurt, en hoe de klantenservice reageert als er iets misgaat. Juist die dingen bepalen of een abonnement bevalt.`,
+      `Daarnaast zijn korte proefaccounts bij veel aanbieders technisch anders opgezet dan betaalde accounts. Je test dan dus niet eens wat je zou krijgen. Dat maakt het een vrij zinloze meting, hoe aantrekkelijk het woord "gratis" ook is.`,
+      `Onze aanpak bij [8K IPTV](${SITE}) is anders: een volwaardig maandabonnement voor 11,99 euro voor één apparaat, of 19,99 euro voor twee gelijktijdige verbindingen. Geen uitgeklede demo maar het volledige aanbod, en zonder automatische verlenging, dus je zit nergens aan vast.`,
+      `In die maand krijg je meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, Catch-up, Time-Shift, de volledige programmagids, PPV-evenementen, een geavanceerd kinderslot, toegang zonder IP-lock en een VPN tegen geoblokkades.`,
+      `Bovendien geldt de terugbetalingsgarantie van vijftien dagen na activatie, wanneer het abonnement aantoonbaar niet werkt: geen enkele zender én geen enkele film of serie. Wat er wel en niet onder valt, staat woord voor woord in onze [voorwaarden](${TERMS}). Voordat terugbetaling in beeld komt, krijg je altijd eerst technische ondersteuning.`,
+      `Bevalt het, dan wordt het snel voordeliger. Drie maanden kosten 29,99 euro, zes maanden 44,99 euro, twaalf plus drie maanden gratis 64,99 euro en vierentwintig plus zes maanden gratis 124,99 euro. Voor twee apparaten: 44,99, 64,99, 124,99 en 229,99 euro.`,
+      `Dat pakket van vijftien maanden komt neer op ongeveer 4,33 euro per maand. Vergelijk dat met wat je nu betaalt voor losse streamingdiensten plus een sportpakket, en de rekensom is meestal snel gemaakt.`,
+      `Bestellen loopt via WhatsApp, van het eerste bericht tot en met de installatie. Onze klantenservice is 24 uur per dag bereikbaar. Zie ook ons artikel over [IPTV trial](${BLOG}/iptv-trial).`,
+    ],
+  },
+  {
+    slug: "pandora-iptv-review",
+    category: "Reviews",
+    date: "2026-08-04",
+    title: "Pandora IPTV review lezen? Zo herken je een bruikbare review",
+    excerpt: "Veel IPTV-reviews zijn advertenties. Dit zijn de kenmerken van een review waar je wél iets aan hebt.",
+    body: [
+      `Wie een Pandora IPTV review zoekt, krijgt tientallen pagina's voorgeschoteld die verdacht veel op elkaar lijken. Een flink deel daarvan is betaald of geschreven door partijen die commissie ontvangen. Daarom eerst: hoe herken je een review waar je iets aan hebt?`,
+      `Kenmerk één: er staan nadelen in. Een review zonder enkel minpunt is geen review maar een advertentie. Elke IPTV-dienst heeft beperkingen — een app die apart betaald moet worden, content die niet nagesynchroniseerd is, een minimale internetsnelheid. Wie dat weglaat, laat meer weg.`,
+      `Kenmerk twee: er staan concrete getallen in die je kunt narekenen. Niet "duizenden zenders" maar een aantal. Niet "scherpe prijs" maar een bedrag. Bij [8K IPTV](${SITE}) zijn dat meer dan 69.000 livezenders, meer dan 220.000 films en series, en prijzen van 11,99 tot 124,99 euro voor één apparaat.`,
+      `Kenmerk drie: de review beschrijft wat er gebeurde toen er iets misging. Dat is het echte testmoment. Bij ons betekent het: klantenservice 24 uur per dag via WhatsApp, eerst de lijn testen en de server controleren, en wekelijks onderhoud waarbij gemelde problemen worden opgepakt.`,
+      `Kenmerk vier: de terugbetalingsregeling wordt geciteerd, niet samengevat. "Geld-terug-garantie" zegt niets. De onze luidt: vijftien dagen na activatie, uitsluitend wanneer het abonnement aantoonbaar niet werkt — alle zenders én alle films en series niet. Werkt één kanaal niet, dan is dat een storing die we oplossen. Het staat letterlijk in onze [voorwaarden](${TERMS}).`,
+      `Kenmerk vijf: er wordt benoemd wat er níet bij zit. Bij ons is dat de speler-app, die je zelf installeert of koopt, en volledige Nederlandse nasynchronisatie van alle internationale titels. Veel content is in de originele taal met ondertiteling waar beschikbaar.`,
+      `Onze eigen positie, voor de duidelijkheid: dit is onze website, dus lees dit als wat het is. Wat we wél kunnen doen, is alles controleerbaar maken. Neem een maand voor 11,99 euro, reken zelf na of de aantallen kloppen, en oordeel daarna.`,
+      `De volledige prijslijst: één apparaat 11,99 euro voor een maand, 29,99 voor drie, 44,99 voor zes, 64,99 voor twaalf plus drie gratis en 124,99 voor vierentwintig plus zes gratis. Twee apparaten: 19,99, 44,99, 64,99, 124,99 en 229,99 euro. Geen contract, geen automatische verlenging.`,
+      `Verder lezen over dezelfde naam kan via [IPTV Pandora](${BLOG}/iptv-pandora) en [Pandora IPTV Nederland](${BLOG}/pandora-iptv-nederland).`,
+    ],
+  },
+  {
+    slug: "watch4k-iptv",
+    category: "Reviews",
+    date: "2026-08-03",
+    title: "Watch4K IPTV en de 4K-belofte: wat er technisch echt nodig is",
+    excerpt: "4K in de naam betekent niet automatisch 4K op je scherm. Dit is de keten die moet kloppen voordat je het écht ziet.",
+    body: [
+      `Namen als Watch4K beloven hoge resolutie, en dat is precies waar veel kijkers op afkomen. Maar 4K in een productnaam zegt niets over wat er op je scherm terechtkomt. Daarvoor moet een hele keten kloppen, en één zwakke schakel bepaalt het resultaat.`,
+      `Schakel één is de bron. Een zender die alleen in HD wordt uitgezonden, wordt niet ineens 4K omdat je aanbieder dat woord gebruikt. Bij [8K IPTV](${SITE}) leveren wij tot 8K waar de bron dat toelaat, met 4K en UHD voor het meeste materiaal — en we zeggen er eerlijk bij dat het van de bron afhangt.`,
+      `Schakel twee is je internetverbinding. Voor stabiel 4K heb je in de praktijk 50 Mbps of meer nodig; onder de 25 Mbps kom je zelfs met HD in de problemen. Dit is de schakel waar de meeste teleurstellingen vandaan komen, en geen enkele aanbieder kan hem voor je oplossen.`,
+      `Schakel drie is je netwerk binnenshuis. Wifi over een paar muren op de 2,4 GHz-band haalt de beloofde snelheid nooit. Een netwerkkabel naar je tv of box is de goedkoopste beeldverbetering die er bestaat, en het effect is groter dan welke abonnementsupgrade dan ook.`,
+      `Schakel vier is je apparaat. Een box of televisie moet de moderne codecs aankunnen. Oudere hardware die op papier 4K ondersteunt maar de juiste codec mist, schakelt stilletjes terug naar een lagere kwaliteit. Zet hardware-decodering aan in je speler; dat scheelt aanzienlijk.`,
+      `Schakel vijf is de speler-app en de instellingen daarin. Een te kleine buffer geeft onderbrekingen bij hoge bitrates. Verhoog hem een stap als je op drukke avonden hapert. En ververs de EPG handmatig als je geen programmagids ziet — dat is een aparte kwestie maar wel de vaakst gestelde vraag bij onze support.`,
+      `Wat wij aan onze kant doen: redundante servers met 99,9 procent uptime, anti-freeze-technologie, wekelijks onderhoud en regionale serverplaatsing zodat de afstand tot Nederlandse kijkers kort blijft. Dat is de helft van de keten die wij kunnen beïnvloeden, en daar sturen we ook op.`,
+      `Het aanbod: meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, Catch-up, Time-Shift, EPG, PPV, kinderslot, geen IP-lock en VPN inbegrepen. Voor 11,99 euro per maand, 29,99 voor drie, 44,99 voor zes, 64,99 voor twaalf plus drie gratis of 124,99 voor vierentwintig plus zes gratis.`,
+      `Voor twee gelijktijdige apparaten geldt 19,99, 44,99, 64,99, 124,99 en 229,99 euro. De volledige beschrijving van wat wij leveren staat in onze [voorwaarden](${TERMS}). Zie ook [beste IPTV](${BLOG}/beste-iptv).`,
+    ],
+  },
+  {
+    slug: "beste-iptv-box",
+    category: "Apparaten",
+    date: "2026-08-02",
+    title: "Beste IPTV box in 2026: per situatie, niet per ranglijst",
+    excerpt: "Er is geen enkele beste box. Wel een beste keuze per televisie, per budget en per manier van kijken.",
+    body: [
+      `De vraag naar de beste IPTV box levert doorgaans een ranglijstje op met affiliate-links. Nuttiger is een keuze per situatie, want de beste box voor een oude tv in de logeerkamer is niet dezelfde als die voor de hoofdtelevisie in de woonkamer.`,
+      `Situatie één: je hebt een Smart TV van de laatste jaren. Dan is de beste box géén box. Samsung, LG, Philips, Sony en TCL hebben allemaal een app-store waar een IPTV-speler in staat. Installeren, koppelen, klaar. Wij verkopen geen hardware, dus we kunnen dit gewoon eerlijk zeggen.`,
+      `Situatie twee: je televisie is ouder of traag, en je wilt zo min mogelijk uitgeven. Een Fire TV Stick is dan de goedkoopste route naar een moderne interface. Let wel op dat de goedkoopste modellen alleen wifi hebben; op een druk netwerk merk je dat.`,
+      `Situatie drie: je kijkt veel livesport en wilt geen enkele hapering. Kies een Android TV-box met minstens 4 GB werkgeheugen en een netwerkpoort. De kabel is hier het belangrijkst; de rest van de specificaties is secundair. In combinatie met TiviMate schakel je razendsnel tussen zenders.`,
+      `Situatie vier: je hebt al een Apple TV, een Xbox of een PlayStation staan. Gebruik die. Ons abonnement werkt op al deze apparaten, en een extra kastje voegt dan weinig toe behalve rommel achter je tv.`,
+      `Wat in alle vier de situaties gelijk blijft, is de lijn erachter. Bij [8K IPTV](${SITE}) krijg je meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, beeld tot 8K waar de bron dat toelaat, anti-freeze-technologie, Catch-up, Time-Shift, EPG, PPV, kinderslot, geen IP-lock en VPN inbegrepen.`,
+      `Onze lijn werkt met HotPlayer, IBO Player en IBO Pro, IPTV Smarters en Smarters Pro, TiviMate, Flix IPTV, Duplex Play, Net IPTV, XCIPTV, Televizo, Kodi en elke andere speler met Xtream Codes- of M3U-ondersteuning. Je zit dus nooit vast aan één apparaat of één app.`,
+      `De prijzen: 11,99 euro voor een maand, 29,99 voor drie maanden, 44,99 voor zes maanden, 64,99 voor twaalf plus drie maanden gratis en 124,99 voor vierentwintig plus zes maanden gratis op één apparaat. Voor twee gelijktijdige verbindingen 19,99, 44,99, 64,99, 124,99 en 229,99 euro.`,
+      `Weet je niet in welke situatie je zit, stuur dan het merk en model van je tv door via WhatsApp. We zijn 24/7 bereikbaar en zeggen eerlijk of je iets moet kopen of niet. Lees ook [IPTV box](${BLOG}/iptv-box) en de [voorwaarden](${TERMS}).`,
+    ],
+  },
+  {
+    slug: "forum-iptv",
+    category: "Gids",
+    date: "2026-08-01",
+    title: "Forum over IPTV: wat je er wel en niet uit haalt",
+    excerpt: "Forums zijn nuttig voor technische tips en waardeloos voor aanbiederadvies. Zo lees je ze met de juiste bril op.",
+    body: [
+      `IPTV-forums zijn een merkwaardige mengeling: uitstekende technische hulp naast aanbevelingen die je met een flinke korrel zout moet nemen. Als je weet welk deel je moet lezen en welk deel je moet overslaan, zijn ze erg nuttig.`,
+      `Waar forums écht goed in zijn: concrete technische problemen. Welke instelling in TiviMate zorgt dat de gids goed laadt, waarom een bepaalde Android-box hapert bij hoge bitrates, hoe je op een Enigma-ontvanger een M3U-lijst inlaadt. Dat soort kennis vind je nergens beter.`,
+      `Waar ze niet goed in zijn: aanbieders vergelijken. Een groot deel van de aanbevelingen op forums komt van mensen met een belang — doorverkopers, affiliates, of aanbieders die zich voordoen als tevreden klant. Dat maakt de meeste ranglijstjes daar onbetrouwbaar.`,
+      `Praktische leesregel: gebruik forums voor het "hoe", niet voor het "bij wie". Voor het "hoe" is de gemeenschap goud waard. Voor het "bij wie" doe je er beter aan zelf de checklist af te lopen — contact vóór betaling, iets op papier, een concrete terugbetalingsregeling, aantoonbaar onderhoud.`,
+      `Bij [8K IPTV](${SITE}) kun je die checklist afvinken zonder forum. Je praat met onze klantenservice voordat je betaalt, 24 uur per dag via WhatsApp. Je krijgt na betaling een factuur of contract met startdatum, einddatum, looptijd inclusief gratis maanden, aantal apparaten en je inloggegevens. En onze terugbetalingsregeling staat uitgeschreven in de [voorwaarden](${TERMS}).`,
+      `Voor het technische deel hebben we bovendien een eigen kanaal: op ons WhatsApp-kanaal melden we updates, gepland onderhoud en storingsherstel. Volgen is gratis en vrijblijvend, ook als je nog geen klant bent, en het scheelt je het speurwerk op een forum als er iets aan de hand is.`,
+      `Het aanbod dat erachter zit: meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, Catch-up, Time-Shift, volledige EPG, PPV-evenementen, geavanceerd kinderslot, geen IP-lock en VPN inbegrepen. Wekelijks onderhoud, VOD elk kwartaal bijgewerkt.`,
+      `De prijzen: 11,99 euro voor een maand, 29,99 voor drie, 44,99 voor zes, 64,99 voor twaalf plus drie maanden gratis en 124,99 voor vierentwintig plus zes maanden gratis op één apparaat. Voor twee apparaten 19,99, 44,99, 64,99, 124,99 en 229,99 euro. Vaste bedragen, geen automatische verlenging.`,
+      `Zoek je specifiek Nederlandse forumdiscussies, lees dan ook ons artikel [IPTV forum](${BLOG}/iptv-forum). En als je een technische vraag hebt: stuur hem gewoon naar onze support, ook als je nog geen klant bent.`,
+    ],
+  },
+  {
+    slug: "goedkope-iptv",
+    category: "Prijzen",
+    date: "2026-07-31",
+    title: "Goedkope IPTV: waar de prijs vandaan komt en waar je op moet letten",
+    excerpt: "Goedkoop kan prima, mits je weet waarom het goedkoop is. Dit is de rekensom en de checklist.",
+    body: [
+      `Goedkope IPTV heeft een dubbele reputatie: veel mensen zoeken erop, en tegelijk waarschuwt iedereen ervoor. De waarheid ligt in het midden. Een lage prijs is geen probleem zolang je begrijpt waar hij vandaan komt.`,
+      `IPTV is structureel goedkoper dan kabel om een simpele reden: er is geen fysieke infrastructuur, geen decoderhuur, geen monteur en geen regionale licentiestructuur per gebied. Wat overblijft zijn servers en onderhoud, en die kosten schalen goed. Dat is de eerlijke verklaring voor het prijsverschil.`,
+      `Wat een lage prijs níet mag betekenen: geen onderhoud, geen bereikbare klantenservice, geen papieren bevestiging en geen concrete terugbetalingsregeling. Dat zijn de plekken waar aan bespaard wordt als een prijs onrealistisch laag is, en daar merk je het pas als er iets misgaat.`,
+      `Bij [8K IPTV](${SITE}) begint een abonnement bij 11,99 euro voor een maand op één apparaat. Drie maanden kosten 29,99 euro, zes maanden 44,99 euro, twaalf plus drie maanden gratis 64,99 euro en vierentwintig plus zes maanden gratis 124,99 euro. Voor twee gelijktijdige verbindingen: 19,99, 44,99, 64,99, 124,99 en 229,99 euro.`,
+      `Reken die bedragen om naar een maandprijs, dan wordt het interessant. Het pakket van vijftien maanden komt uit op ongeveer 4,33 euro per maand; het pakket van dertig maanden op ongeveer 4,17 euro. Daarvoor krijg je meer dan 69.000 livezenders en meer dan 220.000 films en series, inclusief alle Nederlandse zenders.`,
+      `Wat er nog meer in zit zonder meerprijs: Catch-up, Time-Shift, de volledige programmagids, PPV-evenementen, een geavanceerd kinderslot, wereldwijde toegang zonder IP-lock en een VPN tegen geoblokkades. Nieuwe zenders en categorieën worden automatisch aan je bestaande abonnement toegevoegd.`,
+      `En wat we níet doen om de prijs laag te houden: bezuinigen op onderhoud of op bereikbaarheid. Onderhoud gebeurt wekelijks, de VOD-bibliotheek wordt per kwartaal bijgewerkt, en onze klantenservice is 24 uur per dag, zeven dagen per week bereikbaar via WhatsApp.`,
+      `Er is geen contract, geen automatische verlenging en geen opzegtermijn. Na betaling krijg je een factuur of contract toegestuurd met alle gegevens. En de terugbetalingsregeling van vijftien dagen staat concreet uitgeschreven in onze [voorwaarden](${TERMS}), inclusief wat er níet onder valt.`,
+      `Wil je nog goedkoper uitkomen: verwijs iemand door. Bij een pakket van 12 plus 3 krijg je één maand gratis, bij 24 plus 6 twee maanden, zonder limiet op het aantal aangebrachte klanten. Zie ook [beste IPTV](${BLOG}/beste-iptv) en [IPTV trial](${BLOG}/iptv-trial).`,
+    ],
+  },
+  {
+    slug: "iptv-forum",
+    category: "Gids",
+    date: "2026-07-30",
+    title: "IPTV forum in Nederland: de meest gestelde vragen, direct beantwoord",
+    excerpt: "De vragen die op elk Nederlands IPTV-forum terugkomen, hier in één keer beantwoord door onze eigen support.",
+    body: [
+      `Op Nederlandse IPTV-forums komen steeds dezelfde vragen terug. In plaats van je door tientallen draadjes te laten spitten, hebben we ze hier op een rij gezet zoals onze eigen klantenservice ze dagelijks beantwoordt.`,
+      `"Waarom zie ik geen programmagids?" Verreweg de meest gestelde vraag. Ga in de instellingen van je speler naar EPG en ververs hem handmatig. Op sommige apparaten moet je daarna één keer herstarten. In negen van de tien gevallen is het daarmee opgelost.`,
+      `"Waarom hapert het beeld op zondagavond?" Meestal een combinatie van een te kleine buffer en een druk netwerk. Verhoog de buffergrootte een stap, zet hardware-decodering aan, en gebruik een netwerkkabel in plaats van wifi. Reken op minimaal 25 Mbps stabiel en op 50 Mbps of meer voor 4K en 8K.`,
+      `"Zit de app bij het abonnement?" Nee. Wij leveren de lijn en de inloggegevens; de speler installeer of koop je zelf. Sommige apps zijn gratis, andere vragen een kleine eenmalige vergoeding aan hun ontwikkelaar. Dat staat ook zo in onze [voorwaarden](${TERMS}).`,
+      `"Kan ik op twee tv's tegelijk kijken?" Alleen met een pakket voor twee gelijktijdige verbindingen. Het delen van je inloggegevens met derden of gebruik op meer apparaten dan je abonnement toestaat, leidt tot directe blokkering zonder terugbetaling. De pakketten voor twee apparaten kosten 19,99, 44,99, 64,99, 124,99 en 229,99 euro.`,
+      `"Werkt het in het buitenland?" Ja. Er is geen IP-lock en er zit een VPN bij, dus je abonnement reist gewoon met je mee door Europa. Handig als je op vakantie de Nederlandse zenders wilt blijven volgen.`,
+      `"Is alles Nederlands ondertiteld of nagesynchroniseerd?" Nee, en dat zeggen we liever vooraf. Een groot deel van de internationale content is in de originele taal, meestal Engels, afhankelijk van de bron. Nederlandse ondertiteling is er voor veel titels maar niet voor de hele catalogus. De Nederlandse zenders zijn uiteraard Nederlandstalig.`,
+      `"Wat kost het?" Bij [8K IPTV](${SITE}): 11,99 euro voor een maand, 29,99 voor drie, 44,99 voor zes, 64,99 voor twaalf plus drie maanden gratis en 124,99 voor vierentwintig plus zes maanden gratis, op één apparaat. Meer dan 69.000 livezenders en meer dan 220.000 films en series inbegrepen.`,
+      `"En als het niet werkt?" Dan krijg je eerst technische hulp: we testen de lijn, controleren de server en helpen bij de installatie, 24 uur per dag via WhatsApp. Werkt het abonnement aantoonbaar niet, dan geldt de terugbetalingsregeling van vijftien dagen. Zie ook [forum IPTV](${BLOG}/forum-iptv).`,
+    ],
+  },
+  {
+    slug: "iptv-kastje-kopen",
+    category: "Apparaten",
+    date: "2026-07-29",
+    title: "IPTV kastje kopen: een eerlijk koopadvies van iemand die geen kastjes verkoopt",
+    excerpt: "Wij verkopen geen hardware, dus we hebben geen belang bij je aankoop. Dit is het advies dat daaruit volgt.",
+    body: [
+      `Wij verkopen geen kastjes. Dat maakt dit koopadvies wat waard, want we hebben er niets bij te winnen of je nu honderd euro uitgeeft of nul. Wat we wel dagelijks zien, is wat mensen ná die aankoop bij onze klantenservice melden — en daar volgt een vrij helder advies uit.`,
+      `Advies één: controleer eerst of je het al kunt. Heb je een Smart TV van Samsung, LG, Philips, Sony of TCL van de laatste jaren, dan staat er waarschijnlijk al een geschikte IPTV-speler in de app-store van je televisie. Dan hoef je niets te kopen. Dit geldt voor een verrassend groot deel van de mensen die ons benaderen.`,
+      `Advies twee: kijk of je al iets in huis hebt. Een Fire TV Stick, een Apple TV, een Xbox of een PlayStation doen het werk prima. Ons abonnement draait op al die apparaten. Een extra kastje kopen terwijl er al eentje onder je tv staat is zonde.`,
+      `Advies drie: moet je toch kopen, let dan op drie dingen en negeer de rest. Minstens 2 GB werkgeheugen, liefst 4 GB. Een netwerkpoort in plaats van alleen wifi. En officiële Android TV- of Google TV-certificering voor betrouwbare updates. Grote opslag heb je niet nodig, want je streamt.`,
+      `Advies vier: koop bij een winkel met retourrecht. Niet elk kastje bevalt, en niet elk kastje gaat even goed om met moderne streams. Met veertien dagen bedenktijd kun je gewoon proberen. Exotische merken met indrukwekkende doosteksten vallen in de praktijk het vaakst tegen.`,
+      `Wat je daarna nodig hebt, is de lijn. Bij [8K IPTV](${SITE}) krijg je meer dan 69.000 livezenders inclusief alle Nederlandse zenders, meer dan 220.000 films en series, beeld tot 8K waar de bron dat toelaat, Catch-up, Time-Shift, volledige EPG, PPV-evenementen, geavanceerd kinderslot, geen IP-lock en VPN inbegrepen.`,
+      `Onze lijn werkt met vrijwel elke speler: HotPlayer, IBO Player en IBO Pro, IPTV Smarters en Smarters Pro, TiviMate, Flix IPTV, Duplex Play, Net IPTV, XCIPTV, Televizo, Kodi en alles wat Xtream Codes of M3U ondersteunt. Welk kastje je ook koopt, je zit niet vast.`,
+      `De prijzen: 11,99 euro voor een maand, 29,99 voor drie maanden, 44,99 voor zes maanden, 64,99 voor twaalf plus drie maanden gratis en 124,99 voor vierentwintig plus zes maanden gratis op één apparaat. Voor twee gelijktijdige verbindingen 19,99, 44,99, 64,99, 124,99 en 229,99 euro. Geen contract en geen automatische verlenging.`,
+      `Twijfel je nog over de aankoop, stuur dan het merk en model van je televisie via WhatsApp. Onze klantenservice is 24/7 bereikbaar en zegt eerlijk of je genoeg hebt aan wat je hebt. Lees ook [IPTV kastje](${BLOG}/iptv-kastje) en de [voorwaarden](${TERMS}).`,
+    ],
+  },
+];
+
+export const NL_BLOG_POSTS_19: BlogPost[] = DRAFTS.map((d, i) => ({
+  slug: d.slug,
+  category: d.category,
+  dateISO: d.date,
+  image: IMG[i % IMG.length],
+  minutes: 6 + (i % 4),
+  lang: "nl",
+  content: { nl: { title: d.title, excerpt: d.excerpt, body: d.body } },
+}));
