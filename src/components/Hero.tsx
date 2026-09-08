@@ -193,36 +193,6 @@ export default function Hero({ onPricingClick }: HeroProps) {
             </div>
           </div>
 
-          {/* Social links — below both scroll bars */}
-          <div className="flex items-center gap-3 px-6 sm:px-8 md:px-10 lg:px-12 pb-6">
-            <a
-              href="https://www.instagram.com/my8k.tv/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full px-4 py-2 transition-all hover:opacity-90 active:scale-95"
-              style={{ background: "linear-gradient(135deg, #F9CE34, #EE2A7B, #6228D7)" }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5.5" fill="white" fillOpacity="0.2"/>
-                <circle cx="12" cy="12" r="4.3" stroke="white" strokeWidth="2" fill="none"/>
-                <circle cx="17.3" cy="6.7" r="1.2" fill="white"/>
-              </svg>
-              <span className="text-[12px] font-bold text-white tracking-wide">@8K IPTV</span>
-            </a>
-
-            <a
-              href="https://www.tiktok.com/@my.8ktv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full px-4 py-2 transition-all hover:opacity-90 active:scale-95"
-              style={{ background: "#010101", border: "1px solid rgba(255,255,255,0.18)" }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.321 5.562a5.124 5.124 0 01-.443-.258 6.228 6.228 0 01-1.137-.966c-.849-.971-1.166-1.956-1.282-2.645h.004C16.362 1.333 16.4 1 16.4 1h-3.797v14.073c0 .189 0 .376-.008.561 0 .022-.002.042-.003.065v.017a3.22 3.22 0 01-1.615 2.516 3.164 3.164 0 01-1.574.42c-1.75 0-3.168-1.427-3.168-3.188 0-1.762 1.418-3.189 3.168-3.189.332 0 .65.052.95.147l.005-3.87a7.018 7.018 0 00-4.947 2.055A7.126 7.126 0 003.9 15.504c0 1.898.733 3.687 2.066 5.035A6.964 6.964 0 0011 22.564a6.964 6.964 0 005.034-2.025 7.12 7.12 0 002.066-5.035V8.418a9.196 9.196 0 005.4 1.739V6.37c-1.079 0-3.393-.71-4.179-4.808z" fill="white"/>
-              </svg>
-              <span className="text-[12px] font-bold text-white tracking-wide">@8K IPTV</span>
-            </a>
-          </div>
 
         </div>
       </div>

@@ -26,5 +26,5 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { id: 'tiktok',    label: 'TikTok',           url: '', brand: '#010101' },
   { id: 'x',         label: 'X',                url: '', brand: '#000000' },
   { id: 'reddit',    label: 'Reddit',           url: '', brand: '#FF4500' },
-  { id: 'whatsapp',  label: 'WhatsApp-kanaal',  url: '', brand: '#25D366' },
+  { id: 'whatsapp',  label: 'WhatsApp-kanaal',  url: 'https://wa.me/447882757784', brand: '#25D366' },
 ];
