@@ -21,7 +21,7 @@ export interface ChannelItem {
 }
 
 /** WhatsApp contact number in wa.me form (international, no + or spaces). */
-export const WA_NUMBER = "447882757784";
+export const WA_NUMBER = "447462229301";
 
 export interface PricingPlan {
   id: string;
