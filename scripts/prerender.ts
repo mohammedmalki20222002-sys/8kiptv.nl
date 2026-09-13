@@ -387,6 +387,31 @@ if (!home.includes('name="description"')) {
     ),
   ].join("\n    ");
   home = home.replace(TPL_TITLE, `${TPL_TITLE}\n    ${homeHead}`);
+
+  // The homepage is otherwise a bare <div id="root"></div>: a client-rendered SPA
+  // shell with no text and, critically, no <a href> to /blog anywhere in the raw
+  // HTML. Search Console's fast HTML-only crawl pass (the one that discovers new
+  // links) sees nothing here, so the ~950 blog URLs are reachable only through
+  // the sitemap and the /blog hub page — which is why most sit at "Discovered -
+  // currently not indexed" and never get scheduled for a crawl. React replaces
+  // #root wholesale on mount (main.tsx uses createRoot, not hydrateRoot), so
+  // baking real markup in here is risk-free: users see it for a frame at most,
+  // and it gives crawlers actual links and text on the very first fetch.
+  const homeCornerstones = sorted
+    .filter((p) => getPostLang(p, SITE_LANG) === SITE_LANG)
+    .slice(0, 12);
+  const homeBodyHtml = [
+    `<nav><a href="/">${BRAND}</a> · <a href="/blog">Blog</a> · <a href="/voorwaarden">Voorwaarden</a></nav>`,
+    `<h1>${BRAND} — Premium IPTV-abonnement voor Nederland</h1>`,
+    `<p>${esc(HOME_DESCRIPTION)}</p>`,
+    homeCornerstones.length
+      ? `<nav aria-label="Blog"><h2>Van de blog</h2><ul>${homeCornerstones.map(postLinkHtml).join("")}</ul></nav>`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+  home = home.replace('<div id="root"></div>', `<div id="root">${homeBodyHtml}</div>`);
+
   writeFileSync(resolve(DIST, "index.html"), home, "utf8");
 }
 
