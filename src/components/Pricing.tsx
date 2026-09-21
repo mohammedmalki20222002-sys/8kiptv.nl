@@ -17,11 +17,6 @@ const GREEN  = "#003580";
 const GREEN_D = "#002468";
 
 
-function trackWaConversion() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (window as any).gtag?.('event', 'conversion', { send_to: 'AW-18242640156/_pqZCNyRt8AcEJyy4vpD' });
-}
-
 function buildWhatsAppUrl(plan: PricingPlan, waMsg: (m: number, d: number, p: string) => string): string {
   const preis = plan.price.toFixed(2).replace(".", ",");
   const msg = waMsg(plan.durationMonths, plan.devices, preis);
@@ -310,7 +305,6 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                     href={buildWhatsAppUrl(plan, t.pricing.waMsg)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={trackWaConversion}
                     className="w-full py-3.5 px-4 rounded-xl text-xs font-black uppercase tracking-wider
                                flex items-center justify-center transition-all duration-200 no-underline
                                hover:opacity-90 hover:scale-[1.02] active:scale-100"
@@ -355,7 +349,6 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
             );
             return href ? (
               <a key={title} href={href} target="_blank" rel="noopener noreferrer"
-                onClick={trackWaConversion}
                 className="flex items-start gap-3 p-4 rounded-xl text-left no-underline hover:opacity-80 transition-opacity"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 {inner}

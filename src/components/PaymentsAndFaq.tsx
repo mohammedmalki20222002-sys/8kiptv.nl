@@ -245,7 +245,6 @@ export default function PaymentsAndFaq() {
             href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hallo, ik heb hulp nodig bij de installatie van mijn 8K IPTV-abonnement.")}`}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => (window as any).gtag?.('event', 'conversion', { send_to: 'AW-18242640156/_pqZCNyRt8AcEJyy4vpD' })}
             className="whitespace-nowrap px-5 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-[#FCFBF4] hover:text-white rounded-full text-sm font-bold transition-colors no-underline"
           >
             {t.faq.supportCta}

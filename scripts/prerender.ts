@@ -33,7 +33,7 @@ const TPL_CANONICAL = `<link rel="canonical" href="${SITE}/" />`;
 const TPL_TITLE = "<title>8K IPTV — Premium IPTV Abonnement Nederland</title>";
 
 const HOME_DESCRIPTION =
-  "8K IPTV: premium IPTV-abonnement voor Nederland. Meer dan 89.000 livekanalen en 200.000 films en series in VOD tot 8K, op Smart TV, Android, Fire TV en meer.";
+  "8K IPTV: premium IPTV-abonnement voor Nederland. Meer dan 89.000 livekanalen en 200.000 films en series in VOD, streaming in 4K en 8K, op Smart TV, Android, Fire TV en meer.";
 
 const template = readFileSync(resolve(DIST, "index.html"), "utf8");
 
@@ -379,8 +379,11 @@ if (!home.includes('name="description"')) {
     `<meta property="og:title" content="8K IPTV — Premium IPTV Abonnement Nederland" />`,
     `<meta property="og:description" content="${esc(HOME_DESCRIPTION)}" />`,
     `<meta property="og:url" content="${SITE}/" />`,
-    `<meta property="og:image" content="${SITE}/favicon.png" />`,
+    `<meta property="og:image" content="${SITE}/hero-bg.jpg" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="8K IPTV — Premium IPTV Abonnement Nederland" />`,
+    `<meta name="twitter:description" content="${esc(HOME_DESCRIPTION)}" />`,
+    `<meta name="twitter:image" content="${SITE}/hero-bg.jpg" />`,
     ...[orgJsonLd, websiteJsonLd].map(
       (j) =>
         `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`
@@ -402,7 +405,7 @@ if (!home.includes('name="description"')) {
     .slice(0, 12);
   const homeBodyHtml = [
     `<nav><a href="/">${BRAND}</a> · <a href="/blog">Blog</a> · <a href="/voorwaarden">Voorwaarden</a></nav>`,
-    `<h1>${BRAND} — Premium IPTV-abonnement voor Nederland</h1>`,
+    `<h1>${BRAND} — Premium IPTV-abonnement in 4K en 8K voor Nederland</h1>`,
     `<p>${esc(HOME_DESCRIPTION)}</p>`,
     homeCornerstones.length
       ? `<nav aria-label="Blog"><h2>Van de blog</h2><ul>${homeCornerstones.map(postLinkHtml).join("")}</ul></nav>`
