@@ -9,3 +9,4 @@ Sitemap: https://www.8kiptv.nl/sitemap.xml
 # crawler that does not expand the index still finds every group directly.
 Sitemap: https://www.8kiptv.nl/sitemap-pages.xml
 Sitemap: https://www.8kiptv.nl/sitemap-blog-nl.xml
+Sitemap: https://www.8kiptv.nl/sitemap-blog-en.xml
