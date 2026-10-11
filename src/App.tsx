@@ -20,6 +20,8 @@ import SocialLinks from "./components/SocialLinks";
 import { getPostBySlug } from "./data/allPosts";
 import { getBlogText } from "./blogI18n";
 import { getTerms } from "./termsText";
+import RichText from "./components/RichText";
+import { getKeywordPage } from "./data/keywordPages";
 
 // Canonical origin — must match scripts/prerender.ts. The apex 8kiptv.nl
 // 308-redirects to www, so canonicals have to name the host that serves 200s.
@@ -32,6 +34,7 @@ type View =
   | { type: "home" }
   | { type: "blog-grid" }
   | { type: "blog-post"; slug: string }
+  | { type: "keyword-page"; slug: string }
   | { type: "terms" }
   | { type: "not-found" };
 
@@ -40,6 +43,9 @@ function resolveView(): View {
   if (path === "/") return { type: "home" };
   if (path === "/blog") return { type: "blog-grid" };
   if (path === "/voorwaarden") return { type: "terms" };
+  // Root-level SEO keyword landing pages, e.g. /iptv-kopen, /iptv-kastje.
+  const kwSlug = path.replace(/^\//, "");
+  if (getKeywordPage(kwSlug)) return { type: "keyword-page", slug: kwSlug };
   const match = path.match(/^\/blog\/([^/]+)$/);
   // Only a slug that resolves to a real post is a real page. Anything else falls
   // through to not-found: the Vercel SPA rewrite answers *every* path with 200, so
@@ -63,10 +69,12 @@ function setMetaByName(name: string, content: string) {
 function AppInner({ view }: { view: View }) {
   const { t, dir, lang } = useLanguage();
   const [selectedPlanForCheckout, setSelectedPlanForCheckout] = useState<PricingPlan | null>(null);
-  const isHome = view.type === "home";
+  // Keyword landing pages render the Pricing section inline, so in-page anchor
+  // scrolling must work there just like it does on the homepage.
+  const isScrollable = view.type === "home" || view.type === "keyword-page";
 
   const scrollToSection = (id: string) => {
-    if (!isHome) {
+    if (!isScrollable) {
       // Off the homepage the section does not exist yet, so hand the target to the
       // homepage as a fragment; the effect below applies it once React has rendered.
       window.location.href = `/#${id}`;
@@ -142,6 +150,14 @@ function AppInner({ view }: { view: View }) {
 
     setMetaByName("robots", INDEXABLE);
 
+    if (view.type === "keyword-page") {
+      const kp = getKeywordPage(view.slug);
+      if (kp) {
+        document.title = kp.title;
+        setMetaByName("description", kp.description);
+      }
+    }
+
     if (view.type === "terms") {
       const tt = getTerms(lang);
       document.title = `${tt.title1} ${tt.title2} — 8K IPTV`;
@@ -199,6 +215,50 @@ function AppInner({ view }: { view: View }) {
             <PaymentsAndFaq />
           </>
         )}
+
+        {view.type === "keyword-page" && (() => {
+          const kp = getKeywordPage(view.slug);
+          if (!kp) return null;
+          return (
+            <>
+              <section className="px-4 md:px-8 max-w-4xl mx-auto w-full pt-10 pb-4">
+                <nav className="text-sm text-neutral-500 mb-4">
+                  <a href="/" className="hover:text-[#003580]">8K IPTV</a> › {kp.keyword}
+                </nav>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight mb-6">
+                  {kp.h1}
+                </h1>
+                <div className="space-y-5">
+                  {kp.lead.map((p, i) =>
+                    p.startsWith("## ") ? (
+                      <h2 key={i} className="text-2xl sm:text-3xl font-extrabold text-neutral-900 !mt-10 !mb-2">
+                        <RichText text={p.slice(3)} />
+                      </h2>
+                    ) : (
+                      <p key={i} className="text-lg leading-relaxed text-neutral-700">
+                        <RichText text={p} />
+                      </p>
+                    )
+                  )}
+                </div>
+              </section>
+              <Pricing onSelectPlan={setSelectedPlanForCheckout} />
+              <DeviceCompatibility onPricingClick={() => scrollToSection("pricing-section")} />
+              <section className="px-4 md:px-8 max-w-3xl mx-auto w-full py-12">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-6">FAQ</h2>
+                <div className="space-y-5">
+                  {kp.faq.map((f, i) => (
+                    <div key={i}>
+                      <h3 className="text-lg font-bold text-neutral-900 mb-1">{f.q}</h3>
+                      <p className="text-neutral-700">{f.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+              <PaymentsAndFaq />
+            </>
+          );
+        })()}
 
         {view.type === "blog-grid" && (
           <>

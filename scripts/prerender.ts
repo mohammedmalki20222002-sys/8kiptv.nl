@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import { ALL_POSTS } from "../src/data/allPosts";
 import { getPostText, getPostLang, type BlogPost } from "../src/data/blogPosts";
 import { SITE_LANG, type LangCode } from "../src/i18n";
+import { KEYWORD_PAGES } from "../src/data/keywordPages";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -418,6 +419,68 @@ if (!home.includes('name="description"')) {
   writeFileSync(resolve(DIST, "index.html"), home, "utf8");
 }
 
+// ---- SEO keyword landing pages (/<slug>) -----------------------------------
+// Root-level, single-language (Dutch) landing pages that reuse the Pricing
+// packages in the SPA. Emitted here as real crawlable HTML with WebPage +
+// BreadcrumbList + FAQPage JSON-LD, and added to sitemap-pages.xml below.
+const keywordPageLocs: string[] = [];
+for (const kp of KEYWORD_PAGES) {
+  const canonical = `${SITE}/${kp.slug}`;
+  const leadHtml = kp.lead
+    .map((p) => (p.startsWith("## ") ? `<h2>${paragraphToHtml(p.slice(3))}</h2>` : `<p>${paragraphToHtml(p)}</p>`))
+    .join("\n");
+  const faqHtml = [
+    `<section><h2>FAQ</h2>`,
+    ...kp.faq.map((f) => `<h3>${esc(f.q)}</h3>\n<p>${esc(f.a)}</p>`),
+    `</section>`,
+  ].join("\n");
+  const keywordHtml = buildPage({
+    lang: "nl",
+    title: kp.title,
+    description: kp.description,
+    canonical,
+    ogType: "website",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: kp.title,
+        url: canonical,
+        inLanguage: "nl",
+        description: kp.description,
+        isPartOf: { "@type": "WebSite", name: BRAND, url: SITE },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: BRAND, item: SITE },
+          { "@type": "ListItem", position: 2, name: kp.keyword, item: canonical },
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: kp.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+    bodyHtml: [
+      `<nav><a href="/">${BRAND}</a> › ${esc(kp.keyword)}</nav>`,
+      `<h1>${esc(kp.h1)}</h1>`,
+      leadHtml,
+      faqHtml,
+      `<p><a href="/">Bekijk alle ${BRAND} pakketten</a> · <a href="/blog">Naar de blog</a></p>`,
+    ].join("\n"),
+  });
+  mkdirSync(resolve(DIST, kp.slug), { recursive: true });
+  writeFileSync(resolve(DIST, kp.slug, "index.html"), keywordHtml, "utf8");
+  keywordPageLocs.push(canonical);
+}
+
 // ---- sitemap.xml ----------------------------------------------------------
 // Generated from the real post list so it can never drift out of sync with the
 // pages that were actually emitted above.
@@ -459,6 +522,7 @@ const corePages = urlset([
   urlEntry(`${SITE}/`, newestPostDate),
   urlEntry(`${SITE}/blog`, newestPostDate),
   urlEntry(`${SITE}/voorwaarden`, today),
+  ...keywordPageLocs.map((loc) => urlEntry(loc, today)),
 ]);
 writeFileSync(resolve(DIST, "sitemap-pages.xml"), corePages, "utf8");
 sitemapFiles.push("sitemap-pages.xml");
