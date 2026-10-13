@@ -6,6 +6,7 @@ import { useLanguage } from "../LanguageContext";
 import { getBlogText } from "../blogI18n";
 import BlogPostCard, { formatPostDate } from "./BlogPostCard";
 import RichText from "./RichText";
+import BlogOfferBanner from "./BlogOfferBanner";
 
 interface BlogPostProps {
   slug: string;
@@ -49,6 +50,8 @@ export default function BlogPost({ slug, onPricingClick }: BlogPostProps) {
   return (
     <article className="px-4 md:px-8 max-w-5xl mx-auto w-full py-10">
       <div className="max-w-3xl mx-auto">
+        <BlogOfferBanner />
+
         <a href="/blog" className="flex items-center gap-2 text-[#003580] font-bold text-sm hover:underline mb-6 w-fit">
           <ArrowLeft className="w-4 h-4" /> {bt.backToBlog}
         </a>
