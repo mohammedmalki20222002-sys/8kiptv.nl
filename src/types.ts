@@ -346,8 +346,7 @@ export const INITIAL_MOVIES: MovieItem[] = [
     image: "/movies/odyssey_xxlg.jpg",
     badge: "Bald",
     quality: "8K UHD",
-  },
-];
+  }];
 
 export const ALL_CHANNELS: ChannelItem[] = [
   // --- GERMANY (DE) ---
@@ -482,17 +481,7 @@ const COMMON_FEATURES = [
 
 export const SUBSCRIPTION_PLANS: PricingPlan[] = [
   // ── 1 Device ──────────────────────────────────────────────────────────────
-  {
-    id: "p1a",
-    durationMonths: 1,
-    name: "Trial",
-    price: 12.99,
-    originalPrice: 25.99,
-    popular: false,
-    savings: "Om te testen",
-    devices: 1,
-    features: ["Ideaal om onze service te testen!", ...COMMON_FEATURES]
-  },
+  
   {
     id: "p1b",
     durationMonths: 3,
@@ -540,17 +529,7 @@ export const SUBSCRIPTION_PLANS: PricingPlan[] = [
     features: ["+ 6 MAANDEN GRATIS = 30 maanden totaal — weekaanbieding!", ...COMMON_FEATURES]
   },
   // ── 2 Devices ─────────────────────────────────────────────────────────────
-  {
-    id: "p2a",
-    durationMonths: 1,
-    name: "Duo Trial",
-    price: 19.99,
-    originalPrice: 39.99,
-    popular: false,
-    savings: "Om te testen",
-    devices: 2,
-    features: ["Ideaal om onze service te testen!", "2 Gelijktijdige verbindingen", ...COMMON_FEATURES]
-  },
+  
   {
     id: "p2b",
     durationMonths: 3,

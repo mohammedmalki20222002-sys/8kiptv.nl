@@ -143,7 +143,7 @@ export default function Pricing({ onSelectPlan: _unused }: PricingProps) {
                 )}
 
                 {/* TEST PACK ribbon — 1-month card */}
-                {plan.durationMonths === 1 && (
+                {plan.durationMonths === 3 && (
                   <div className="absolute z-10 pointer-events-none"
                     style={{ top: "16px", right: "-34px", width: "130px", textAlign: "center", transform: "rotate(45deg)",
                       background: `linear-gradient(90deg, ${GREEN_D}, ${GREEN})`,
