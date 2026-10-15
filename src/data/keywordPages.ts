@@ -41,6 +41,70 @@ export interface KeywordPage {
 
 const RAW_KEYWORD_PAGES: KeywordPage[] = [
   {
+    slug: "iptv-4k",
+    keyword: "IPTV 4K",
+    title: "IPTV 4K — IPTV abonnement 4K | 8K IPTV",
+    description: "IPTV 4K: meer dan 69.000 livezenders en 220.000+ films & series in 4K/8K. Transparant IPTV-abonnement met 15 dagen niet-goed-geld-terug en 24/7 support.",
+    h1: "IPTV 4K — jouw IPTV-abonnement voor Nederland",
+    lead: [
+      "IPTV 4K bij [8K IPTV](https://www.8kiptv.nl) betekent premium televisie via internet: meer dan 69.000 livezenders en ruim 220.000 films en series als video-on-demand, in Full HD, 4K en op compatibele content tot 8K. In plaats van kabel, satelliet en meerdere streamingdiensten krijg je alles in één transparant IPTV-abonnement.",
+      "Wie zoekt op „iptv 4k\" wil vooral stabiliteit en een betrouwbare aanbieder. [8K IPTV](https://www.8kiptv.nl) toont pakketten en prijzen openlijk, houdt de zender- en VOD-lijst dagelijks bij en is bereikbaar via WhatsApp – anders dan de anonieme wederverkopers achter veel goedkope aanbiedingen.",
+      "## Wat 8K IPTV biedt",
+      "Nederlandse en Belgische zenders, internationale programma's, sport en een enorme mediatheek. Dankzij een netwerk van relay-servers blijft het beeld ook tijdens prime time en drukke voetbalavonden vloeiend – voor HD volstaat zo'n 16 Mbit/s, voor 4K ongeveer 25 Mbit/s.",
+      "## Pakketten & installatie",
+      "Kies hieronder je pakket en activeer het in enkele minuten. Je toegang werkt op smart-tv, Amazon Fire TV Stick, Android-box, MAG en Apple TV en met IPTV Smarters Pro, TiviMate en elke Xtream-Codes- of M3U-speler. Inclusief 15 dagen niet-goed-geld-terug en 24/7 support.",
+    ],
+    faq: [
+      { q: "Wat is IPTV 4K?", a: "IPTV 4K is een IPTV-abonnement van 8K IPTV met meer dan 69.000 livezenders en 220.000+ films & series als VOD in tot 4K/8K – voor smart-tv, Fire TV, Android en Apple TV." },
+      { q: "Wat kost het IPTV-abonnement?", a: "De prijzen per pakket en looptijd vind je in het overzicht hierboven – met een transparante vaste prijs, zonder verborgen kosten en met 15 dagen niet-goed-geld-terug." },
+      { q: "Welke apparaten en apps worden ondersteund?", a: "Smart-tv, Amazon Fire TV Stick, Android-box, MAG en Apple TV – via IPTV Smarters Pro, TiviMate en elke Xtream-Codes-/M3U-speler." },
+      { q: "Is er een niet-goed-geld-terug-garantie?", a: "Ja. 8K IPTV biedt 15 dagen niet-goed-geld-terug en 24/7 support via WhatsApp." },
+    ],
+  },
+  {
+    slug: "iptv-8k",
+    keyword: "IPTV 8K",
+    title: "IPTV 8K — IPTV abonnement 4K | 8K IPTV",
+    description: "IPTV 8K: meer dan 69.000 livezenders en 220.000+ films & series in 4K/8K. Transparant IPTV-abonnement met 15 dagen niet-goed-geld-terug en 24/7 support.",
+    h1: "IPTV 8K — jouw IPTV-abonnement voor Nederland",
+    lead: [
+      "IPTV 8K bij [8K IPTV](https://www.8kiptv.nl) betekent premium televisie via internet: meer dan 69.000 livezenders en ruim 220.000 films en series als video-on-demand, in Full HD, 4K en op compatibele content tot 8K. In plaats van kabel, satelliet en meerdere streamingdiensten krijg je alles in één transparant IPTV-abonnement.",
+      "Wie zoekt op „iptv 8k\" wil vooral stabiliteit en een betrouwbare aanbieder. [8K IPTV](https://www.8kiptv.nl) toont pakketten en prijzen openlijk, houdt de zender- en VOD-lijst dagelijks bij en is bereikbaar via WhatsApp – anders dan de anonieme wederverkopers achter veel goedkope aanbiedingen.",
+      "## Wat 8K IPTV biedt",
+      "Nederlandse en Belgische zenders, internationale programma's, sport en een enorme mediatheek. Dankzij een netwerk van relay-servers blijft het beeld ook tijdens prime time en drukke voetbalavonden vloeiend – voor HD volstaat zo'n 16 Mbit/s, voor 4K ongeveer 25 Mbit/s.",
+      "## Pakketten & installatie",
+      "Kies hieronder je pakket en activeer het in enkele minuten. Je toegang werkt op smart-tv, Amazon Fire TV Stick, Android-box, MAG en Apple TV en met IPTV Smarters Pro, TiviMate en elke Xtream-Codes- of M3U-speler. Inclusief 15 dagen niet-goed-geld-terug en 24/7 support.",
+    ],
+    faq: [
+      { q: "Wat is IPTV 8K?", a: "IPTV 8K is een IPTV-abonnement van 8K IPTV met meer dan 69.000 livezenders en 220.000+ films & series als VOD in tot 4K/8K – voor smart-tv, Fire TV, Android en Apple TV." },
+      { q: "Wat kost het IPTV-abonnement?", a: "De prijzen per pakket en looptijd vind je in het overzicht hierboven – met een transparante vaste prijs, zonder verborgen kosten en met 15 dagen niet-goed-geld-terug." },
+      { q: "Welke apparaten en apps worden ondersteund?", a: "Smart-tv, Amazon Fire TV Stick, Android-box, MAG en Apple TV – via IPTV Smarters Pro, TiviMate en elke Xtream-Codes-/M3U-speler." },
+      { q: "Is er een niet-goed-geld-terug-garantie?", a: "Ja. 8K IPTV biedt 15 dagen niet-goed-geld-terug en 24/7 support via WhatsApp." },
+    ],
+  },
+  {
+    slug: "iptv-europe",
+    keyword: "IPTV Europe",
+    title: "IPTV Europe — IPTV abonnement 4K | 8K IPTV",
+    description: "IPTV Europe: meer dan 69.000 livezenders en 220.000+ films & series in 4K/8K. Transparant IPTV-abonnement met 15 dagen niet-goed-geld-terug en 24/7 support.",
+    h1: "IPTV Europe — jouw IPTV-abonnement voor Nederland",
+    lead: [
+      "IPTV Europe bij [8K IPTV](https://www.8kiptv.nl) betekent premium televisie via internet: meer dan 69.000 livezenders en ruim 220.000 films en series als video-on-demand, in Full HD, 4K en op compatibele content tot 8K. In plaats van kabel, satelliet en meerdere streamingdiensten krijg je alles in één transparant IPTV-abonnement.",
+      "Wie zoekt op „iptv europe\" wil vooral stabiliteit en een betrouwbare aanbieder. [8K IPTV](https://www.8kiptv.nl) toont pakketten en prijzen openlijk, houdt de zender- en VOD-lijst dagelijks bij en is bereikbaar via WhatsApp – anders dan de anonieme wederverkopers achter veel goedkope aanbiedingen.",
+      "## Wat 8K IPTV biedt",
+      "Nederlandse en Belgische zenders, internationale programma's, sport en een enorme mediatheek. Dankzij een netwerk van relay-servers blijft het beeld ook tijdens prime time en drukke voetbalavonden vloeiend – voor HD volstaat zo'n 16 Mbit/s, voor 4K ongeveer 25 Mbit/s.",
+      "## Pakketten & installatie",
+      "Kies hieronder je pakket en activeer het in enkele minuten. Je toegang werkt op smart-tv, Amazon Fire TV Stick, Android-box, MAG en Apple TV en met IPTV Smarters Pro, TiviMate en elke Xtream-Codes- of M3U-speler. Inclusief 15 dagen niet-goed-geld-terug en 24/7 support.",
+    ],
+    faq: [
+      { q: "Wat is IPTV Europe?", a: "IPTV Europe is een IPTV-abonnement van 8K IPTV met meer dan 69.000 livezenders en 220.000+ films & series als VOD in tot 4K/8K – voor smart-tv, Fire TV, Android en Apple TV." },
+      { q: "Wat kost het IPTV-abonnement?", a: "De prijzen per pakket en looptijd vind je in het overzicht hierboven – met een transparante vaste prijs, zonder verborgen kosten en met 15 dagen niet-goed-geld-terug." },
+      { q: "Welke apparaten en apps worden ondersteund?", a: "Smart-tv, Amazon Fire TV Stick, Android-box, MAG en Apple TV – via IPTV Smarters Pro, TiviMate en elke Xtream-Codes-/M3U-speler." },
+      { q: "Is er een niet-goed-geld-terug-garantie?", a: "Ja. 8K IPTV biedt 15 dagen niet-goed-geld-terug en 24/7 support via WhatsApp." },
+    ],
+  },
+
+  {
     slug: BRAND_SLUG,
     keyword: BRAND_KEYWORD,
     title: `${BRAND} — Premium IPTV Abonnement Nederland`,

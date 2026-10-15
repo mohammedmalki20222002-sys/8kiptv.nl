@@ -1,4 +1,5 @@
 import { BLOG_POSTS, BlogPost } from "./blogPosts";
+import { PRINCIPAL_POSTS } from "./principalPosts";
 import { SEO_BLOG_POSTS } from "./seoBlogPosts";
 import { UK_BLOG_POSTS_01 } from "./ukBlogPosts01";
 import { UK_BLOG_POSTS_02 } from "./ukBlogPosts02";
@@ -98,7 +99,7 @@ const EN_BLOG_POSTS: BlogPost[] = [
   ...EN_BLOG_POSTS_02,
 ];
 
-export const ALL_POSTS: BlogPost[] = [...SEO_BLOG_POSTS, ...FR_BLOG_POSTS, ...NL_BLOG_POSTS, ...EN_BLOG_POSTS, ...BLOG_POSTS].sort((a, b) =>
+export const ALL_POSTS: BlogPost[] = [...PRINCIPAL_POSTS, ...SEO_BLOG_POSTS, ...FR_BLOG_POSTS, ...NL_BLOG_POSTS, ...EN_BLOG_POSTS, ...BLOG_POSTS].sort((a, b) =>
   b.dateISO.localeCompare(a.dateISO)
 );
 
