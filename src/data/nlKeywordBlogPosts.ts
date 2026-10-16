@@ -251,7 +251,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "iptv-kastje",
+    slug: "iptv-kastje-nl",
     category: "Apparaten",
     dateISO: "2026-10-04",
     image: "https://images.unsplash.com/photo-1467987506553-8f3916508521?auto=format&fit=crop&w=1200&q=80",
@@ -273,7 +273,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "iptv-totaal",
+    slug: "iptv-totaal-nl",
     category: "Reviews",
     dateISO: "2026-10-03",
     image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
@@ -361,7 +361,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "iptv-box",
+    slug: "iptv-box-nl",
     category: "Apparaten",
     dateISO: "2026-09-29",
     image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1200&q=80",
@@ -383,7 +383,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "iptv-dark",
+    slug: "iptv-dark-nl",
     category: "Reviews",
     dateISO: "2026-09-28",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80",
@@ -449,7 +449,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "beste-iptv",
+    slug: "beste-iptv-nl",
     category: "Vergelijking",
     dateISO: "2026-09-25",
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80",
@@ -669,7 +669,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "hot-iptv",
+    slug: "hot-iptv-nl",
     category: "Reviews",
     dateISO: "2026-09-15",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
@@ -735,7 +735,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "nero-iptv",
+    slug: "nero-iptv-nl",
     category: "Reviews",
     dateISO: "2026-09-12",
     image: "https://images.unsplash.com/photo-1480694313141-fce5e697ee25?auto=format&fit=crop&w=1200&q=80",
@@ -801,7 +801,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "hakuna-iptv",
+    slug: "hakuna-iptv-nl",
     category: "Reviews",
     dateISO: "2026-09-09",
     image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
@@ -1153,7 +1153,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "net-iptv",
+    slug: "net-iptv-nl",
     category: "Spelers",
     dateISO: "2026-08-24",
     image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1200&q=80",
@@ -1175,7 +1175,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "set-iptv",
+    slug: "set-iptv-nl",
     category: "Spelers",
     dateISO: "2026-08-23",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80",
@@ -1329,7 +1329,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "iptv-mate",
+    slug: "iptv-mate-nl",
     category: "Reviews",
     dateISO: "2026-08-16",
     image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
@@ -1395,7 +1395,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "amiko-iptv",
+    slug: "amiko-iptv-nl",
     category: "Reviews",
     dateISO: "2026-08-13",
     image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=1200&q=80",
@@ -1461,7 +1461,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "beste-iptv-app",
+    slug: "beste-iptv-app-nl",
     category: "Spelers",
     dateISO: "2026-08-10",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
@@ -1505,7 +1505,7 @@ export const NL_KW_BLOG_POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "iptv-climb",
+    slug: "iptv-climb-nl",
     category: "Reviews",
     dateISO: "2026-08-08",
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80",
