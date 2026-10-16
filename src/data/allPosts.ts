@@ -99,7 +99,8 @@ const EN_BLOG_POSTS: BlogPost[] = [
   ...EN_BLOG_POSTS_02,
 ];
 
-export const ALL_POSTS: BlogPost[] = [...PRINCIPAL_POSTS, ...SEO_BLOG_POSTS, ...FR_BLOG_POSTS, ...NL_BLOG_POSTS, ...EN_BLOG_POSTS, ...BLOG_POSTS].sort((a, b) =>
+export const ALL_POSTS: BlogPost[] = [
+  ...NL_KW_BLOG_POSTS,...PRINCIPAL_POSTS, ...SEO_BLOG_POSTS, ...FR_BLOG_POSTS, ...NL_BLOG_POSTS, ...EN_BLOG_POSTS, ...BLOG_POSTS].sort((a, b) =>
   b.dateISO.localeCompare(a.dateISO)
 );
 
