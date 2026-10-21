@@ -1,3 +1,4 @@
+import SiteLinks from "./components/SiteLinks";
 import { useEffect, useState } from "react";
 import { PricingPlan } from "./types";
 import { LanguageProvider, useLanguage } from "./LanguageContext";
@@ -297,6 +298,7 @@ function AppInner({ view }: { view: View }) {
       </main>
 
       <footer className="mt-16 text-[#FDFDF7] py-16 px-6 md:px-12 border-t border-white/5" style={{ background: "linear-gradient(160deg, #0a0f1c 0%, #0e1829 50%, #0a0f1c 100%)" }}>
+        <SiteLinks lang="nl" langPrefix="" />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-10">
 
           {/* Logo & tagline */}
