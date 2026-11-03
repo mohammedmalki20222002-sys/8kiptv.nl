@@ -224,6 +224,9 @@ function AppInner({ view }: { view: View }) {
           if (!kp) return null;
           return (
             <>
+              <Hero onPricingClick={() => scrollToSection("pricing-section")} />
+              <BlogOfferBanner />
+              <MovieGrid onPricingClick={() => scrollToSection("pricing-section")} />
               <section className="px-4 md:px-8 max-w-4xl mx-auto w-full pt-10 pb-4">
                 <nav className="text-sm text-neutral-500 mb-4">
                   <a href="/" className="hover:text-[#003580]">8K IPTV</a> › {kp.keyword}
@@ -274,6 +277,7 @@ function AppInner({ view }: { view: View }) {
           <>
             <div className="pt-6 md:pt-10" />
             <BlogPost slug={view.slug} onPricingClick={() => scrollToSection("pricing-section")} />
+            <Pricing onSelectPlan={setSelectedPlanForCheckout} />
           </>
         )}
 
