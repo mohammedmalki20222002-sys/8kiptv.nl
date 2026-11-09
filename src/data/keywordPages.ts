@@ -1,3 +1,4 @@
+import { KW_WAVE3_PAGES } from "./kwWave3Pages";
 // SEO keyword landing pages (TODO-1). Single source of truth shared by the SPA
 // router (src/App.tsx) and the post-build prerenderer (scripts/prerender.ts) so
 // the client-rendered page and the crawlable static HTML can never drift apart.
@@ -17907,7 +17908,7 @@ const RAW_KEYWORD_PAGES: KeywordPage[] = [
 // the generic slugs (e.g. iptv-kopen.net → BRAND_SLUG "iptv-kopen"), the brand
 // entry above collapses the later generic duplicate into a single strong page,
 // so the prerenderer never double-writes a dir or lists a sitemap <loc> twice.
-export const KEYWORD_PAGES: KeywordPage[] = RAW_KEYWORD_PAGES.filter(
+export const KEYWORD_PAGES: KeywordPage[] = [...RAW_KEYWORD_PAGES, ...KW_WAVE3_PAGES].filter(
   (p, i, a) => a.findIndex((x) => x.slug === p.slug) === i
 );
 

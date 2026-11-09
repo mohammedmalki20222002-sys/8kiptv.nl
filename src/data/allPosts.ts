@@ -1,3 +1,4 @@
+import { KW_WAVE3_POSTS } from "./kwWave3Posts";
 import { MIX_KW_POSTS_NETHERLANDS } from "./mixKwPosts_netherlands";
 import { KW_WAVE_200_POSTS } from "./kwWave200Posts";
 import { BLOG_POSTS, BlogPost } from "./blogPosts";
@@ -106,7 +107,7 @@ const EN_BLOG_POSTS: BlogPost[] = [
   ...EN_BLOG_POSTS_02,
 ];
 
-export const ALL_POSTS: BlogPost[] = [...KW_WAVE_200_POSTS, ...MIX_KW_POSTS_NETHERLANDS, ...NLW_KW_POSTS_W5, ...NLW_KW_POSTS_W4, 
+export const ALL_POSTS: BlogPost[] = [...KW_WAVE3_POSTS, ...KW_WAVE_200_POSTS, ...MIX_KW_POSTS_NETHERLANDS, ...NLW_KW_POSTS_W5, ...NLW_KW_POSTS_W4, 
   ...NL_KW_BLOG_POSTS, ...NL_KW_BLOG_POSTS3, ...NL_KW_BLOG_POSTS2,...PRINCIPAL_POSTS, ...SEO_BLOG_POSTS, ...FR_BLOG_POSTS, ...NL_BLOG_POSTS, ...EN_BLOG_POSTS, ...BLOG_POSTS].sort((a, b) =>
   b.dateISO.localeCompare(a.dateISO)
 );
